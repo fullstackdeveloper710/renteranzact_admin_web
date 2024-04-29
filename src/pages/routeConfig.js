@@ -47,6 +47,7 @@ export const routeConfig = [
     role: ["superAdmin"],
     show: true,
   },
+  
   {
     title: AppConstants.sidebarConstants.propertyManagement,
     link: "property-management",
@@ -56,14 +57,14 @@ export const routeConfig = [
   },
   {
     title: AppConstants.sidebarConstants.reviewRating,
-    link: "review-rating",
+    link: "review-and-rating-mgt",
     path: "./pages/reviewRating",
     role: ["superAdmin"],
     show: true,
   },
   {
     title: AppConstants.sidebarConstants.financialPerformance,
-    link: "financial-performance",
+    link: "finance-performance",
     path: "./pages/financialPerformance",
     role: ["superAdmin"],
     show: true,

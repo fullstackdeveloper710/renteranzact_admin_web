@@ -29,7 +29,7 @@ export default function DataTable({rows,columns}) {
           },
         }}
         pageSizeOptions={[5]}
-        checkboxSelection
+        // checkboxSelection
         disableRowSelectionOnClick
       />
     </Box>
