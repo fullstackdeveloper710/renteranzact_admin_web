@@ -10,6 +10,10 @@ import {
 import DashboardLayout from "../layouts/dashboard";
 import { routeConfig } from "../pages/routeConfig";
 import ManageRolesAndPermission from "../pages/rolesandPermissionManagement";
+import AddNewRole from "../pages/rolesandPermissionManagement/add-new-role";
+import ReviewAndRatingMgt from "../pages/Review&RatingMgt/Review&RatingMgt";
+import FinancePerformance from "../pages/financePerformance/FinancePerformance";
+import ManagePayouts from "../pages/managePayouts/ManagePayouts";
 export const LoginPage = lazy(() => import("../pages/login"));
 export const ProductsPage = lazy(() => import("../pages/products"));
 export const Page404 = lazy(() => import("../pages/page-not-found"));
@@ -86,6 +90,29 @@ export default function Router() {
           path: "manage-users/user-details",
         },
         {
+
+          element : <ManageRolesAndPermission />,
+          path : 'roles-and-permissions-management'
+        },
+        {
+          element : <AddNewRole />,
+          path : 'add-new-roles-and-permissions-management'
+        },
+        {
+          element : <ReviewAndRatingMgt />,
+          path : 'review-and-rating-mgt'
+        },
+        {
+          element : <FinancePerformance />,
+          path : 'finance-performance'
+        }
+        ,
+        {
+          element : <ManagePayouts />,
+          path : 'manage-payouts'
+        }
+      ]
+
           element: <ManageRolesAndPermission />,
           path: "roles-and-permissions-management",
         },
