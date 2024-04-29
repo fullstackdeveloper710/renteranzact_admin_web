@@ -52,13 +52,13 @@ export default function Nav({ openNav, onCloseNav }) {
     >
       {/* <Avatar src={"./images/logo.png"} alt="photoURL" /> */}
 
-      <Box sx={{ ml: 2 }}>
-        {/* <Typography style={{color:"#C8D736"}} variant="">{account.displayName}</Typography> */}
+      {/* <Box sx={{ ml: 2 }}>
+
 
         <Typography variant="body2" sx={{ color: "text.secondary" }}>
           {account.role}
         </Typography>
-      </Box>
+      </Box> */}
     </Box>
   );
 
@@ -165,7 +165,7 @@ function NavItem({ item }) {
     >
       <Box
         component="span"
-        sx={{ width: 24, height: 24, mr: 2, color: "black" }}
+        sx={{ width: 24, height: 24, mr: 2, color: "white" }}
       >
         {item.icon}
       </Box>
