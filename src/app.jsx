@@ -12,6 +12,8 @@ import ThemeProvider from './theme';
 // ----------------------------------------------------------------------
 
 export default function App() {
+
+
   useScrollToTop();
   return (
     <ThemeProvider>
