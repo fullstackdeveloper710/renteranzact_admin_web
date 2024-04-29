@@ -90,29 +90,26 @@ export default function Router() {
           path: "manage-users/user-details",
         },
         {
-
-          element : <ManageRolesAndPermission />,
-          path : 'roles-and-permissions-management'
+          element: <ManageRolesAndPermission />,
+          path: "roles-and-permissions-management",
         },
         {
-          element : <AddNewRole />,
-          path : 'add-new-roles-and-permissions-management'
+          element: <AddNewRole />,
+          path: "add-new-roles-and-permissions-management",
         },
         {
-          element : <ReviewAndRatingMgt />,
-          path : 'review-and-rating-mgt'
+          element: <ReviewAndRatingMgt />,
+          path: "review-and-rating-mgt",
         },
         {
-          element : <FinancePerformance />,
-          path : 'finance-performance'
-        }
-        ,
+          element: <FinancePerformance />,
+          path: "finance-performance",
+        },
         {
-          element : <ManagePayouts />,
-          path : 'manage-payouts'
-        }
-      ]
-
+          element: <ManagePayouts />,
+          path: "manage-payouts",
+        },
+        {
           element: <ManageRolesAndPermission />,
           path: "roles-and-permissions-management",
         },
@@ -120,25 +117,25 @@ export default function Router() {
           element: <PropertyManagement />,
           path: "property-management",
         },
+        {
+          path: "/login",
+          element: <LoginPage />,
+        },
+        {
+          path: "/404",
+          element: <Page404 />,
+        },
+        {
+          path: "*",
+          element: <Navigate to="/404" replace />,
+        },
       ],
-      // children: routeConfig.map((x) => ({
-      //   element: LoadDynamicComponent(x.path),
-      //   path: `/${x.link}`,
-      // })),
-    },
-    {
-      path: "/login",
-      element: <LoginPage />,
-    },
-    {
-      path: "/404",
-      element: <Page404 />,
-    },
-    {
-      path: "*",
-      element: <Navigate to="/404" replace />,
     },
   ]);
+  // children: routeConfig.map((x) => ({
+  //   element: LoadDynamicComponent(x.path),
+  //   path: `/${x.link}`,
+  // })),
 
   return routes;
 }
