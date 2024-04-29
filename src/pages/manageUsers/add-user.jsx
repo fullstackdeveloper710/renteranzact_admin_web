@@ -54,6 +54,7 @@ const AddUser = () => {
         type="submit"
         variant="contained"
         color="inherit"
+        className='global-button'
       >
         Save
       </Button>

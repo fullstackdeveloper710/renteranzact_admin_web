@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-
+import "../layout.css"
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import AppBar from '@mui/material/AppBar';
@@ -39,14 +39,15 @@ export default function Header({ onOpenNav }) {
       <Box sx={{ flexGrow: 1 }} />
 
       <Stack direction="row" alignItems="center" spacing={1}>
-        <LanguagePopover />
-        <NotificationsPopover />
+        {/* <LanguagePopover />
+        <NotificationsPopover /> */}
         <AccountPopover />
       </Stack>
     </>
   );
 
   return (
+    <div className='app-header'>
     <AppBar
       sx={{
         boxShadow: 'none',
@@ -73,6 +74,7 @@ export default function Header({ onOpenNav }) {
         {renderContent}
       </Toolbar>
     </AppBar>
+    </div>
   );
 }
 

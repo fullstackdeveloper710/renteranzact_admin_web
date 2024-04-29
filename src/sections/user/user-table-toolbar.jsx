@@ -63,6 +63,7 @@ export default function UserTableToolbar({ numSelected, filterName, onFilterName
       )} */}
 
       <Button
+      className='global-button'
         variant="contained"
         color="inherit"
         startIcon={<Iconify icon="eva:plus-fill" />}

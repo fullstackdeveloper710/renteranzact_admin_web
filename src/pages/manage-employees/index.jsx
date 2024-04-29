@@ -146,6 +146,7 @@ export default function UserPage() {
             color="inherit"
             startIcon={<Iconify icon="eva:plus-fill" />}
             onClick={() => navigate('/manage-employees/add-employees')}
+            className='global-button'
           >
             Add Employee
           </Button>

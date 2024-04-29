@@ -3,6 +3,7 @@ import { lazy, Suspense, useEffect } from "react";
 import { Outlet, Navigate, useRoutes, useNavigate , useParams } from "react-router-dom";
 import DashboardLayout from "../layouts/dashboard";
 import { routeConfig } from "../pages/routeConfig";
+import ManageRolesAndPermission from "../pages/rolesandPermissionManagement";
 export const LoginPage = lazy(() => import("../pages/login"));
 export const ProductsPage = lazy(() => import("../pages/products"));
 export const Page404 = lazy(() => import("../pages/page-not-found"));
@@ -19,9 +20,9 @@ const LoadDynamicComponent = (object) => {
 };
 export default function Router() {
 const navigate = useNavigate()
-  useEffect(() =>{
-    navigate('/login')
-  },[])
+  // useEffect(() =>{
+  //   navigate('/login')
+  // },[])
   const routes = useRoutes([
     {
       element: (
@@ -69,6 +70,10 @@ const navigate = useNavigate()
         {
           element : <UserDetails />,
           path : 'manage-users/user-details'
+        },
+        {
+          element : <ManageRolesAndPermission />,
+          path : 'roles-and-permissions-management'
         }
       ]
       // children: routeConfig.map((x) => ({

@@ -48,12 +48,13 @@ const AddEmployee = () => {
 
       <div className="text-center mt-4">
         <Button
-          sx={{ mt: 3, width: 400 }}
+          sx={{ mt: 3, width: 200 }}
           size="large"
           type="submit"
           fullWidth
           variant="contained"
           color="inherit"
+          className='global-button'
         >
           Save
         </Button>

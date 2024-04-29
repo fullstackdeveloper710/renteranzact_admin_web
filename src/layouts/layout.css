@@ -1,0 +1,21 @@
+.app-header header{
+    background-color: #13556D !important;
+}
+
+.app-header .css-dohfak-MuiAvatar-root{
+    background-color: #C8D736;
+}
+.nav-logo{
+    text-align: center;
+    padding: 27px 10px;
+    background-color: #C8D736;
+}
+.nav-bar span {
+    color: #fff !important;
+}
+
+ .css-16pm499-MuiButtonBase-root-MuiListItemButton-root{
+    background-color: #C8D736 !important;
+    color: #13556D !important;
+    font-size:"15px" !important
+}

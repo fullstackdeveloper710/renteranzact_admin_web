@@ -42,7 +42,7 @@ export const routeConfig = [
   },
   {
     title: AppConstants.sidebarConstants.rolesAndPremission,
-    link: "roles-permission",
+    link: "roles-and-permissions-management",
     path: "./pages/rolePermissions",
     role: ["superAdmin"],
     show: true,

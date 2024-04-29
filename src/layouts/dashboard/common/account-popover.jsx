@@ -62,7 +62,9 @@ export default function AccountPopover() {
             width: 36,
             height: 36,
             border: (theme) => `solid 2px ${theme.palette.background.default}`,
+            
           }}
+          className='global-button'
         >
           {account.displayName.charAt(0).toUpperCase()}
         </Avatar>
