@@ -117,10 +117,7 @@ export default function Router() {
           element: <PropertyManagement />,
           path: "property-management",
         },
-        {
-          path: "/login",
-          element: <LoginPage />,
-        },
+       
         {
           path: "/404",
           element: <Page404 />,
@@ -130,6 +127,11 @@ export default function Router() {
           element: <Navigate to="/404" replace />,
         },
       ],
+     
+    },
+    {
+      path: "/login",
+      element: <LoginPage />,
     },
   ]);
   // children: routeConfig.map((x) => ({
