@@ -94,7 +94,7 @@ export const routeConfig = [
   },
   {
     title: AppConstants.sidebarConstants.activityLog,
-    link: "activity-log",
+    link: "activity-logs",
     path: "./pages/activityLog",
     icon : <Icon icon="tdesign:activity" />,
     role: ["superAdmin"],
@@ -102,8 +102,8 @@ export const routeConfig = [
   },
   {
     title: AppConstants.sidebarConstants.manageChat,
-    link: "roles-permission",
-    path: "./pages/manageEmployees",
+    link: "manage-chat",
+    path: "./pages/manageChat",
     role: ["superAdmin"],
     icon : <Icon icon="majesticons:chat-line" />,
     show: true,

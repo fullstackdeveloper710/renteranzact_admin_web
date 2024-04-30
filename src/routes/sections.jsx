@@ -14,6 +14,10 @@ import AddNewRole from "../pages/rolesandPermissionManagement/add-new-role";
 import ReviewAndRatingMgt from "../pages/Review&RatingMgt/Review&RatingMgt";
 import FinancePerformance from "../pages/financePerformance/FinancePerformance";
 import ManagePayouts from "../pages/managePayouts/ManagePayouts";
+import ManageTransactions from "../pages/manageTransactions/manageTransaction";
+import Activitylog from "../pages/activityLog/activitylog";
+import ManageChat from "../pages/manageChat/manageChat";
+import ChatAsPerUser from "../pages/manageChat/chatAsPerUser";
 export const LoginPage = lazy(() => import("../pages/login"));
 export const ProductsPage = lazy(() => import("../pages/products"));
 export const Page404 = lazy(() => import("../pages/page-not-found"));
@@ -106,6 +110,10 @@ export default function Router() {
           path: "finance-performance",
         },
         {
+          element: <ManageTransactions />,
+          path: "manage-transactions",
+        },
+        {
           element: <ManagePayouts />,
           path: "manage-payouts",
         },
@@ -117,7 +125,18 @@ export default function Router() {
           element: <PropertyManagement />,
           path: "property-management",
         },
-
+        {
+          element: <Activitylog />,
+          path: "activity-logs",
+        },
+        {
+          element: <ManageChat />,
+          path: "manage-chat",
+        },
+        {
+          element: <ChatAsPerUser />,
+          path: "user-chat",
+        },
         {
           path: "/404",
           element: <Page404 />,
