@@ -69,7 +69,7 @@ export default function FinancePerformance() {
   ];
   const revenueGenrateColumn = ["Month", "Revenue Regenrated"];
   return (
-    <div>
+    <div className="px-5">
       <Stack
         direction="row"
         alignItems="center"
@@ -91,10 +91,10 @@ export default function FinancePerformance() {
           </LocalizationProvider>
         </div>
       </Stack>
-      <Stack>
+    
         <Typography variant="h4">Collected Amount</Typography>
         <Grid container gap={2} className="mt-4">
-          <Grid xs={2}>
+          <Grid item md={2}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
               <Select
@@ -110,7 +110,7 @@ export default function FinancePerformance() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid xs={2}>
+          <Grid item md={2}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
               <Select
@@ -126,40 +126,39 @@ export default function FinancePerformance() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid xs={2}>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <Grid item md={2} >
+            <LocalizationProvider dateAdapter={AdapterDayjs} >
               <DemoContainer components={["DatePicker"]}>
                 <DatePicker label="11/11/23" />
               </DemoContainer>
             </LocalizationProvider>
           </Grid>
-          <Grid xs={2}>
+          <Grid item md={2}>
             <Button
               variant="contained"
               color="inherit"
               className="global-button"
-              style={{ width: "140px", height: "54px" }}
+              fullWidth
             >
               Filter
             </Button>
           </Grid>
-          <Grid xs={1}></Grid>
-          <Grid xs={2}>
+          {/* <Grid item md={1}></Grid> */}
+          <Grid item md={2}>
             <Button
               variant="contained"
               color="inherit"
               className="global-button"
               startIcon={<Iconify icon="eva:download-fill" />}
-              style={{ width: "140px", height: "54px" }}
+             fullWidth
             >
               Download
             </Button>
           </Grid>
         </Grid>
-      </Stack>
-      <Scrollbar>
-        <TableContainer sx={{ overflow: "unset" }} className="mt-4 mb-4">
-          <Table sx={{ minWidth: 800 }} className="table-bordered">
+    
+   
+          <Table sx={{ minWidth: 800 ,  mt : 4  }} className="table-bordered">
             <TableHead>
               <TableRow>
                 {tableColumns.map((x, i) => {
@@ -188,13 +187,10 @@ export default function FinancePerformance() {
               {notFound && <TableNoData query={filterName} />}
             </TableBody>
           </Table>
-        </TableContainer>
+
         <div className="d-flex">
-          <TableContainer
-            sx={{ overflow: "unset", marginTop: "10" }}
-            className="me-2"
-          >
-            <Table sx={{ minWidth: 700 }} className="table-bordered">
+        
+            <Table sx={{ minWidth: 700 ,  mt : 4  }} className="table-bordered">
               <TableHead>
                 <TableRow>
                   {revenueGenrateColumn.map((x, i) => {
@@ -218,9 +214,9 @@ export default function FinancePerformance() {
                 {notFound && <TableNoData query={filterName} />}
               </TableBody>
             </Table>
-          </TableContainer>
-          <TableContainer sx={{ overflow: "unset", marginTop: "10" }}>
-            <Table sx={{ minWidth: 400 }} className="table-bordered">
+         
+         
+            <Table  sx={{ minWidth: 400 , mt : 4 }} className="table-bordered">
               <TableHead>
                 <TableRow>
                   {revenueGenrateColumn.map((x, i) => {
@@ -244,9 +240,7 @@ export default function FinancePerformance() {
                 {notFound && <TableNoData query={filterName} />}
               </TableBody>
             </Table>
-          </TableContainer>
         </div>
-      </Scrollbar>
     </div>
   );
 }

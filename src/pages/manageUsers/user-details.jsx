@@ -112,7 +112,7 @@ const UserDetails = () => {
               <CardMedia
                 component="img"
                 height="100"
-                image="/static/images/cards/paella.jpg"
+                image="https://miro.medium.com/v2/resize:fit:1400/1*5SqWT_rosWcElLsi1nfT0A.png"
                 alt="Paella dish"
               />
               <div className="d-flex flex-row-reverse">
@@ -141,7 +141,7 @@ const UserDetails = () => {
               <CardMedia
                 component="img"
                 height="100"
-                image="/static/images/cards/paella.jpg"
+                image="https://miro.medium.com/v2/resize:fit:1400/1*5SqWT_rosWcElLsi1nfT0A.png"
                 alt="Paella dish"
               />
               <div className="d-flex flex-row-reverse">
@@ -171,7 +171,7 @@ const UserDetails = () => {
               <CardMedia
                 component="img"
                 height="100"
-                image="/static/images/cards/paella.jpg"
+                image="https://miro.medium.com/v2/resize:fit:1400/1*5SqWT_rosWcElLsi1nfT0A.png"
                 alt="Paella dish"
               />
               <div className="d-flex flex-row-reverse">

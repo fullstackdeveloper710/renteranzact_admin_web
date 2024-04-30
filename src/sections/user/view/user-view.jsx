@@ -37,7 +37,7 @@ export default function UserPage() {
 
   const [filterName, setFilterName] = useState('');
 
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const handleSort = (event, id) => {
     const isAsc = orderBy === id && order === 'asc';
@@ -114,9 +114,6 @@ export default function UserPage() {
             </DemoContainer>
           </LocalizationProvider>
         </div>
-        {/* <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:plus-fill" />}>
-          New User
-        </Button> */}
       </Stack>
 
       <Card>
@@ -125,9 +122,6 @@ export default function UserPage() {
           filterName={filterName}
           onFilterName={handleFilterByName}
         />
-
-        <Scrollbar>
-          <TableContainer sx={{ overflow: 'unset' }}>
             <Table sx={{ minWidth: 800 }}>
               <UserTableHead
                 order={order}
@@ -169,10 +163,9 @@ export default function UserPage() {
                 {notFound && <TableNoData query={filterName} />}
               </TableBody>
             </Table>
-          </TableContainer>
-        </Scrollbar>
+       
 
-        <TablePagination
+        {/* <TablePagination
           page={page}
           component="div"
           count={users.length}
@@ -180,7 +173,7 @@ export default function UserPage() {
           onPageChange={handleChangePage}
           rowsPerPageOptions={[5, 10, 25]}
           onRowsPerPageChange={handleChangeRowsPerPage}
-        />
+        /> */}
       </Card>
     </div>
   );

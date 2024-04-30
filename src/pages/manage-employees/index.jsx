@@ -28,7 +28,7 @@ export default function UserPage() {
   const [order, setOrder] = useState('asc');
   const [orderBy, setOrderBy] = useState('name');
   const [filterName, setFilterName] = useState('');
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
   // const handleSort = (event, id) => {
   //   const isAsc = orderBy === id && order === 'asc';
   //   if (id !== '') {
@@ -152,8 +152,8 @@ export default function UserPage() {
           </Button>
         </div>
 
-        <Scrollbar>
-          <TableContainer sx={{ overflow: 'unset' }}>
+        {/* <Scrollbar>
+          <TableContainer sx={{ overflow: 'unset' }}> */}
             <Table sx={{ minWidth: 800 }}>
               <TableHead>
                 <TableRow>
@@ -183,10 +183,10 @@ export default function UserPage() {
                 {notFound && <TableNoData query={filterName} />}
               </TableBody>
             </Table>
-          </TableContainer>
-        </Scrollbar>
+          {/* </TableContainer>
+        </Scrollbar> */}
 
-        <TablePagination
+        {/* <TablePagination
           page={page}
           component="div"
           count={users.length}
@@ -194,7 +194,7 @@ export default function UserPage() {
           onPageChange={handleChangePage}
           rowsPerPageOptions={[5, 10, 25]}
           onRowsPerPageChange={handleChangeRowsPerPage}
-        />
+        /> */}
       </Card>
     </div>
   );

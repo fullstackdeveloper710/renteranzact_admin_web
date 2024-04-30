@@ -4,13 +4,19 @@ import {
   InputAdornment,
   OutlinedInput,
   Stack,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
   Typography,
 } from "@mui/material";
 import React from "react";
 import Iconify from "../../components/iconify/iconify";
 import DataTable from "../../components/table/table";
 import { useNavigate } from "react-router-dom";
-import { renderActionsCell } from "@mui/x-data-grid";
+import moment from "moment";
+import TableEmptyRows from "../../sections/user/table-empty-rows";
 
 export default function ManageRolesAndPermission() {
   const navigate = useNavigate();
@@ -75,8 +81,35 @@ export default function ManageRolesAndPermission() {
             Add New Role
           </Button>
         </div>
+        <Table sx={{ minWidth: 800 }}>
+          <TableHead>
+            <TableRow>
+              <TableCell>Role Name</TableCell>
+              <TableCell>Permissions</TableCell>
+              <TableCell>Action</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableCell>{"Reviewer Admin"}</TableCell>
+              <TableCell>
+                <p>Manage Users(Add/Edit/Delete)</p>
+              </TableCell>
+           
+              <TableCell>
+                <Iconify icon="solar:eye-linear" />
+                &nbsp;
+                <Iconify icon="mingcute:delete-line" />
+              </TableCell>
+            </TableRow>
 
-        <DataTable rows={rows} columns={columns} />
+            {/* <TableEmptyRows
+                  height={77}
+                  emptyRows={emptyRows(page, rowsPerPage, users.length)}
+                />
+                {notFound && <TableNoData query={filterName} />} */}
+          </TableBody>
+        </Table>
       </Card>
     </div>
   );

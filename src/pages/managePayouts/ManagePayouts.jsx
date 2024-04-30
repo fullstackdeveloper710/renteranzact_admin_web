@@ -19,12 +19,11 @@ export default function ManagePayouts() {
   const managePayouyArray = [1, 2, 3, 4, 5];
   return (
     <div>
-      {" "}
       <Stack
         direction="row"
         alignItems="center"
         justifyContent="space-between"
-        mb={5}
+       
       >
         <Typography variant="h4">Manage Payouts</Typography>
         <div className="d-flex">

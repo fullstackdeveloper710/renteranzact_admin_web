@@ -58,7 +58,7 @@ export default function LoginView() {
         />
       </Stack>
 
-      <Stack
+      {/* <Stack
         direction="row"
         alignItems="center"
         justifyContent="flex-end"
@@ -67,8 +67,8 @@ export default function LoginView() {
         <Link variant="subtitle2" underline="hover">
           Forgot password?
         </Link>
-      </Stack>
-      <div className="loginview_button">
+      </Stack> */}
+      <div className="loginview_button mt-4">
         <LoadingButton
         style={{background:"#13556D" ,color:"#C8D736"}}
           fullWidth

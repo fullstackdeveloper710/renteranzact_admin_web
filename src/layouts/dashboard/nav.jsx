@@ -63,7 +63,7 @@ export default function Nav({ openNav, onCloseNav }) {
   );
 
   const renderMenu = (
-    <Stack component="nav" spacing={0.5} sx={{ px: 2 }}>
+    <Stack component="nav" spacing={0.5} sx={{ px: 2 }} mt={4}>
       {routeConfig.map(
         (item) => item.show && <NavItem key={item.title} item={item} />
       )}
@@ -83,11 +83,10 @@ export default function Nav({ openNav, onCloseNav }) {
       }}
     >
       <div className="nav-logo">
-        {" "}
         <img src="./images/logo.png" alt="no logo" />
       </div>
 
-      {renderAccount}
+      {/* {renderAccount} */}
 
       {renderMenu}
 
@@ -171,7 +170,9 @@ function NavItem({ item }) {
       </Box>
       <div className="nav-bar">
         {" "}
-        <Box component="span" className="unactive">{item.title}</Box>
+        <Box component="span" className="unactive">
+          {item.title}
+        </Box>
       </div>
     </ListItemButton>
   );
