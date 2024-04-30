@@ -1,6 +1,9 @@
 import { Button, Grid, TextField, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+
+    const navigate = useNavigate()
   return (
     <div className="px-5">
       <Typography className="mt-4" variant="h4">
@@ -28,7 +31,7 @@ const Profile = () => {
       </Grid>
       <div className="d-flex mt-4 gap-2">
         <Button   variant="contained">Save</Button>
-        <Button  color="error" variant="outlined">
+        <Button onClick={() => navigate('/login')}  color="error" variant="outlined">
           Logout
         </Button>
       </div>
