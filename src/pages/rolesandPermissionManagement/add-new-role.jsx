@@ -41,36 +41,17 @@ const AddNewRole = () => {
       >
         <Typography variant="h4">Add New Role</Typography>
       </Stack>
-      <Grid container spacing={6}>
-        <Grid item xs={8} md={6}>
-          <TextField fullWidth name="role" label="role-name" type={"text"} />
+      <Grid container >
+        <Grid item xs={12} >
+          <TextField style={{width:"55%"}} name="role" label="role-name" type={"text"} />
         </Grid>
-        <Grid item xs={8} md={6}>
-          <Select
-            labelId="multiple-select-label"
-            id="multiple-select"
-            fullWidth
-            placeholder="Role And Permissions"
-            label="Role Permissons"
-            value={formData?.selectedPermission}
-            onChange={(e) =>
-              setFormData((prev) => ({
-                ...prev,
-                selectedPermission: e.target.value,
-              }))
-            }
-            multiple
-            renderValue={(selected) => selected.join(", ")}
-          >
-            {names.map((name) => (
-              <MenuItem key={name} value={name}>
-                <Checkbox
-                  value={formData?.selectedPermission?.includes(name)}
-                />
-                <ListItemText primary={name} />
-              </MenuItem>
-            ))}
-          </Select>
+        <Grid item xs={12} className="mt-3">
+          {names.map((name) => (
+            <div className="d-flex align-items-center">
+              <Checkbox value={formData?.selectedPermission?.includes(name)} />
+              <ListItemText primary={name} />
+            </div>
+          ))}
         </Grid>
       </Grid>
       <Button
@@ -81,7 +62,7 @@ const AddNewRole = () => {
         color="inherit"
         className="global-button"
         onClick={() => {
-        //   toast.success("New role added");
+          //   toast.success("New role added");
           navigate(-1);
         }}
       >
