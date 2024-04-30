@@ -88,8 +88,8 @@ export default function LoginView() {
     <Box
       sx={{
         ...bgGradient({
-          color: alpha(theme.palette.background.default, 0.9),
-          imgUrl: "/assets/background/overlay_4.jpg",
+          color: alpha(theme.palette.background.default, 0.2),
+          imgUrl: "/assets/background/property-back.png",
         }),
         height: 1,
       }}

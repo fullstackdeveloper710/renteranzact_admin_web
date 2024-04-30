@@ -1,30 +1,31 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
-import Divider from '@mui/material/Divider';
-import Popover from '@mui/material/Popover';
-import { alpha } from '@mui/material/styles';
-import MenuItem from '@mui/material/MenuItem';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
+import Box from "@mui/material/Box";
+import Avatar from "@mui/material/Avatar";
+import Divider from "@mui/material/Divider";
+import Popover from "@mui/material/Popover";
+import { alpha } from "@mui/material/styles";
+import MenuItem from "@mui/material/MenuItem";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
 
-import { account } from '../../../_mock/account';
+import { account } from "../../../_mock/account";
+import { useNavigate } from "react-router-dom";
 
 // ----------------------------------------------------------------------
 
 const MENU_OPTIONS = [
   {
-    label: 'Home',
-    icon: 'eva:home-fill',
+    label: "Home",
+    icon: "eva:home-fill",
   },
   {
-    label: 'Profile',
-    icon: 'eva:person-fill',
+    label: "Profile",
+    icon: "eva:person-fill",
   },
   {
-    label: 'Settings',
-    icon: 'eva:settings-2-fill',
+    label: "Settings",
+    icon: "eva:settings-2-fill",
   },
 ];
 
@@ -33,7 +34,10 @@ const MENU_OPTIONS = [
 export default function AccountPopover() {
   const [open, setOpen] = useState(null);
 
+  const navigate = useNavigate()
+
   const handleOpen = (event) => {
+    navigate('/profile')
     setOpen(event.currentTarget);
   };
 
@@ -62,15 +66,14 @@ export default function AccountPopover() {
             width: 36,
             height: 36,
             border: (theme) => `solid 2px ${theme.palette.background.default}`,
-            
           }}
-          className='global-button'
+          className="global-button"
         >
           {account.displayName.charAt(0).toUpperCase()}
         </Avatar>
       </IconButton>
 
-      <Popover
+      {/* <Popover
         open={!!open}
         anchorEl={open}
         onClose={handleClose}
@@ -112,7 +115,7 @@ export default function AccountPopover() {
         >
           Logout
         </MenuItem>
-      </Popover>
+      </Popover> */}
     </>
   );
 }

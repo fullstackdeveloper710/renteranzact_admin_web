@@ -32,6 +32,7 @@ export const UserDetails = lazy(() =>
 export const PropertyManagement = lazy(() =>
   import("../pages/property-management/index")
 );
+export const Profile = lazy(() => import("../pages/profile"));
 
 const LoadDynamicComponent = (object) => {
   const Component = lazy(() => import(`${object}`));
@@ -116,6 +117,10 @@ export default function Router() {
         {
           element: <PropertyManagement />,
           path: "property-management",
+        },
+        {
+          element: <Profile />,
+          path: "profile",
         },
 
         {
