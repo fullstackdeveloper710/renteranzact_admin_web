@@ -11,15 +11,17 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Iconify from "../../components/iconify/iconify";
 import DataTable from "../../components/table/table";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
 import TableEmptyRows from "../../sections/user/table-empty-rows";
+import ConfirmationDialog from "../../components/dialog/ConfirmationDialog";
 
 export default function ManageRolesAndPermission() {
   const navigate = useNavigate();
+  const [deleteDialog, setDeleteDialog] = useState(false);
   const columns = [
     {
       field: "roleName",
@@ -95,11 +97,14 @@ export default function ManageRolesAndPermission() {
               <TableCell>
                 <p>Manage Users(Add/Edit/Delete)</p>
               </TableCell>
-           
+
               <TableCell>
                 <Iconify icon="solar:eye-linear" />
                 &nbsp;
-                <Iconify icon="mingcute:delete-line" />
+                <Iconify
+                  onClick={() => setDeleteDialog(true)}
+                  icon="mingcute:delete-line"
+                />
               </TableCell>
             </TableRow>
 
@@ -111,6 +116,13 @@ export default function ManageRolesAndPermission() {
           </TableBody>
         </Table>
       </Card>
+      {deleteDialog && (
+        <ConfirmationDialog
+          open={deleteDialog}
+          setDeleteDialog={setDeleteDialog}
+          title={"Are you sure you want to delete?"}
+        />
+      )}
     </div>
   );
 }
