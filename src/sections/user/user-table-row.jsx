@@ -1,17 +1,18 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useState } from "react";
+import PropTypes from "prop-types";
 
-import Stack from '@mui/material/Stack';
-import Avatar from '@mui/material/Avatar';
-import Popover from '@mui/material/Popover';
-import TableRow from '@mui/material/TableRow';
-import Checkbox from '@mui/material/Checkbox';
-import MenuItem from '@mui/material/MenuItem';
-import TableCell from '@mui/material/TableCell';
-import Typography from '@mui/material/Typography';
+import Stack from "@mui/material/Stack";
+import Avatar from "@mui/material/Avatar";
+import Popover from "@mui/material/Popover";
+import TableRow from "@mui/material/TableRow";
+import Checkbox from "@mui/material/Checkbox";
+import MenuItem from "@mui/material/MenuItem";
+import TableCell from "@mui/material/TableCell";
+import Typography from "@mui/material/Typography";
 
-import { Link } from 'react-router-dom';
-import { Switch } from '@mui/material';
+import { Link, useNavigate } from "react-router-dom";
+import { Switch } from "@mui/material";
+import Iconify from "../../components/iconify";
 
 // ----------------------------------------------------------------------
 
@@ -24,6 +25,8 @@ export default function UserTableRow({
   isVerified,
   status,
   handleClick,
+  setDeleteDialog,
+  setDisableUser,
 }) {
   const [open, setOpen] = useState(null);
 
@@ -34,6 +37,7 @@ export default function UserTableRow({
   const handleCloseMenu = () => {
     setOpen(null);
   };
+  const navigate = useNavigate();
 
   return (
     <>
@@ -52,22 +56,30 @@ export default function UserTableRow({
         </TableCell>
 
         <TableCell>
-          <Link to={'/manage-users/user-details'}>{email}</Link>
+          <Link to={"/manage-users/user-details"}>{email}</Link>
         </TableCell>
 
         <TableCell>{mobile}</TableCell>
 
-        <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
+        <TableCell align="left">{isVerified ? "Yes" : "No"}</TableCell>
 
         <TableCell>
-          <Switch />
+          <Switch onChange={() => setDisableUser(true)} />
         </TableCell>
 
         <TableCell align="left">
           {/* <IconButton onClick={handleOpenMenu}>
             <Iconify icon="eva:more-vertical-fill" />
           </IconButton> */}
-          <Link>View</Link>
+          <Iconify
+            onClick={() => navigate("/manage-users/user-details")}
+            icon="solar:eye-linear"
+          />
+          &nbsp;
+          <Iconify
+            onClick={() => setDeleteDialog(true)}
+            icon="mingcute:delete-line"
+          />
         </TableCell>
       </TableRow>
 

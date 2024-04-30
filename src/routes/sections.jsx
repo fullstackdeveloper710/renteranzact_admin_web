@@ -36,6 +36,7 @@ export const UserDetails = lazy(() =>
 export const PropertyManagement = lazy(() =>
   import("../pages/property-management/index")
 );
+export const Profile = lazy(() => import("../pages/profile"));
 
 const LoadDynamicComponent = (object) => {
   const Component = lazy(() => import(`${object}`));
@@ -126,6 +127,12 @@ export default function Router() {
           path: "property-management",
         },
         {
+
+          element: <Profile />,
+          path: "profile",
+        },
+
+{
           element: <Activitylog />,
           path: "activity-logs",
         },
@@ -137,6 +144,7 @@ export default function Router() {
           element: <ChatAsPerUser />,
           path: "user-chat",
         },
+
         {
           path: "/404",
           element: <Page404 />,

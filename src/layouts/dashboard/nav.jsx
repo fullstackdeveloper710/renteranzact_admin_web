@@ -36,31 +36,31 @@ export default function Nav({ openNav, onCloseNav }) {
     }
   }, [pathname]);
 
-  const renderAccount = (
-    <Box
-      sx={{
-        my: 3,
-        mx: 2.5,
-        py: 2,
-        px: 2.5,
-        display: "flex",
-        borderRadius: 1.5,
+  // const renderAccount = (
+  //   <Box
+  //     sx={{
+  //       my: 3,
+  //       mx: 2.5,
+  //       py: 2,
+  //       px: 2.5,
+  //       display: "flex",
+  //       borderRadius: 1.5,
 
-        alignItems: "center",
-        bgcolor: (theme) => alpha(theme.palette.grey[500], 0.12),
-      }}
-    >
-      {/* <Avatar src={"./images/logo.png"} alt="photoURL" /> */}
+  //       alignItems: "center",
+  //       bgcolor: (theme) => alpha(theme.palette.grey[500], 0.12),
+  //     }}
+  //   >
+  //     {/* <Avatar src={"./images/logo.png"} alt="photoURL" /> */}
 
-      {/* <Box sx={{ ml: 2 }}>
+  //     {/* <Box sx={{ ml: 2 }}>
 
 
-        <Typography variant="body2" sx={{ color: "text.secondary" }}>
-          {account.role}
-        </Typography>
-      </Box> */}
-    </Box>
-  );
+  //       <Typography variant="body2" sx={{ color: "text.secondary" }}>
+  //         {account.role}
+  //       </Typography>
+  //     </Box> */}
+  //   </Box>
+  // );
 
   const renderMenu = (
     <Stack component="nav" spacing={0.5} sx={{ px: 2 }} mt={4}>
@@ -79,7 +79,8 @@ export default function Nav({ openNav, onCloseNav }) {
           display: "flex",
           flexDirection: "column",
         },
-        background: "#13556D",
+        background: "white",
+        color : "#13556D"
       }}
     >
       <div className="nav-logo">
@@ -149,7 +150,8 @@ function NavItem({ item }) {
         minHeight: 44,
         borderRadius: 0.75,
         typography: "body2",
-        color: "text.secondary",
+        margin : 5,
+        color: "#13556D",
         textTransform: "capitalize",
         fontWeight: "fontWeightMedium",
         ...(active && {
@@ -164,13 +166,12 @@ function NavItem({ item }) {
     >
       <Box
         component="span"
-        sx={{ width: 24, height: 24, mr: 2, color: "white" }}
+        sx={{ width: 24, height: 24, mr: 2, color: "#13556D" }}
       >
         {item.icon}
       </Box>
       <div className="nav-bar">
-        {" "}
-        <Box component="span" className="unactive">
+        <Box  className="unactive" sx={{color :'#13556D'}}>
           {item.title}
         </Box>
       </div>

@@ -172,7 +172,18 @@ export default function UserPage() {
                       <TableCell>{moment(x.joiningDate).format('YYYY/DD/MM')}</TableCell>
                       <TableCell>{x.role}</TableCell>
                       <TableCell>{x.status}</TableCell>
-                      <TableCell>{x.action}</TableCell>
+                      <TableCell>
+
+                      <Iconify
+            // onClick={() => navigate("/manage-users/user-details")}
+            icon="solar:eye-linear"
+          />
+          &nbsp;
+          <Iconify
+            // onClick={() => setDeleteDialog(true)}
+            icon="mingcute:delete-line"
+          />
+                      </TableCell>
                     </TableRow>
                   );
                 })}
