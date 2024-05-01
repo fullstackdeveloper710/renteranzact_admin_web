@@ -9,13 +9,13 @@ export default function ManageTransactionCard() {
           <img  src="./images/profile.png" alt="profileimage" />
         </Grid>
         <Grid xs={2}>
-          <Typography variant="h6">
+          <Typography variant="subtitle1">
             David, Lagos <br /> 9718****69 <br /> LAndlord
           </Typography>
         </Grid>
         <Grid xs={2}>
           <Stack className="ps-2">
-            <Typography variant="h5">Address</Typography>
+            <Typography variant="subtitle1">Address</Typography>
             <Typography>
               6th floor, Tower A Spaze iTeckPark, Sector 49 Lagos
             </Typography>
@@ -23,13 +23,13 @@ export default function ManageTransactionCard() {
         </Grid>
         <Grid xs={2}>
           <Stack className="ps-2">
-            <Typography variant="h5">Rent Paid</Typography>
+            <Typography variant="subtitle1">Rent Paid</Typography>
             <Typography>Property Name</Typography>
           </Stack>
         </Grid>
         <Grid xs={2}>
           <Stack className="ps-2">
-            <Typography variant="h5">Amount</Typography>
+            <Typography variant="subtitle1">Amount</Typography>
             <Typography>NGN 50000</Typography>
           </Stack>
         </Grid>

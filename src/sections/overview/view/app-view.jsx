@@ -438,7 +438,7 @@ export default function AppView() {
   ];
   return (
     <div className="px-5">
-      <Typography className="mt-2" variant="h4">
+      <Typography className="mt-2" variant="h3">
         Dashboard
       </Typography>
 
@@ -486,14 +486,14 @@ export default function AppView() {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={2}>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DemoContainer components={["DatePicker"]}>
-              <DatePicker className="mb-2" label="From Date" />
+        <Grid item md={3}>
+          <LocalizationProvider  dateAdapter={AdapterDayjs}>
+            <DemoContainer sx={{overflowX: 'hidden'}}  components={["DatePicker"]}>
+              <DatePicker sx={{width : '100%',}} className="mb-2" label="From Date" />
             </DemoContainer>
           </LocalizationProvider>
         </Grid>
-        <Grid item md={4}>
+        <Grid item md={2}>
           <Link>Clear Filters</Link>
         </Grid>
 

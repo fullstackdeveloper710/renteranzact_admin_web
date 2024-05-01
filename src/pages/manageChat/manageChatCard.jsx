@@ -11,7 +11,7 @@ export default function ManageChatCard() {
           <img src="./images/profile.png" alt="profileimage" />
         </Grid>
         <Grid xs={2}>
-          <Typography variant="h6">
+          <Typography variant="subtitle1">
             David, Lagos <br />LAndlord
           </Typography>
         </Grid>

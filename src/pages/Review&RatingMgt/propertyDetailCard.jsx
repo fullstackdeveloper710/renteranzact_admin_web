@@ -11,7 +11,7 @@ export default function PropertyDetailCard() {
         </Grid>
         <Grid xs={2}>
           <Stack className="ps-2">
-            <Typography variant="h6">
+            <Typography variant="subtitle1">
               3 BHK Flat, Fully Furnished Rent:NGN 5000/Month
             </Typography>
             <Typography>
@@ -20,7 +20,7 @@ export default function PropertyDetailCard() {
           </Stack>
         </Grid>
         <Grid xs={2}>
-          <Typography variant="h6">Star Ratings</Typography>
+          <Typography variant="subtitle1">Star Ratings</Typography>
           <Stack className="mt-2">
             <Rating name="simple-controlled" value={2} />
             <Typography level="body-sm" className="mt-2">
@@ -33,7 +33,7 @@ export default function PropertyDetailCard() {
           <img src="./images/profile.png" alt="profileimage" />
         </Grid>
         <Grid xs={2}>
-          <Typography variant="h6">
+          <Typography variant="subtitle1">
             David, Lagos <br /> 9718****69 <br /> david@gmail.com <br /> Rented
             on 07/11/2023
           </Typography>

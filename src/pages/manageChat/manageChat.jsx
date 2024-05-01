@@ -18,7 +18,6 @@ export default function ManageChat() {
   const navigate = useNavigate()
   return (
     <div className="px-5">
-      {" "}
       <Stack direction="row" alignItems="center" justifyContent="space-between">
         <Typography variant="h4">Manage Chat</Typography>
         <div className="d-flex">
