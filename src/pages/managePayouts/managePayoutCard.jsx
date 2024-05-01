@@ -3,7 +3,7 @@ import React from "react";
 
 export default function ManagePayoutCard() {
   return (
-    <Box sx={{ flexGrow: 1, border: "2px solid #C8D736" }} className="p-4 mt-4">
+    <Box sx={{ flexGrow: 1 }} className="p-4 mt-4">
       <Grid container className="align-items-center">
         <Grid xs={3}>
           <img src="./images/profile.png" alt="profileimage" />
@@ -15,7 +15,7 @@ export default function ManagePayoutCard() {
         </Grid>
         <Grid xs={2}>
           <Stack className="ps-2">
-            <Typography variant="h4">Address</Typography>
+            <Typography variant="h5">Address</Typography>
             <Typography>
               6th floor, Tower A Spaze iTeckPark, Sector 49 Lagos
             </Typography>
@@ -23,7 +23,7 @@ export default function ManagePayoutCard() {
         </Grid>
         <Grid xs={2}>
           <Stack className="ps-2">
-            <Typography variant="h4">Amount to Paid</Typography>
+            <Typography variant="h5">Amount to Paid</Typography>
             <Typography>NGN 50000</Typography>
           </Stack>
         </Grid>

@@ -44,33 +44,45 @@ export default function UserTableToolbar({
         </Typography>
       ) : (
         <>
-        
-        <OutlinedInput
-          value={filterName}
-          onChange={onFilterName}
-          placeholder="Search user..."
-          startAdornment={
-            <InputAdornment position="start">
-              <Iconify
-                icon="eva:search-fill"
-                sx={{ color: "text.disabled", width: 20, height: 20 }}
-              />
-            </InputAdornment>
-          }
-        />
-      <FormControl sx={{width : 300}}>
-        <InputLabel id="demo-simple-select-label">Filter Users</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          // value={age}
-          label="Age"
-        >
-          <MenuItem value={10}>Property Managers</MenuItem>
-          <MenuItem value={20}>Landlords</MenuItem>
-          <MenuItem value={30}>Renters</MenuItem>
-        </Select>
-      </FormControl>
+        <div>
+
+
+          <OutlinedInput
+            value={filterName}
+            onChange={onFilterName}
+            placeholder="Search user..."
+            startAdornment={
+              <InputAdornment position="start">
+                <Iconify
+                  icon="eva:search-fill"
+                  sx={{ color: "text.disabled", width: 20, height: 20 }}
+                />
+              </InputAdornment>
+            }
+          />&nbsp;&nbsp;&nbsp;&nbsp;
+          <FormControl sx={{ width: 300 }}>
+            <InputLabel id="demo-simple-select-label">Filter Users</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              // value={age}
+              label="Age"
+            >
+              <MenuItem value={10}>Property Managers</MenuItem>
+              <MenuItem value={20}>Landlords</MenuItem>
+              <MenuItem value={30}>Renters</MenuItem>
+            </Select>
+          </FormControl>
+        </div>
+          <Button
+            className="global-button"
+            variant="contained"
+            color="inherit"
+            startIcon={<Iconify icon="eva:plus-fill" />}
+            onClick={() => navigate("/manage-users/add-user")}
+          >
+            Add User
+          </Button>
         </>
       )}
 
@@ -87,16 +99,6 @@ export default function UserTableToolbar({
           </IconButton>
         </Tooltip>
       )} */}
-
-      <Button
-        className="global-button"
-        variant="contained"
-        color="inherit"
-        startIcon={<Iconify icon="eva:plus-fill" />}
-        onClick={() => navigate("/manage-users/add-user")}
-      >
-        Add User
-      </Button>
     </Toolbar>
   );
 }

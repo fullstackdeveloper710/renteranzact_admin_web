@@ -1,15 +1,31 @@
-import { Button, Grid, TextField, Typography } from "@mui/material";
+import { Avatar, Button, Card, Grid, IconButton, TextField, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
-
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className="px-5">
       <Typography className="mt-4" variant="h4">
         Profile
       </Typography>
-      <Grid container spacing={4} className="mt-2">
+      <Card className="p-4 mt-3" >
+
+
+      <Grid container spacing={3} >
+      
+
+      <Grid item md={12} ml={-2}>
+        <IconButton>
+        <Avatar
+          src="/assets/images/avatars/avatar_25.jpg"
+          style={{
+
+            width: "100px",
+            height: "100px",
+          }}
+        />
+      </IconButton>
+        </Grid>
         <Grid item md={6}>
           <TextField
             fullWidth
@@ -29,12 +45,23 @@ const Profile = () => {
           />
         </Grid>
       </Grid>
+      <Typography className="mt-4" variant="h6" mb={1}>
+        Change Password
+      </Typography>
+      <Grid container spacing={4} className="">
+        <Grid item md={6}>
+          <TextField fullWidth type="password" label="Old Password" />
+        </Grid>
+        <Grid item md={6}>
+          <TextField fullWidth type="password" label="New Password" />
+        </Grid>
+      </Grid>
       <div className="d-flex mt-4 gap-2">
-        <Button   variant="contained">Save</Button>
-        <Button onClick={() => navigate('/login')}  color="error" variant="outlined">
-          Logout
-        </Button>
+        <Button variant="contained">Save</Button>
       </div>
+      </Card>
+
+       
     </div>
   );
 };

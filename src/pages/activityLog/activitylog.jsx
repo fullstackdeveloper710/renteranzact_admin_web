@@ -13,13 +13,14 @@ import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import React from "react";
+import { Link } from "react-router-dom";
 export default function Activitylog() {
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
-    <div>
-      {" "}
+    <div className="px-5">
+     
       <Stack direction="row" alignItems="center" justifyContent="space-between">
-        <Typography variant="h4">Activity log</Typography>
+        <Typography variant="h4">Activity Log</Typography>
         <div className="d-flex">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={["DatePicker"]}>
@@ -36,8 +37,8 @@ export default function Activitylog() {
       </Stack>
       <Stack>
         {/* <Typography variant="h4">Collected Amount</Typography> */}
-        <Grid container gap={2} className="mt-4">
-          <Grid xs={4}>
+        <Grid container gap={2} className="mt-4" direction="row" alignItems="center" >
+          <Grid item xs={4}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Select Role</InputLabel>
               <Select
@@ -53,7 +54,7 @@ export default function Activitylog() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid xs={4}>
+          <Grid item xs={4}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Select User</InputLabel>
               <Select
@@ -70,15 +71,8 @@ export default function Activitylog() {
             </FormControl>
           </Grid>
 
-          <Grid xs={2}>
-            <Button
-              variant="contained"
-              color="inherit"
-              className="global-button"
-              style={{ width: "140px", height: "54px" }}
-            >
-              Filter
-            </Button>
+          <Grid item xs={2}>
+          <Link>Clear Filters</Link>
           </Grid>
         </Grid>
       </Stack>
@@ -96,10 +90,10 @@ export default function Activitylog() {
         <Box direction={"row"} sx={{ border: 1 }} className="mt-2">
           <Grid container className="m-3">
             <Grid xs={4}>
-              <Typography variant="h5">24/09/2020 at 09:31am</Typography>
+              <Typography variant="h7">24/09/2020 at 09:31am</Typography>
             </Grid>
             <Grid xs={8}>
-              <Typography variant="h5">
+              <Typography variant="h7">
                 Jimmy approved property request shared by the david
               </Typography>
             </Grid>

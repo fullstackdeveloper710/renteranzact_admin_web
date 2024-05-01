@@ -35,7 +35,7 @@ import {
 import Iconify from "../../components/iconify";
 import { Button } from "@mui/material";
 import { faker } from "@faker-js/faker";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import moment from "moment/moment";
 // ---------------------------------------------
 
@@ -91,156 +91,154 @@ export default function FinancePerformance() {
           </LocalizationProvider>
         </div>
       </Stack>
-    
-        <Typography variant="h4">Collected Amount</Typography>
-        <Grid container gap={2} className="mt-4">
-          <Grid item md={2}>
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={""}
-                label="Age"
-                // onChange={handleChange}
-              >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item md={2}>
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={""}
-                label="Age"
-                // onChange={handleChange}
-              >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item md={2} >
-            <LocalizationProvider dateAdapter={AdapterDayjs} >
-              <DemoContainer components={["DatePicker"]}>
-                <DatePicker label="11/11/23" />
-              </DemoContainer>
-            </LocalizationProvider>
-          </Grid>
-          <Grid item md={2}>
-            <Button
-              variant="contained"
-              color="inherit"
-              className="global-button"
-              fullWidth
-            >
-              Filter
-            </Button>
-          </Grid>
-          {/* <Grid item md={1}></Grid> */}
-          <Grid item md={2}>
-            <Button
-              variant="contained"
-              color="inherit"
-              className="global-button"
-              startIcon={<Iconify icon="eva:download-fill" />}
-             fullWidth
-            >
-              Download
-            </Button>
-          </Grid>
-        </Grid>
-    
-   
-          <Table sx={{ minWidth: 800 ,  mt : 4  }} className="table-bordered">
-            <TableHead>
-              <TableRow>
-                {tableColumns.map((x, i) => {
-                  return <TableCell key={i}>{x}</TableCell>;
-                })}
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {employees.map((x, i) => {
-                return (
-                  <TableRow key={i}>
-                    <TableCell>{x.month}</TableCell>
-                    <TableCell>40000</TableCell>
-                    <TableCell>20000</TableCell>
-                    <TableCell>100000</TableCell>
-                    <TableCell>50000</TableCell>
-                    <TableCell>60000</TableCell>
-                    <TableCell>70000</TableCell>
-                  </TableRow>
-                );
-              })}
-              <TableEmptyRows
-                height={77}
-                emptyRows={emptyRows(page, rowsPerPage, users.length)}
-              />
-              {notFound && <TableNoData query={filterName} />}
-            </TableBody>
-          </Table>
 
-        <div className="d-flex">
-        
-            <Table sx={{ minWidth: 700 ,  mt : 4  }} className="table-bordered">
-              <TableHead>
-                <TableRow>
-                  {revenueGenrateColumn.map((x, i) => {
-                    return <TableCell key={i}>{x}</TableCell>;
-                  })}
+      <Typography variant="h5">Collected Amount</Typography>
+      <Grid
+        container
+        spacing={2}
+        className="mt-4"
+        direction={"row"}
+        alignItems={"center"}
+        justify={"space-evenly"}
+      >
+        <Grid item md={2}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={""}
+              label="Age"
+              // onChange={handleChange}
+            >
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item md={2}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={""}
+              label="Age"
+              // onChange={handleChange}
+            >
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item md={2} mb={1}>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DemoContainer components={["DatePicker"]}>
+              <DatePicker label="11/11/23" />
+            </DemoContainer>
+          </LocalizationProvider>
+        </Grid>
+        <Grid item md={2}>
+         <Link>Clear Filters</Link>
+        </Grid>
+        {/* <Grid item md={1}></Grid> */}
+        <Grid item md={2}>
+          <Button
+            variant="contained"
+            color="inherit"
+            className="global-button"
+            startIcon={<Iconify icon="eva:download-fill" />}
+            size="large"
+            fullWidth
+          >
+            Download
+          </Button>
+        </Grid>
+      </Grid>
+
+      <Table sx={{ minWidth: 800, mt: 4 }} className="table-bordered">
+        <TableHead>
+          <TableRow>
+            {tableColumns.map((x, i) => {
+              return <TableCell key={i}>{x}</TableCell>;
+            })}
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {employees.map((x, i) => {
+            return (
+              <TableRow key={i}>
+                <TableCell>{x.month}</TableCell>
+                <TableCell>40000</TableCell>
+                <TableCell>20000</TableCell>
+                <TableCell>100000</TableCell>
+                <TableCell>50000</TableCell>
+                <TableCell>60000</TableCell>
+                <TableCell>70000</TableCell>
+              </TableRow>
+            );
+          })}
+          <TableEmptyRows
+            height={77}
+            emptyRows={emptyRows(page, rowsPerPage, users.length)}
+          />
+          {notFound && <TableNoData query={filterName} />}
+        </TableBody>
+      </Table>
+
+      <div className="d-flex">
+        <Table sx={{ minWidth: 700, mt: 4 }} className="table-bordered">
+          <TableHead>
+            <TableRow>
+              {revenueGenrateColumn.map((x, i) => {
+                return <TableCell key={i}>{x}</TableCell>;
+              })}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {employees.map((x, i) => {
+              return (
+                <TableRow key={i}>
+                  <TableCell>{x.month}</TableCell>
+                  <TableCell>40000</TableCell>
                 </TableRow>
-              </TableHead>
-              <TableBody>
-                {employees.map((x, i) => {
-                  return (
-                    <TableRow key={i}>
-                      <TableCell>{x.month}</TableCell>
-                      <TableCell>40000</TableCell>
-                    </TableRow>
-                  );
-                })}
-                <TableEmptyRows
-                  height={77}
-                  emptyRows={emptyRows(page, rowsPerPage, users.length)}
-                />
-                {notFound && <TableNoData query={filterName} />}
-              </TableBody>
-            </Table>
-         
-         
-            <Table  sx={{ minWidth: 400 , mt : 4 }} className="table-bordered">
-              <TableHead>
-                <TableRow>
-                  {revenueGenrateColumn.map((x, i) => {
-                    return <TableCell key={i}>{x}</TableCell>;
-                  })}
+              );
+            })}
+            <TableEmptyRows
+              height={77}
+              emptyRows={emptyRows(page, rowsPerPage, users.length)}
+            />
+            {notFound && <TableNoData query={filterName} />}
+          </TableBody>
+        </Table>
+
+        <Table sx={{ minWidth: 400, mt: 4 }} className="table-bordered">
+          <TableHead>
+            <TableRow>
+              {revenueGenrateColumn.map((x, i) => {
+                return <TableCell key={i}>{x}</TableCell>;
+              })}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {employees.map((x, i) => {
+              return (
+                <TableRow key={i}>
+                  <TableCell>{x.month}</TableCell>
+                  <TableCell>40000</TableCell>
                 </TableRow>
-              </TableHead>
-              <TableBody>
-                {employees.map((x, i) => {
-                  return (
-                    <TableRow key={i}>
-                      <TableCell>{x.month}</TableCell>
-                      <TableCell>40000</TableCell>
-                    </TableRow>
-                  );
-                })}
-                <TableEmptyRows
-                  height={77}
-                  emptyRows={emptyRows(page, rowsPerPage, users.length)}
-                />
-                {notFound && <TableNoData query={filterName} />}
-              </TableBody>
-            </Table>
-        </div>
+              );
+            })}
+            <TableEmptyRows
+              height={77}
+              emptyRows={emptyRows(page, rowsPerPage, users.length)}
+            />
+            {notFound && <TableNoData query={filterName} />}
+          </TableBody>
+        </Table>
+      </div>
     </div>
   );
 }

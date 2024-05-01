@@ -8,8 +8,8 @@ export default function ChatAsPerUser() {
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
-    <div>
-      <div className="d-flex align-items-center">
+    <div className="px-5">
+      <div className="d-flex align-items-center mt-3">
         <Iconify
           icon="ion:arrow-back"
           sx={{ color: "text.disabled", width: 20, height: 20 }}
@@ -25,14 +25,14 @@ export default function ChatAsPerUser() {
             <div className="ms-2 text-center" style={{ width: "100%" }}>
               <h4>08/11/23</h4>
             </div>
-            <Grid item xs={8}>
+            <Grid item xs={8} sx={{border :'1px solid grey' ,borderRadius : 2}}>
               <div className="d-flex align-items-center">
                 <img
                   src="./images/profile.png"
                   style={{ height: "auto", width: "100px" }}
                   alt="profileimage"
                 />
-                <Typography variant="h6" className="ms-2">
+                <Typography variant="h7" className="ms-2">
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
                   The point of using Lorem Ipsum is that it has a more-or-less
@@ -41,10 +41,10 @@ export default function ChatAsPerUser() {
               </div>
             </Grid>
           </Grid>
-          <Grid container spacing={2} className="justify-content-end mt-1">
-            <Grid item xs={8}>
+          <Grid container spacing={2} className="justify-content-end mt-4">
+            <Grid item xs={8} sx={{border :'1px solid grey' ,borderRadius : 2}}>
               <div className="d-flex align-items-center">
-                <Typography variant="h6" className="ms-2">
+                <Typography variant="h7" className="ms-2">
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
                   The point of using Lorem Ipsum is that it has a more-or-less

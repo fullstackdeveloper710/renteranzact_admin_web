@@ -55,8 +55,18 @@ export default function ManageRolesAndPermission() {
         justifyContent="space-between"
         mb={5}
       >
-        <Typography variant="h4">Roles & Permissions Mgt</Typography>
+        <Typography className="mt-3" variant="h4">Roles & Permissions Mgt</Typography>
+
+        <div className="d-flex">
+          <div></div>
+          &nbsp;&nbsp;
+          <div></div>
+        </div>
+        {/* <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:plus-fill" />}>
+          New User
+        </Button> */}
       </Stack>
+
       <Card>
         <div className="d-flex justify-content-between align-items-center p-4">
           <OutlinedInput

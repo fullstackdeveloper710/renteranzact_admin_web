@@ -17,7 +17,7 @@ import PropertyDetailCard from "./propertyDetailCard";
 export default function ReviewAndRatingMgt() {
   const propertyArray = [1, 2, 3, 4, 5, 6];
   return (
-    <div>
+    <div className="px-5">
       {" "}
       <Stack
         direction="row"
@@ -44,7 +44,7 @@ export default function ReviewAndRatingMgt() {
       New User
     </Button> */}
       </Stack>
-      <div className="d-flex justify-content-between align-items-center p-4">
+      <div className="d-flex justify-content-between align-items-center">
         <OutlinedInput
           placeholder="Search user..."
           startAdornment={

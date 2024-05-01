@@ -12,11 +12,11 @@ import {
 const AddEmployee = () => {
   return (
     <div className="px-5">
-      <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-        <Typography variant="h4">Manage Employees{'>>'}Add Employee</Typography>
+      <Stack direction="row" alignItems="center" justifyContent="space-between" className='mt-2'>
+        <Typography variant="h4" >Add Employee</Typography>
       </Stack>
 
-      <Grid container spacing={6}>
+      <Grid container spacing={6} className='mt-3'>
         <Grid item xs={8} md={6}>
           <TextField fullWidth name="name" label="Name" type={'text'} />
         </Grid>

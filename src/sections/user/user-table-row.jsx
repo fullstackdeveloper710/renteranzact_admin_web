@@ -24,6 +24,7 @@ export default function UserTableRow({
   mobile,
   isVerified,
   status,
+  userType,
   handleClick,
   setDeleteDialog,
   setDisableUser,
@@ -55,16 +56,20 @@ export default function UserTableRow({
           </Stack>
         </TableCell>
 
-        <TableCell>
-          <Link to={"/manage-users/user-details"}>{email}</Link>
-        </TableCell>
+        <TableCell>{email}</TableCell>
 
         <TableCell>{mobile}</TableCell>
 
-        <TableCell align="left">{isVerified ? "Yes" : "No"}</TableCell>
+        <TableCell align="left">
+          {isVerified ? "Property Manager" : "Landlord"}
+        </TableCell>
 
         <TableCell>
-          <Switch onChange={() => setDisableUser(true)} />
+          <Switch
+            onChange={(e, checked) => {
+              if (checked) setDisableUser(true);
+            }}
+          />
         </TableCell>
 
         <TableCell align="left">

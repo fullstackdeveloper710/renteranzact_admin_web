@@ -14,11 +14,12 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import Iconify from "../../components/iconify";
 import ManagePayoutCard from "./managePayoutCard";
+import { Link } from "react-router-dom";
 
 export default function ManagePayouts() {
   const managePayouyArray = [1, 2, 3, 4, 5];
   return (
-    <div>
+    <div className="px-5">
       <Stack
         direction="row"
         alignItems="center"
@@ -42,8 +43,10 @@ export default function ManagePayouts() {
       </Stack>
       <Stack>
         {/* <Typography variant="h4">Collected Amount</Typography> */}
-        <Grid container gap={2} className="mt-4">
-          <Grid xs={2}>
+        <Grid container gap={2} className="mt-4" direction={"row"}
+          alignItems={"center"}
+          justify={"space-evenly"}>
+          <Grid item xs={2}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
               <Select
@@ -59,7 +62,7 @@ export default function ManagePayouts() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid xs={2}>
+          <Grid item xs={2}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
               <Select
@@ -75,31 +78,34 @@ export default function ManagePayouts() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid xs={2}>
+          <Grid item xs={2} mb={1}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer components={["DatePicker"]}>
                 <DatePicker label="11/11/23" />
               </DemoContainer>
             </LocalizationProvider>
           </Grid>
-          <Grid xs={2}>
-            <Button
+          <Grid item xs={2}>
+            {/* <Button
               variant="contained"
               color="inherit"
               className="global-button"
-              style={{ width: "140px", height: "54px" }}
+              fullWidth
+              size="large"
             >
               Filter
-            </Button>
+            </Button> */}
+            <Link>Clear Filters</Link>
           </Grid>
-          <Grid xs={1}></Grid>
-          <Grid xs={2}>
+          {/* <Grid item xs={1}></Grid> */}
+          <Grid item xs={2}>
             <Button
               variant="contained"
               color="inherit"
               className="global-button"
               startIcon={<Iconify icon="eva:download-fill" />}
-              style={{ width: "140px", height: "54px" }}
+             fullWidth
+             size="large"
             >
               Download
             </Button>

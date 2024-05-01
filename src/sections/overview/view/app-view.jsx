@@ -25,6 +25,8 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { useState } from "react";
 import ReactApexChart from "react-apexcharts";
+import CountCard from "../../../components/CountCard";
+import { Link } from "react-router-dom";
 // ----------------------------------------------------------------------
 export default function AppView() {
   const [barchartState] = useState({
@@ -372,14 +374,12 @@ export default function AppView() {
       chart: {
         type: "bar",
         height: 400,
-        toolbar : {
-          show : false
+        toolbar: {
+          show: false,
         },
-       
       },
       plotOptions: {
         bar: {
-       
           columnWidth: "20%",
           endingShape: "rounded",
         },
@@ -396,7 +396,6 @@ export default function AppView() {
             fontSize: "10px",
             fontWeight: 700,
           },
-          
         },
       },
       title: {
@@ -411,85 +410,46 @@ export default function AppView() {
       },
     },
   });
+  const cardsArray = [
+    {
+      count: "100",
+      title: "Top Listed Properties",
+    },
+    {
+      count: "80",
+      title: "Properties on Rent",
+    },
+    {
+      count: "100",
+      title: "Vacant Properties",
+    },
+    {
+      count: "80",
+      title: "Registered Renters",
+    },
+    {
+      count: "100",
+      title: "Registered Landlords",
+    },
+    {
+      count: "80",
+      title: "Registered  Property Managers",
+    },
+  ];
   return (
-    <Container maxWidth="xl">
-      <Typography variant="h4" sx={{ mb: 5 }}>
+    <div className="px-5">
+      <Typography className="mt-2" variant="h4">
         Dashboard
       </Typography>
 
-      <Grid container spacing={3}>
-        <Grid xs={12} sm={6} md={4}>
-          <Card>
-            <div className="d-flex justify-content-around align-items-center flex-column py-3">
-              <Typography className="text-center" variant="h5">
-                Top Listed{<br />} Properties
-              </Typography>
-              <Typography className="mt-3" variant="h2">
-                100
-              </Typography>
-            </div>
-          </Card>
-        </Grid>
-        <Grid xs={12} sm={6} md={4}>
-          <Card>
-            <div className="d-flex justify-content-around align-items-center flex-column py-3">
-              <Typography className="text-center" variant="h5">
-                Properties {<br />} on Rent
-              </Typography>
-              <Typography className="mt-3" variant="h2">
-                80
-              </Typography>
-            </div>
-          </Card>
-        </Grid>
-        <Grid xs={12} sm={6} md={4}>
-          <Card>
-            <div className="d-flex justify-content-around align-items-center flex-column py-3">
-              <Typography className="text-center" variant="h5">
-                Vacant {<br />} Properties
-              </Typography>
-              <Typography className="mt-3" variant="h2">
-                20
-              </Typography>
-            </div>
-          </Card>
-        </Grid>
-        <Grid xs={12} sm={6} md={4}>
-          <Card>
-            <div className="d-flex justify-content-around align-items-center flex-column py-3">
-              <Typography className="text-center" variant="h5">
-                Registered {<br />} Renters
-              </Typography>
-              <Typography className="mt-3" variant="h2">
-                100
-              </Typography>
-            </div>
-          </Card>
-        </Grid>
-        <Grid xs={12} sm={6} md={4}>
-          <Card>
-            <div className="d-flex justify-content-around align-items-center flex-column py-3">
-              <Typography className="text-center" variant="h5">
-                Registered {<br />} Landlords
-              </Typography>
-              <Typography className="mt-3" variant="h2">
-                80
-              </Typography>
-            </div>
-          </Card>
-        </Grid>
-        <Grid xs={12} sm={6} md={4}>
-          <Card>
-            <div className="d-flex justify-content-around align-items-center flex-column py-3">
-              <Typography className="text-center" variant="h5">
-                Registered {<br />} Property Managers
-              </Typography>
-              <Typography className="mt-3" variant="h2">
-                80
-              </Typography>
-            </div>
-          </Card>
-        </Grid>
+      <Grid container spacing={3} sx={{mt:4}}>
+        {cardsArray.map((x, i) => {
+          return (
+            <Grid xs={12} sm={6} md={4}>
+              <CountCard key={i} title={x.title} count={x.count} />
+            </Grid>
+          );
+        })}
 
         {/* <Grid xs={12} sm={6} md={3}>
           <AppWidgetSummary
@@ -690,11 +650,11 @@ export default function AppView() {
           />
         </Grid> */}
       </Grid>
-      <Grid className={"mt-4"} container spacing={4}>
+      <Grid className={"mt-4"} container spacing={4} direction={'row'} alignItems={'center'} justify={'space-evenly'}>
         <Grid item md={2}>
           <Typography variant="h5">Financial Performance</Typography>
         </Grid>
-        <Grid item md={3}>
+        <Grid item md={2}>
           <FormControl fullWidth>
             <Select
               labelId="demo-simple-select-label"
@@ -718,17 +678,15 @@ export default function AppView() {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={3}>
+        <Grid item md={2}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={["DatePicker"]}>
               <DatePicker className="mb-2" label="From Date" />
             </DemoContainer>
           </LocalizationProvider>
         </Grid>
-        <Grid item md={2}>
-          <Button size="large" variant="contained" fullWidth>
-            Filter
-          </Button>
+        <Grid item md={4}>
+         <Link>Clear Filters</Link>
         </Grid>
 
         <Grid item md={12}>
@@ -797,6 +755,6 @@ export default function AppView() {
           </Card>
         </Grid>
       </Grid>
-    </Container>
+    </div>
   );
 }

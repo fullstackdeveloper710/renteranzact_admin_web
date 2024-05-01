@@ -17,7 +17,7 @@ export default function ManageChat() {
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const navigate = useNavigate()
   return (
-    <div>
+    <div className="px-5">
       {" "}
       <Stack direction="row" alignItems="center" justifyContent="space-between">
         <Typography variant="h4">Manage Chat</Typography>
@@ -36,7 +36,7 @@ export default function ManageChat() {
         </div>
       </Stack>
       <Stack>
-        <div className="d-flex  align-items-center p-4">
+        <div className="d-flex  align-items-center mt-3">
           <OutlinedInput
             placeholder="Search user..."
             startAdornment={

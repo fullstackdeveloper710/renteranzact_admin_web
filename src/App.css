@@ -29,8 +29,8 @@
 }
 
 .global-button {
-  background-color: #c8d736 !important;
-  color: #13556d !important;
+  background-color: #13556d  !important;
+  color: white !important;
   font-size: 17px;
 }
 .login_background {
@@ -50,5 +50,5 @@
   }
 }
 body {
-  font-size: 18px !important;
+  /* font-size: 18px !important; */
 }

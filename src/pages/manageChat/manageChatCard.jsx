@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function ManageChatCard() {
     const navigate = useNavigate()
   return (
-    <Box onClick = {()=>navigate("/user-chat")} sx={{ flexGrow: 1, border: "2px solid #C8D736",cursor:"pointer" }} className="p-2 mt-4">
+    <Box onClick = {()=>navigate("/user-chat")} sx={{ flexGrow: 1,cursor:"pointer" }} className="p-2 mt-4">
       <Grid container className="align-items-center">
         <Grid xs={2}>
           <img src="./images/profile.png" alt="profileimage" />

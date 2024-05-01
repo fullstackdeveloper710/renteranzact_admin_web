@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import React from "react";
 export default function PropertyDetailCard() {
   return (
-    <Box sx={{ flexGrow: 1, border: "2px solid #C8D736"}} className="p-4 mt-4">
+    <Box sx={{ flexGrow: 1}} className="p-4 mt-4">
       <Grid container >
         <Grid xs={2}>
           <img src="./images/houseProperty.jpg" />
