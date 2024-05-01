@@ -197,11 +197,15 @@ export default function UserPage() {
                   <TableCell>
                     {moment(x.joiningDate).format("YYYY/DD/MM")}
                   </TableCell>
-                  <TableCell>{x.role}</TableCell>
-                  <TableCell>{x.status}</TableCell>
+                  <TableCell>
+                    {i % 2 === 0 ? "Property Manager" : "Landlord"}
+                  </TableCell>
+                  <TableCell>
+                    {i % 2 === 0 ? "Verified" : "Not Verified"}
+                  </TableCell>
                   <TableCell>
                     <Iconify
-                      // onClick={() => navigate("/manage-users/user-details")}
+                      onClick={() => navigate("/employee")}
                       icon="solar:eye-linear"
                     />
                     &nbsp;

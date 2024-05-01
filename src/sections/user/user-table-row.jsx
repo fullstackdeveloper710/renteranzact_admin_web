@@ -28,6 +28,7 @@ export default function UserTableRow({
   handleClick,
   setDeleteDialog,
   setDisableUser,
+  managePopupText,
 }) {
   const [open, setOpen] = useState(null);
 
@@ -67,7 +68,8 @@ export default function UserTableRow({
         <TableCell>
           <Switch
             onChange={(e, checked) => {
-              if (checked) setDisableUser(true);
+              setDisableUser(true);
+              managePopupText(checked);
             }}
           />
         </TableCell>

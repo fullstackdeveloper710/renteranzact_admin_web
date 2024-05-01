@@ -95,11 +95,12 @@ export default function FinancePerformance() {
       <Typography variant="h5">Collected Amount</Typography>
       <Grid
         container
-        spacing={2}
-        className="mt-4"
-        direction={"row"}
+        gap={2}
+        // className="mt-4"
+        // direction={"row"}
+        // alignItems={"center"}
+        justifyContent="space-between"
         alignItems={"center"}
-        justify={"space-evenly"}
       >
         <Grid item md={2}>
           <FormControl fullWidth>
@@ -108,6 +109,7 @@ export default function FinancePerformance() {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={""}
+              fullWidth
               label="Age"
               // onChange={handleChange}
             >
@@ -133,17 +135,19 @@ export default function FinancePerformance() {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={2} mb={1}>
+        <Grid item md={3} style={{ alignSelf: "flex-start" }} mb={1}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DemoContainer components={["DatePicker"]}>
-              <DatePicker label="11/11/23" />
+            <DemoContainer
+              components={["DatePicker"]}
+              sx={{ overflowX: "hidden" }}
+            >
+              <DatePicker sx={{ width: "100%" }} label="11/11/23" />
             </DemoContainer>
           </LocalizationProvider>
         </Grid>
         <Grid item md={2}>
-         <Link>Clear Filters</Link>
+          <Link>Clear Filters</Link>
         </Grid>
-        {/* <Grid item md={1}></Grid> */}
         <Grid item md={2}>
           <Button
             variant="contained"

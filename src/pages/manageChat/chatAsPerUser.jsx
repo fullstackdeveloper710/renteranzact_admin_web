@@ -25,13 +25,22 @@ export default function ChatAsPerUser() {
             <div className="ms-2 text-center" style={{ width: "100%" }}>
               <h4>08/11/23</h4>
             </div>
-            <Grid item xs={8} sx={{border :'1px solid grey' ,borderRadius : 2}}>
+            <img
+              src="./images/profile.png"
+              style={{ height: "auto", width: "100px" }}
+              alt="profileimage"
+            />
+            <Grid
+              item
+              xs={8}
+              sx={{
+                border: "1px solid grey",
+                borderRadius: 2,
+                background: "#13556db5",
+                color: "white",
+              }}
+            >
               <div className="d-flex align-items-center">
-                <img
-                  src="./images/profile.png"
-                  style={{ height: "auto", width: "100px" }}
-                  alt="profileimage"
-                />
                 <Typography variant="h7" className="ms-2">
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
@@ -42,7 +51,16 @@ export default function ChatAsPerUser() {
             </Grid>
           </Grid>
           <Grid container spacing={2} className="justify-content-end mt-4">
-            <Grid item xs={8} sx={{border :'1px solid grey' ,borderRadius : 2}}>
+            <Grid
+              item
+              xs={8}
+              sx={{
+                border: "1px solid grey",
+                borderRadius: 2,
+                background: "#13556D",
+                color: "white",
+              }}
+            >
               <div className="d-flex align-items-center">
                 <Typography variant="h7" className="ms-2">
                   It is a long established fact that a reader will be distracted
@@ -50,13 +68,13 @@ export default function ChatAsPerUser() {
                   The point of using Lorem Ipsum is that it has a more-or-less
                   normal distribution of letters
                 </Typography>
-                <img
-                  src="./images/profile.png"
-                  style={{ height: "auto", width: "100px" }}
-                  alt="profileimage"
-                />
               </div>
             </Grid>
+            <img
+              src="./images/profile.png"
+              style={{ height: "auto", width: "100px" }}
+              alt="profileimage"
+            />
           </Grid>
         </>
       ))}

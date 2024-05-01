@@ -12,13 +12,13 @@ const Scrollbar = forwardRef(({ children, sx, ...other }, ref) => {
 
   const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
 
-  if (mobile) {
+  // if (mobile) {
     return (
       <Box ref={ref} sx={{ overflow: 'auto', ...sx }} {...other}>
         {children}
       </Box>
     );
-  }
+  // }
 
   return (
     <StyledRootScrollbar>

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import Box from "@mui/material/Box";
@@ -27,11 +27,14 @@ import "../layout.css";
 import { IconButton, backdropClasses } from "@mui/material";
 import Iconify from "../../components/iconify";
 import { Navigate, useNavigate } from "react-router-dom";
+import ConfirmationDialog from "../../components/dialog/ConfirmationDialog";
 // ----------------------------------------------------------------------
 
 export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  const [logoutPopup, setLogoutPopup] = useState(false);
   const upLg = useResponsive("up", "lg");
   useEffect(() => {
     if (openNav) {
@@ -40,7 +43,7 @@ export default function Nav({ openNav, onCloseNav }) {
   }, [pathname]);
 
   const renderMenu = (
-    <Stack component="nav" spacing={0.5} sx={{ px: 2 }} mt={4}>
+    <Stack component="nav" spacing={0.5} sx={{ px: 2 }} mt={4} >
       {routeConfig.map(
         (item) => item.show && <NavItem key={item.title} item={item} />
       )}
@@ -51,6 +54,7 @@ export default function Nav({ openNav, onCloseNav }) {
     <Scrollbar
       sx={{
         height: 1,
+       
         "& .simplebar-content": {
           height: 1,
           display: "flex",
@@ -66,14 +70,16 @@ export default function Nav({ openNav, onCloseNav }) {
 
       {renderMenu}
 
-     <Box style={{height : 157}}></Box>
-      <Box sx={{px : 2}}>
-        <ListItemButton sx={{color : '#FF5630'}} onClick={()=> navigate('/login')}>
-        <Iconify icon="basil:logout-outline" />
-       <Typography sx={{ml:4}}>Logout</Typography> 
-      </ListItemButton>
-        </Box>
-     
+      <Box style={{ height: 145 }}></Box>
+      <Box sx={{ px: 2 }}>
+        <ListItemButton
+          sx={{ color: "#13556D" }}
+          onClick={() => setLogoutPopup(true)}
+        >
+          <Iconify icon="basil:logout-outline" />
+          <Typography sx={{ ml: 4 }}>Logout</Typography>
+        </ListItemButton>
+      </Box>
     </Scrollbar>
   );
 
@@ -82,6 +88,7 @@ export default function Nav({ openNav, onCloseNav }) {
       sx={{
         flexShrink: { lg: 0 },
         width: { lg: NAV.WIDTH },
+        overflow: 'auto'
       }}
     >
       {upLg ? (
@@ -90,6 +97,7 @@ export default function Nav({ openNav, onCloseNav }) {
             height: 1,
             position: "fixed",
             width: NAV.WIDTH,
+            overflow: 'auto',
             borderRight: (theme) => `dashed 1px ${theme.palette.divider}`,
           }}
         >
@@ -107,6 +115,14 @@ export default function Nav({ openNav, onCloseNav }) {
         >
           {renderContent}
         </Drawer>
+      )}
+      {logoutPopup && (
+        <ConfirmationDialog
+          open={logoutPopup}
+          setDeleteDialog={setLogoutPopup}
+          title={"Are you sure you want to logout?"}
+          yes={() => navigate("/login")}
+        />
       )}
     </Box>
   );

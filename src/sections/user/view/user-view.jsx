@@ -26,12 +26,12 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import ConfirmationDialog from "../../../components/dialog/ConfirmationDialog";
 
 // ----------------------------------------------------------------------
-
+let text = "";
 export default function UserPage() {
   const [page, setPage] = useState(0);
 
   const [deleteDialog, setDeleteDialog] = useState(false);
-  const [disableUser , setDisableUser] =useState(false)
+  const [disableUser, setDisableUser] = useState(false);
 
   const [order, setOrder] = useState("asc");
 
@@ -100,6 +100,15 @@ export default function UserPage() {
 
   const notFound = !dataFiltered.length && !!filterName;
 
+  const managePopupText = (checked) => {
+    console.log(checked, "checked");
+    if (checked) {
+      text = "Are you sure you want to enable this user?";
+    } else {
+      text = "Are you sure you want to disable this user?";
+    }
+  };
+
   return (
     <div className="px-5">
       <Stack
@@ -163,6 +172,7 @@ export default function UserPage() {
                   handleClick={(event) => handleClick(event, row.name)}
                   setDeleteDialog={setDeleteDialog}
                   setDisableUser={setDisableUser}
+                  managePopupText={managePopupText}
                 />
               ))}
 
@@ -192,11 +202,13 @@ export default function UserPage() {
             title={"Are you sure you want to delete this user?"}
           />
         )}
-         {disableUser && (
+        {disableUser && (
           <ConfirmationDialog
             open={disableUser}
             setDeleteDialog={setDisableUser}
-            title={"Are you sure you want to disable this user?"}
+            managePopupText={managePopupText}
+            yes={() => setDisableUser(false)}
+            title={text}
           />
         )}
       </Card>

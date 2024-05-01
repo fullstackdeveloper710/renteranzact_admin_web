@@ -18,6 +18,7 @@ import ManageTransactions from "../pages/manageTransactions/manageTransaction";
 import Activitylog from "../pages/activityLog/activitylog";
 import ManageChat from "../pages/manageChat/manageChat";
 import ChatAsPerUser from "../pages/manageChat/chatAsPerUser";
+import ViewEmployee from "../pages/manage-employees/view-employee";
 export const LoginPage = lazy(() => import("../pages/login"));
 export const ProductsPage = lazy(() => import("../pages/products"));
 export const Page404 = lazy(() => import("../pages/page-not-found"));
@@ -37,6 +38,7 @@ export const PropertyManagement = lazy(() =>
   import("../pages/property-management/index")
 );
 export const Profile = lazy(() => import("../pages/profile"));
+export const Employee = lazy(() =>import("../pages/manage-employees/view-employee"))
 
 const LoadDynamicComponent = (object) => {
   const Component = lazy(() => import(`${object}`));
@@ -117,6 +119,10 @@ export default function Router() {
         {
           element: <ManagePayouts />,
           path: "manage-payouts",
+        },
+        {
+          element: <Employee />,
+          path: "employee",
         },
         {
           element: <ManageRolesAndPermission />,
