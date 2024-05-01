@@ -43,7 +43,7 @@ const AddNewRole = () => {
       </Stack>
       <Grid container >
         <Grid item xs={12} >
-          <TextField style={{width:"55%"}} name="role" label="role-name" type={"text"} />
+          <TextField style={{width:"55%"}} name="role" label="Name" type={"text"} />
         </Grid>
         <Grid item xs={12} className="mt-3">
           {names.map((name) => (
