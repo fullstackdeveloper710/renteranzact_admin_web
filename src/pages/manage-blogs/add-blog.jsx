@@ -1,10 +1,21 @@
-import { Button, Grid, TextField, Typography } from "@mui/material";
+import { Button, Grid, TextField, Typography, styled } from "@mui/material";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import { useState } from "react";
-
+import Iconify from "../../components/iconify";
+const VisuallyHiddenInput = styled("input")({
+  clip: "rect(0 0 0 0)",
+  clipPath: "inset(50%)",
+  height: 1,
+  overflow: "hidden",
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  whiteSpace: "nowrap",
+  width: 1,
+});
 const AddBlogs = () => {
-    const [textEditor, setTextEditor] = useState("");
+  const [textEditor, setTextEditor] = useState("");
   return (
     <div className="px-5">
       <div className="mt-3">
@@ -13,10 +24,21 @@ const AddBlogs = () => {
           <Grid item md={12}>
             <TextField label="Title" fullWidth />
           </Grid>
+
+          <Grid item md={12}>
+            <Button
+              component="label"
+              role={undefined}
+              variant="outlined"
+              tabIndex={-1}
+              startIcon={<Iconify icon="ep:upload-filled" />}
+            >
+              Add Media
+              <VisuallyHiddenInput type="file" />
+            </Button>
+          </Grid>
           <Grid item md={12}>
             <CKEditor
-            
-            
               editor={ClassicEditor}
               data={textEditor}
               onReady={(editor) => {

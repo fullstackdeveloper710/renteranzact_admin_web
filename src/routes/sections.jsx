@@ -28,8 +28,12 @@ export const ManageEmployees = lazy(() =>
 export const AddEmployees = lazy(() =>
   import("../pages/manage-employees/add-employee")
 );
+const ManageFaq = lazy(() => import("../pages/manage-faq"));
 export const ManageUsers = lazy(() => import("../pages/manageUsers/index"));
 export const AddUsers = lazy(() => import("../pages/manageUsers/add-user"));
+export const ManagePrivacyPolicy = lazy(() =>
+  import("../pages/manage-privacy-policy")
+);
 export const UserDetails = lazy(() =>
   import("../pages/manageUsers/user-details")
 );
@@ -157,6 +161,10 @@ export default function Router() {
           path: "manage-aboutUS",
         },
         {
+          element: <ManagePrivacyPolicy />,
+          path: "manage-privacy-policy",
+        },
+        {
           element: <Profile />,
           path: "profile",
         },
@@ -180,6 +188,10 @@ export default function Router() {
         {
           element: <BlogDetail />,
           path: "blog-detail",
+        },
+        {
+          element: <ManageFaq />,
+          path: "manage-faq",
         },
 
         {

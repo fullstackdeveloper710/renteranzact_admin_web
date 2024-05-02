@@ -140,4 +140,20 @@ export const routeConfig = [
     icon: <Icon icon="fluent:chat-sparkle-16-regular" />,
     show: true,
   },
+  {
+    title: "Manage Privacy Policy",
+    link: "manage-privacy-policy",
+    path: "./pages/manage-privacy-policy",
+    role: ["superAdmin"],
+    icon: <Icon icon="ic:baseline-privacy-tip" />,
+    show: true,
+  },
+  {
+    title: "Manage FAQ's",
+    link: "manage-faq",
+    path: "./pages/manage-faq",
+    role: ["superAdmin"],
+    icon: <Icon icon="mdi:faq" />,
+    show: true,
+  },
 ];

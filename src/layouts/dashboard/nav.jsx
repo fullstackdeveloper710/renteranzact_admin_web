@@ -43,7 +43,7 @@ export default function Nav({ openNav, onCloseNav }) {
   }, [pathname]);
 
   const renderMenu = (
-    <Stack component="nav" spacing={0.5} sx={{ px: 2 }} mt={4} >
+    <Stack component="nav" spacing={0.5} sx={{ px: 2 }} mt={4}>
       {routeConfig.map(
         (item) => item.show && <NavItem key={item.title} item={item} />
       )}
@@ -54,7 +54,7 @@ export default function Nav({ openNav, onCloseNav }) {
     <Scrollbar
       sx={{
         height: 1,
-       
+
         "& .simplebar-content": {
           height: 1,
           display: "flex",
@@ -88,7 +88,7 @@ export default function Nav({ openNav, onCloseNav }) {
       sx={{
         flexShrink: { lg: 0 },
         width: { lg: NAV.WIDTH },
-        overflow: 'auto'
+        overflow: "auto",
       }}
     >
       {upLg ? (
@@ -97,7 +97,7 @@ export default function Nav({ openNav, onCloseNav }) {
             height: 1,
             position: "fixed",
             width: NAV.WIDTH,
-            overflow: 'auto',
+            overflow: "auto",
             borderRight: (theme) => `dashed 1px ${theme.palette.divider}`,
           }}
         >
@@ -157,9 +157,6 @@ function NavItem({ item }) {
           bgcolor: "#13556D",
           height: 10,
           fontSize: 13,
-          "&:hover": {
-            bgcolor: (theme) => alpha(theme.palette.primary.main),
-          },
         }),
       }}
     >
