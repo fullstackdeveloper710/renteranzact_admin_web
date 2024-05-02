@@ -18,7 +18,6 @@ import ManageTransactions from "../pages/manageTransactions/manageTransaction";
 import Activitylog from "../pages/activityLog/activitylog";
 import ManageChat from "../pages/manageChat/manageChat";
 import ChatAsPerUser from "../pages/manageChat/chatAsPerUser";
-import ViewEmployee from "../pages/manage-employees/view-employee";
 export const LoginPage = lazy(() => import("../pages/login"));
 export const ProductsPage = lazy(() => import("../pages/products"));
 export const Page404 = lazy(() => import("../pages/page-not-found"));
@@ -38,7 +37,24 @@ export const PropertyManagement = lazy(() =>
   import("../pages/property-management/index")
 );
 export const Profile = lazy(() => import("../pages/profile"));
-export const Employee = lazy(() =>import("../pages/manage-employees/view-employee"))
+export const Employee = lazy(() =>
+  import("../pages/manage-employees/view-employee")
+);
+
+export const ManageBlogs = lazy(() => import("../pages/manage-blogs"));
+export const AddBlogs = lazy(() => import("../pages/manage-blogs/add-blog"));
+export const BlogDetail = lazy(() =>
+  import("../pages/manage-blogs/blog-detail")
+);
+
+export const ManageAboutUs = lazy(() =>
+  import("../pages/manage-aboutUs/index")
+);
+export const ManageCareers = lazy(() => import("../pages/manage-careers"));
+
+export const CreateTestimonials = lazy(() =>
+  import("../pages/create-testimonials")
+);
 
 const LoadDynamicComponent = (object) => {
   const Component = lazy(() => import(`${object}`));
@@ -133,12 +149,19 @@ export default function Router() {
           path: "property-management",
         },
         {
-
+          element: <ManageBlogs />,
+          path: "manage-blogs",
+        },
+        {
+          element: <ManageAboutUs />,
+          path: "manage-aboutUS",
+        },
+        {
           element: <Profile />,
           path: "profile",
         },
 
-{
+        {
           element: <Activitylog />,
           path: "activity-logs",
         },
@@ -150,6 +173,14 @@ export default function Router() {
           element: <ChatAsPerUser />,
           path: "user-chat",
         },
+        {
+          element: <AddBlogs />,
+          path: "add-blogs",
+        },
+        {
+          element: <BlogDetail />,
+          path: "blog-detail",
+        },
 
         {
           path: "/404",
@@ -158,6 +189,14 @@ export default function Router() {
         {
           path: "*",
           element: <Navigate to="/404" replace />,
+        },
+        {
+          element: <ManageCareers />,
+          path: "manage-careers",
+        },
+        {
+          element: <CreateTestimonials />,
+          path: "create-testimonials",
         },
       ],
     },
