@@ -34,7 +34,7 @@ export default function DashboardLayout({ children }) {
         <Nav openNav={openNav} onCloseNav={() => setOpenNav(false)} />
 
         <Main>{children}</Main>
-        {showAI && (
+        {/* {showAI && (
           <div
             style={{
               position: "fixed",
@@ -52,9 +52,9 @@ export default function DashboardLayout({ children }) {
               }}
             />
           </div>
-        )}
+        )} */}
 
-        <Box
+        {/* <Box
           onClick={() => setShowAI(!showAI)}
           sx={{
             height: 50,
@@ -70,13 +70,13 @@ export default function DashboardLayout({ children }) {
             color: "#ffffff",
             borderRadius: "50%",
             textAlign: "center",
-            lineHeight: 60 /* should match height for vertical centering */,
+            lineHeight: 60 ,
             cursor: "pointer",
-            zIndex: 1000 /* ensure it's above other content */,
+            zIndex: 1000 ,
           }}
         >
           <Iconify sx={{ color: "white" }} icon="healthicons:contact-support" />
-        </Box>
+        </Box> */}
       </Box>
     </>
   );
