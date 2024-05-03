@@ -12,6 +12,7 @@ import {
   TableCell,
   TableRow,
   TableHead,
+  Button,
 } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -85,7 +86,7 @@ const PropertyManagement = () => {
             }
           />
 
-          <div></div>
+        <Button variant="contained" size="large">Add</Button>
         </div>
         <Tabs
           className="mt-3"

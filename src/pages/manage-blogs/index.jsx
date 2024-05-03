@@ -13,6 +13,10 @@ import Iconify from "../../components/iconify";
 
 const ManageBlogs = () => {
   const navigate = useNavigate();
+  const object = {
+    title: "Housing Bubble 2024: Are housing Market Crashing?",
+    description : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.'
+  };
 
   const Blog = () => (
     <Card
@@ -42,9 +46,16 @@ const ManageBlogs = () => {
           Read more
         </Button>
         <div>
-          <Iconify sx={{color : '#13556D'}}  icon="tabler:edit" />
+          <Iconify
+            sx={{ color: "#13556D" }}
+            icon="tabler:edit"
+            onClick={(e) => {
+              e.stopPropagation()
+              navigate("/add-blogs", { state: object })
+            }}
+          />
           &nbsp;
-          <Iconify  sx={{color : '#13556D'}} icon="mingcute:delete-line" />
+          <Iconify sx={{ color: "#13556D" }} icon="mingcute:delete-line" />
         </div>
       </CardActions>
     </Card>

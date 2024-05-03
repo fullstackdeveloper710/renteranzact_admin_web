@@ -39,6 +39,8 @@ const OnboardedProperties = ({ tableColumns, data, onClick }) => {
                 />
                 &nbsp;
                 <Iconify onClick={onClick} icon="mingcute:delete-line" />
+                &nbsp;
+                <Iconify icon="bx:edit" />
               </TableCell>
             </TableRow>
           );
