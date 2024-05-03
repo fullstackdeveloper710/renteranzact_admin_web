@@ -9,6 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Iconify from "../../components/iconify";
 
 const ManageBlogs = () => {
   const navigate = useNavigate();
@@ -36,10 +37,15 @@ const ManageBlogs = () => {
           <b>Housing Bubble 2024: Are housing{<br />} Market Crashing?</b>
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions className="d-flex justify-content-between align-items-center">
         <Button onClick={() => navigate("/blog-detail")} size="small">
           Read more
         </Button>
+        <div>
+          <Iconify sx={{color : '#13556D'}}  icon="tabler:edit" />
+          &nbsp;
+          <Iconify  sx={{color : '#13556D'}} icon="mingcute:delete-line" />
+        </div>
       </CardActions>
     </Card>
   );

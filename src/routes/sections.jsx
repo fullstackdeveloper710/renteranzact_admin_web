@@ -1,5 +1,5 @@
 import { Box, CircularProgress } from "@mui/material";
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense } from "react";
 import {
   Outlet,
   Navigate,
@@ -29,6 +29,7 @@ export const AddEmployees = lazy(() =>
   import("../pages/manage-employees/add-employee")
 );
 const ManageFaq = lazy(() => import("../pages/manage-faq"));
+const AddFAQ = lazy(() => import("../pages/manage-faq/add-faq"));
 export const ManageUsers = lazy(() => import("../pages/manageUsers/index"));
 export const AddUsers = lazy(() => import("../pages/manageUsers/add-user"));
 export const ManagePrivacyPolicy = lazy(() =>
@@ -65,6 +66,23 @@ export const CreateTestimonials = lazy(() =>
 export const Testimonials = lazy(() =>
   import("../pages/create-testimonials/index")
 );
+
+export const ManageSocialMediaLinks = lazy(() =>
+  import("../pages/manage-social-media-links")
+);
+export const ManageBanners = lazy(() => import("../pages/manage-banners"));
+export const AddBanners = lazy(() =>
+  import("../pages/manage-banners/add-banners")
+);
+export const AddSocialMediaLinks = lazy(() =>
+  import("../pages/manage-social-media-links/add-social-media-links")
+);
+
+export const DataProtection = lazy(() => import("../pages/data-protection"));
+export const ManageAggrements = lazy(() =>
+  import("../pages/manage-aggrements")
+);
+export const AddAggrements = lazy(() => import("../pages/manage-aggrements/add-aggrements"));
 
 const LoadDynamicComponent = (object) => {
   const Component = lazy(() => import(`${object}`));
@@ -199,6 +217,10 @@ export default function Router() {
           element: <ManageFaq />,
           path: "manage-faq",
         },
+        {
+          element: <AddFAQ />,
+          path: "add-faq",
+        },
 
         {
           path: "/404",
@@ -221,8 +243,36 @@ export default function Router() {
           path: "testimonials",
         },
         {
+          element: <ManageSocialMediaLinks />,
+          path: "manage-social-media-links",
+        },
+        {
+          element: <AddSocialMediaLinks />,
+          path: "add-social-media-links",
+        },
+        {
+          element: <DataProtection />,
+          path: "data-protection",
+        },
+        {
           element: <CreateTestimonials />,
           path: "add-testimonials",
+        },
+        {
+          element: <ManageBanners />,
+          path: "manage-banners",
+        },
+        {
+          element: <AddBanners />,
+          path: "add-banners",
+        },
+        {
+          element: <ManageAggrements />,
+          path: "manage-aggrements",
+        },
+        {
+          element: <AddAggrements />,
+          path: "add-aggrements",
         },
       ],
     },

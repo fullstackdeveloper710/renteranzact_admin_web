@@ -29,14 +29,14 @@
 }
 
 .global-button {
-  background-color: #13556d  !important;
+  background-color: #13556d !important;
   color: white !important;
   font-size: 17px;
 }
 .login_background {
   height: 100vh;
   width: 100%;
-  background-image: url('/public/assets/background/property-back.png');
+  background-image: url("/public/assets/background/property-back.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -51,4 +51,17 @@
 }
 body {
   /* font-size: 18px !important; */
+}
+.ai-chatbot-support {
+  background-color: white;
+  box-shadow: 0px 3px 0px 0px white;
+  padding: 10px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  border-radius: 10px;
+  opacity: 10;
+}
+.ic--outline-expand-less {
+  height: 10px !important;
+  width: 10px !important;
 }

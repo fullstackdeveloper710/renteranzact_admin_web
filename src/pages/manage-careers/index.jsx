@@ -35,7 +35,7 @@ const ManageCareers = () => {
         </TableHead>
         <TableBody>
           <TableCell align="left">{"John Doe"}</TableCell>
-          <TableCell align="left">{"Amazon"}</TableCell>
+          <TableCell align="left">{"8"}</TableCell>
           <TableCell align="left">
             <Iconify icon="tabler:edit" />
             &nbsp;

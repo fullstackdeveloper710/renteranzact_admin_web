@@ -24,7 +24,14 @@ import { NAV } from "./config-layout";
 import navConfig from "./config-navigation";
 import { routeConfig } from "../../pages/routeConfig";
 import "../layout.css";
-import { IconButton, backdropClasses } from "@mui/material";
+import {
+  Collapse,
+  IconButton,
+  List,
+  ListItemIcon,
+  ListItemText,
+  backdropClasses,
+} from "@mui/material";
 import Iconify from "../../components/iconify";
 import { Navigate, useNavigate } from "react-router-dom";
 import ConfirmationDialog from "../../components/dialog/ConfirmationDialog";
@@ -136,39 +143,75 @@ Nav.propTypes = {
 // ----------------------------------------------------------------------
 
 function NavItem({ item }) {
+  console.log(item, "item");
+  const [openCollapse, setOpenCollapse] = useState(false);
   const pathname = usePathname();
   const active = `/${item.link}` === pathname;
   return (
-    <ListItemButton
-      component={RouterLink}
-      href={item.link}
-      sx={{
-        minHeight: 44,
-        borderRadius: 0.75,
-        typography: "body2",
-        // margin: 5,
-        marginTop: 5,
-        color: "#13556D",
-        textTransform: "capitalize",
-        fontWeight: "fontWeightMedium",
-        ...(active && {
-          color: "#FFFFFF",
-          fontWeight: "fontWeightSemiBold",
-          bgcolor: "#13556D",
-          height: 10,
-          fontSize: 13,
-        }),
-      }}
-    >
-      <Box component="span" className="m-2">
-        {item.icon}
-      </Box>
-      <div className="nav-bar">
-        <Box className="unactive" sx={{ ml: 2 }}>
-          {item.title}
+    <>
+      <ListItemButton
+        onClick={
+          item?.children?.length > 0
+            ? () => setOpenCollapse(() => !openCollapse)
+            : null
+        }
+        component={RouterLink}
+        href={item.link}
+        sx={{
+          minHeight: 44,
+          borderRadius: 0.75,
+          typography: "body2",
+          // margin: 5,
+          marginTop: 5,
+          color: "#13556D",
+          textTransform: "capitalize",
+          fontWeight: "fontWeightMedium",
+          ...(active && {
+            color: "#FFFFFF",
+            fontWeight: "fontWeightSemiBold",
+            bgcolor: "#13556D",
+            height: 10,
+            fontSize: 13,
+          }),
+        }}
+      >
+        <Box component="span" className="m-2">
+          {item.icon}
         </Box>
-      </div>
-    </ListItemButton>
+        <div className="nav-bar">
+          <Box className="unactive" sx={{ ml: 2 }}>
+            {item.title}
+
+            {item?.children?.length > 0 ? (
+              openCollapse ? (
+                <Iconify
+                  sx={{ ml: 8, width: 20 }}
+                  icon="ic:outline-expand-less"
+                />
+              ) : (
+                <Iconify
+                  sx={{ ml: 8, width: 20 }}
+                  icon="ic:outline-expand-more"
+                />
+              )
+            ) : null}
+          </Box>
+        </div>
+      </ListItemButton>
+      <Collapse in={openCollapse} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          {item?.children?.length > 0 &&
+            item?.children?.map((x, i) => {
+              return (
+                <ListItemButton key={i} href={x.link} sx={{ pl: 4 }}>
+                  <ListItemIcon>{x.icon}</ListItemIcon>
+                  <ListItemText primary={x.title} />
+                </ListItemButton>
+              );
+            })}
+        </List>
+      </Collapse>
+    </>
   );
 }
 

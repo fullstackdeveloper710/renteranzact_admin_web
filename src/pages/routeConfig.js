@@ -164,4 +164,53 @@ export const routeConfig = [
     icon: <Icon icon="mdi:faq" />,
     show: true,
   },
+  {
+    title: "Social Media Links",
+    link: "manage-social-media-links",
+    path: "./pages/manage-social-media-links",
+    role: ["superAdmin"],
+    icon: <Icon icon="ri:links-fill" />,
+    show: true,
+  },
+  {
+    title: "Manage Banners",
+    link: "manage-banners",
+    path: "./pages/manage-banners",
+    role: ["superAdmin"],
+    icon: <Icon icon="material-symbols-light:planner-banner-ad-pt-outline" />,
+    show: true,
+  },
+  {
+    title: "Data Protection",
+    link: "data-protection",
+    path: "./pages/data-protection",
+    role: ["superAdmin"],
+    icon: <Icon icon="flat-color-icons:data-protection" />,
+    show: true,
+  },
+  {
+    title: "Manage Aggrements",
+    link: "manage-aggrements",
+    path: "./pages/manage-aggrements",
+    role: ["superAdmin"],
+    icon: <Icon icon="ph:file" />,
+    show: true,
+  },
+  {
+    title: "Add Aggrements",
+    link: "add-aggrements",
+    path: "./pages/manage-aggrements/add-aggrements",
+    role: ["superAdmin"],
+    icon: <Icon icon="ph:file" />,
+    show: false,
+  },
+  // {
+  //   title: "Pages",
+  //   children: [
+      
+  //   ],
+  //   role: ["superAdmin"],
+  //   icon: <Icon icon="ph:file" />,
+  //   show: true,
+  // },
 ];
