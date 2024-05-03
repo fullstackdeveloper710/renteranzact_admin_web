@@ -6,7 +6,7 @@ export const routeConfig = [
     link: "dashboard",
     path: "/app",
     icon: <Icon icon="ri:dashboard-fill" />,
-    role: ["superAdmin"],
+    role: ["superAdmin","reviewerAdmin","legalAdmin","financeAdmin"],
     show: true,
   },
   {
@@ -14,7 +14,7 @@ export const routeConfig = [
     link: "manage-users",
     icon: <Icon icon="mdi:users" />,
     path: "/src/pages/manageUsers/index",
-    role: ["superAdmin"],
+    role: ["superAdmin" , 'reviewerAdmin'],
     show: true,
   },
   {
@@ -57,7 +57,7 @@ export const routeConfig = [
     link: "property-management",
     path: "./pages/propertyManagement",
     icon: <Icon icon="ph:warehouse-thin" />,
-    role: ["superAdmin"],
+    role: ["superAdmin", 'reviewerAdmin',"legalAdmin"],
     show: true,
   },
   {
@@ -65,7 +65,7 @@ export const routeConfig = [
     link: "review-and-rating-mgt",
     path: "./pages/reviewRating",
     icon: <Icon icon="carbon:review" />,
-    role: ["superAdmin"],
+    role: ["superAdmin", 'reviewerAdmin'],
     show: true,
   },
   {
@@ -73,7 +73,7 @@ export const routeConfig = [
     link: "finance-performance",
     path: "./pages/financialPerformance",
     icon: <Icon icon="material-symbols:finance" />,
-    role: ["superAdmin"],
+    role: ["superAdmin","financeAdmin"],
     show: true,
   },
   {
@@ -81,7 +81,7 @@ export const routeConfig = [
     link: "manage-transactions",
     path: "./pages/manageTransactions",
     icon: <Icon icon="ant-design:transaction-outlined" />,
-    role: ["superAdmin"],
+    role: ["superAdmin","financeAdmin"],
     show: true,
   },
   {

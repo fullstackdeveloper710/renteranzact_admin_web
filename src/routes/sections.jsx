@@ -18,6 +18,7 @@ import ManageTransactions from "../pages/manageTransactions/manageTransaction";
 import Activitylog from "../pages/activityLog/activitylog";
 import ManageChat from "../pages/manageChat/manageChat";
 import ChatAsPerUser from "../pages/manageChat/chatAsPerUser";
+import ReviewerAdminDashboard from "../pages/reviewer-admin-dashboard";
 export const LoginPage = lazy(() => import("../pages/login"));
 export const ProductsPage = lazy(() => import("../pages/products"));
 export const Page404 = lazy(() => import("../pages/page-not-found"));

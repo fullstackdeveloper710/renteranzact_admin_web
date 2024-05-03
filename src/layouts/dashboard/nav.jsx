@@ -40,7 +40,7 @@ import ConfirmationDialog from "../../components/dialog/ConfirmationDialog";
 export default function Nav({ openNav, onCloseNav }) {
   const pathname = usePathname();
   const navigate = useNavigate();
-
+  const role = localStorage.getItem("role")
   const [logoutPopup, setLogoutPopup] = useState(false);
   const upLg = useResponsive("up", "lg");
   useEffect(() => {
@@ -48,11 +48,11 @@ export default function Nav({ openNav, onCloseNav }) {
       onCloseNav();
     }
   }, [pathname]);
-
+  
   const renderMenu = (
     <Stack component="nav" spacing={0.5} sx={{ px: 2 }} mt={4}>
       {routeConfig.map(
-        (item) => item.show && <NavItem key={item.title} item={item} />
+        (item) => item.show && item.role.includes(role) && <NavItem key={item.title} item={item} />
       )}
     </Stack>
   );
