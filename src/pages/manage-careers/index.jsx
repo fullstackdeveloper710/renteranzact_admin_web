@@ -1,31 +1,48 @@
-import { Button, Grid, TextField, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import {
+  Button,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  Typography,
+} from "@mui/material";
+import Iconify from "../../components/iconify";
 
 const ManageCareers = () => {
+  const navigate = useNavigate();
   return (
     <div className="px-5">
-      <Typography variant="h4">Manage Careers</Typography>
+      <div className="d-flex justify-content-between align-items-center w-100 mt-3">
+        <Typography variant="h4">Careers</Typography>
+        <Button
+          onClick={() => navigate("/add-careers")}
+          size="large"
+          variant="contained"
+        >
+          Add
+        </Button>
+      </div>
 
-      <Grid container spacing={4} mt={3}>
-        <Grid item md={6}>
-          <TextField fullWidth label="Job Title" />
-        </Grid>
-
-        <Grid item md={6}>
-          <TextField fullWidth type="number" label="No. of Openings" />
-        </Grid>
-        <Grid item md={12}>
-          <TextField
-            fullWidth
-            multiline
-            rows={5}
-            type="text"
-            label="Job Description"
-          />
-        </Grid>
-      </Grid>
-      <Button variant="contained" size="large" className="mt-4">
-        Save
-      </Button>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table" className="mt-4">
+        <TableHead>
+          <TableRow>
+            <TableCell align="left">Job Title</TableCell>
+            <TableCell align="left">No. of Openings</TableCell>
+            <TableCell align="left">Action</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableCell align="left">{"John Doe"}</TableCell>
+          <TableCell align="left">{"Amazon"}</TableCell>
+          <TableCell align="left">
+            <Iconify icon="tabler:edit" />
+            &nbsp;
+            <Iconify icon="mingcute:delete-line" />
+          </TableCell>
+        </TableBody>
+      </Table>
     </div>
   );
 };

@@ -55,9 +55,15 @@ export const ManageAboutUs = lazy(() =>
   import("../pages/manage-aboutUs/index")
 );
 export const ManageCareers = lazy(() => import("../pages/manage-careers"));
+export const AddCareers = lazy(() =>
+  import("../pages/manage-careers/add-careers")
+);
 
 export const CreateTestimonials = lazy(() =>
-  import("../pages/create-testimonials")
+  import("../pages/create-testimonials/add-testimonials")
+);
+export const Testimonials = lazy(() =>
+  import("../pages/create-testimonials/index")
 );
 
 const LoadDynamicComponent = (object) => {
@@ -207,8 +213,16 @@ export default function Router() {
           path: "manage-careers",
         },
         {
+          element: <AddCareers />,
+          path: "add-careers",
+        },
+        {
+          element: <Testimonials />,
+          path: "testimonials",
+        },
+        {
           element: <CreateTestimonials />,
-          path: "create-testimonials",
+          path: "add-testimonials",
         },
       ],
     },

@@ -135,6 +135,14 @@ export const routeConfig = [
   {
     title: "Create Testimonials",
     link: "create-testimonials",
+    path: "./pages/create-testimonials/add-testimonials",
+    role: ["superAdmin"],
+    icon: <Icon icon="fluent:chat-sparkle-16-regular" />,
+    show: false,
+  },
+  {
+    title: "Manage Testimonials",
+    link: "testimonials",
     path: "./pages/create-testimonials",
     role: ["superAdmin"],
     icon: <Icon icon="fluent:chat-sparkle-16-regular" />,
