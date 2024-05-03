@@ -18,47 +18,96 @@ import { bgGradient } from "../../theme/css";
 
 import Logo from "../../components/logo";
 import Iconify from "../../components/iconify";
+import { loginCredintials } from "../../utils/appConstants";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 // ----------------------------------------------------------------------
 
 export default function LoginView() {
   const theme = useTheme();
-
+  const navigate = useNavigate();
   const router = useRouter();
-
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClick = () => {
     router.push("/dashboard");
   };
 
+  /// onsubmit function
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (
+      formData.email === loginCredintials.superAdmin.email &&
+      formData.password === loginCredintials.superAdmin.password
+    ) {
+      navigate("/dashboard");
+      localStorage.setItem("role", "superAdmin");
+    } else if (
+      formData.email === loginCredintials.reviewerAdmin.email &&
+      formData.password === loginCredintials.reviewerAdmin.password
+    ) {
+      navigate("/dashboard");
+      localStorage.setItem("role", "reviewerAdmin");
+    } else if (
+      formData.email === loginCredintials.legalAdmin.email &&
+      formData.password === loginCredintials.legalAdmin.password
+    ) {
+      navigate("/dashboard");
+      localStorage.setItem("role", "legalAdmin");
+    } else if (
+      formData.email === loginCredintials.financeAdmin.email &&
+      formData.password === loginCredintials.financeAdmin.password
+    ) {
+      navigate("/dashboard");
+      localStorage.setItem("role", "financeAdmin");
+    }
+  };
+
   const renderForm = (
     <>
-      <Stack spacing={3}>
-        <TextField name="email" label="Email address" />
+      <form onSubmit={onSubmit}>
+        <Stack spacing={3}>
+          <TextField
+            name="email"
+            label="Email address"
+            onChange={(e) =>
+              setFormData((prev) => ({
+                ...prev,
+                email: e.target.value,
+              }))
+            }
+          />
 
-        <TextField
-          name="password"
-          label="Password"
-          type={showPassword ? "text" : "password"}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton
-                  onClick={() => setShowPassword(!showPassword)}
-                  edge="end"
-                >
-                  <Iconify
-                    icon={showPassword ? "eva:eye-fill" : "eva:eye-off-fill"}
-                  />
-                </IconButton>
-              </InputAdornment>
-            ),
-          }}
-        />
-      </Stack>
+          <TextField
+            name="password"
+            label="Password"
+            type={showPassword ? "text" : "password"}
+            onChange={(e) =>
+              setFormData((prev) => ({
+                ...prev,
+                password: e.target.value,
+              }))
+            }
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    onClick={() => setShowPassword(!showPassword)}
+                    edge="end"
+                  >
+                    <Iconify
+                      icon={showPassword ? "eva:eye-fill" : "eva:eye-off-fill"}
+                    />
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
+        </Stack>
 
-      {/* <Stack
+        {/* <Stack
         direction="row"
         alignItems="center"
         justifyContent="flex-end"
@@ -68,19 +117,20 @@ export default function LoginView() {
           Forgot password?
         </Link>
       </Stack> */}
-      <div className="loginview_button mt-4">
-        <LoadingButton
-        style={{background:"#13556D" ,color:"#C8D736"}}
-          fullWidth
-          size="large"
-          type="submit"
-          className="global-button"
-          color="inherit"
-          onClick={handleClick}
-        >
-          Login
-        </LoadingButton>
-      </div>
+        <div className="loginview_button mt-4">
+          <LoadingButton
+            style={{ background: "#13556D", color: "#C8D736" }}
+            fullWidth
+            size="large"
+            type="submit"
+            className="global-button"
+            color="inherit"
+            // onClick={handleClick}
+          >
+            Login
+          </LoadingButton>
+        </div>
+      </form>
     </>
   );
 
