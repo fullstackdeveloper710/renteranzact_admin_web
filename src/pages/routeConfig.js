@@ -61,6 +61,14 @@ export const routeConfig = [
     show: true,
   },
   {
+    title:'Properties In Demand',
+    link: "properties-in-demand",
+    path: "./pages/properties-in-demand",
+    icon: <Icon icon="mdi:heart-outline" />,
+    role: ["superAdmin"],
+    show: true,
+  },
+  {
     title: AppConstants.sidebarConstants.reviewRating,
     link: "review-and-rating-mgt",
     path: "./pages/reviewRating",

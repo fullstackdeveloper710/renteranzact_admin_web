@@ -83,9 +83,19 @@ export const DataProtection = lazy(() => import("../pages/data-protection"));
 export const ManageAggrements = lazy(() =>
   import("../pages/manage-aggrements")
 );
-export const AddAggrements = lazy(() => import("../pages/manage-aggrements/add-aggrements"));
+export const AddAggrements = lazy(() =>
+  import("../pages/manage-aggrements/add-aggrements")
+);
 
-export const AddProperty = lazy(() => import('../pages/property-management/add-property'))
+export const AddProperty = lazy(() =>
+  import("../pages/property-management/add-property")
+);
+export const ManageAggrementsAndDocuments = lazy(() =>
+  import("../pages/property-management/manage-aggrements&documents")
+);
+export const PropertiesInDemand = lazy(() =>
+  import("../pages/properties-in-demand")
+);
 
 const LoadDynamicComponent = (object) => {
   const Component = lazy(() => import(`${object}`));
@@ -178,6 +188,14 @@ export default function Router() {
         {
           element: <PropertyManagement />,
           path: "property-management",
+        },
+        {
+          element: <PropertiesInDemand />,
+          path: "properties-in-demand",
+        },
+        {
+          element: <ManageAggrementsAndDocuments />,
+          path: "manage-aggrements-documents",
         },
         {
           element: <ManageBlogs />,

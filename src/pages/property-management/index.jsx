@@ -26,7 +26,7 @@ import { faker } from "@faker-js/faker";
 import OnboardedProperties from "./OnboardedProperties";
 import PropertyListingRequest from "./PropertyListingRequestes";
 import { useNavigate } from "react-router-dom";
-const tableColumns = [
+export const tableColumns = [
   "Image",
   "Landlord/PM",
   "Property",
