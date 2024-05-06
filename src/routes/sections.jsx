@@ -85,6 +85,8 @@ export const ManageAggrements = lazy(() =>
 );
 export const AddAggrements = lazy(() => import("../pages/manage-aggrements/add-aggrements"));
 
+export const AddProperty = lazy(() => import('../pages/property-management/add-property'))
+
 const LoadDynamicComponent = (object) => {
   const Component = lazy(() => import(`${object}`));
   return <Component />;
@@ -274,6 +276,10 @@ export default function Router() {
         {
           element: <AddAggrements />,
           path: "add-aggrements",
+        },
+        {
+          element: <AddProperty />,
+          path: "add-property",
         },
       ],
     },

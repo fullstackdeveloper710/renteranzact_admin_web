@@ -25,6 +25,7 @@ import Scrollbar from "../../components/scrollbar";
 import { faker } from "@faker-js/faker";
 import OnboardedProperties from "./OnboardedProperties";
 import PropertyListingRequest from "./PropertyListingRequestes";
+import { useNavigate } from "react-router-dom";
 const tableColumns = [
   "Image",
   "Landlord/PM",
@@ -48,6 +49,8 @@ const PropertyManagement = () => {
     date: faker.date.birthdate(),
     mobile: faker.phone.number(),
   });
+
+  const navigate = useNavigate();
   return (
     <div className="px-5">
       <Stack
@@ -86,7 +89,13 @@ const PropertyManagement = () => {
             }
           />
 
-        <Button variant="contained" size="large">Add</Button>
+          <Button
+            variant="contained"
+            size="large"
+            onClick={() => navigate("/add-property")}
+          >
+            Add
+          </Button>
         </div>
         <Tabs
           className="mt-3"

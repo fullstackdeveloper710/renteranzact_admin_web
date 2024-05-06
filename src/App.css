@@ -65,3 +65,28 @@ body {
   height: 10px !important;
   width: 10px !important;
 }
+.stepper-step {
+  background: rgb(238 243 193);
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.box-stepper-scale {
+  transform: scale(1);
+  transition: all 0.8s ease;
+  background-color: rgb(238 243 193);
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px #ccc;
+}
+.step-left-text {
+  border-radius: 50%;
+  background: white;
+  border: 5px solid rgb(0 153 161);
+  height: 45px;
+  width: 45px;
+  font-size: 12px;
+}
+.screen-transition {
+  transition: all 0.8s ease-in-out;
+}
