@@ -4,9 +4,6 @@ import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
-import Avatar from "@mui/material/Avatar";
-import { alpha } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import ListItemButton from "@mui/material/ListItemButton";
 
@@ -15,25 +12,14 @@ import { RouterLink } from "../../routes/components";
 
 import { useResponsive } from "../../hooks/use-responsive";
 
-import { account } from "../../_mock/account";
-
-import Logo from "../../components/logo";
 import Scrollbar from "../../components/scrollbar";
 
 import { NAV } from "./config-layout";
-import navConfig from "./config-navigation";
 import { routeConfig } from "../../pages/routeConfig";
 import "../layout.css";
-import {
-  Collapse,
-  IconButton,
-  List,
-  ListItemIcon,
-  ListItemText,
-  backdropClasses,
-} from "@mui/material";
+import { Collapse, List } from "@mui/material";
 import Iconify from "../../components/iconify";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ConfirmationDialog from "../../components/dialog/ConfirmationDialog";
 // ----------------------------------------------------------------------
 
@@ -73,9 +59,11 @@ export default function Nav({ openNav, onCloseNav }) {
         color: "#13556D",
       }}
     >
-      <div className="nav-logo">
-        <img src="./images/logo.png" alt="no logo" />
-      </div>
+      <Link to={"/dashboard"}>
+        <div className="nav-logo">
+          <img src="./images/logo.png" alt="no logo" />
+        </div>
+      </Link>
 
       {renderMenu}
 
@@ -181,7 +169,7 @@ function NavItem({ item }) {
           {item.icon}
         </Box>
         <div className="nav-bar">
-          <Box className="unactive" sx={{ ml: 2 }}>
+          <Box className="unactive">
             {item.title}
 
             {item?.children?.length > 0 ? (
@@ -200,15 +188,43 @@ function NavItem({ item }) {
           </Box>
         </div>
       </ListItemButton>
-      <Collapse in={openCollapse} timeout="auto" unmountOnExit>
+      <Collapse in={openCollapse} timeout="auto">
         <List component="div" disablePadding>
           {item?.children?.length > 0 &&
             item?.children?.map((x, i) => {
+              let subMenuActive = `/${x.link}` === pathname;
               return (
-                <ListItemButton key={i} href={x.link} sx={{ pl: 4 }}>
-                  <ListItemIcon>{x.icon}</ListItemIcon>
-                  <ListItemText primary={x.title} />
-                </ListItemButton>
+                x.show && (
+                  <ListItemButton
+                    sx={{
+                      ml: 4,
+                      minHeight: 44,
+                      borderRadius: 0.75,
+                      typography: "body2",
+                      color: "#13556D",
+                      textTransform: "capitalize",
+                      fontWeight: "fontWeightMedium",
+                      ...(subMenuActive && {
+                        color: "#FFFFFF",
+                        fontWeight: "fontWeightSemiBold",
+                        bgcolor: "#13556D",
+                        height: 10,
+                        fontSize: 13,
+                      }),
+                    }}
+                    className="p-2"
+                    key={i}
+                    component={RouterLink}
+                    href={x.link}
+                  >
+                    <Box component="span" className="m-2">
+                      {x.icon}
+                    </Box>
+                    <div className="nav-bar">
+                      <Box className="unactive">{x.title}</Box>
+                    </div>
+                  </ListItemButton>
+                )
               );
             })}
         </List>

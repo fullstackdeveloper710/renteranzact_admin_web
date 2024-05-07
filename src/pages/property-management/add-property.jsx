@@ -10,19 +10,19 @@ const AddProperty = () => {
   const [steps, setSteps] = React.useState([
     {
       title: "Property Details",
-      status: "Completed",
+      status: true,
     },
     {
       title: "Pricing",
-      status: "Completed",
+      status: false,
     },
     {
       title: "Amenities",
-      status: "Completed",
+      status: false,
     },
     {
       title: "Images & Documents",
-      status: "Completed",
+      status: false,
     },
   ]);
 
@@ -49,14 +49,23 @@ const AddProperty = () => {
 
   const Step = ({ title, status }) => (
     <Box sx={{ width: 300, p: 3 }} display={"flex"} gap={2}>
-      <div className="step-left-text d-flex justify-content-center align-items-center">
+      <div
+        style={
+          !status
+            ? { border: "5px solid #c7d536" }
+            : { border: "5px solid rgb(0 153 161)" }
+        }
+        className="step-left-text d-flex justify-content-center align-items-center"
+      >
         <b>12/12</b>
       </div>
       <div>
         <Typography variant="h6" color={"rgb(7 38 46)"}>
           <b>{title}</b>
         </Typography>
-        <Typography color="rgb(58 168 175)">{status}</Typography>
+        <Typography color={status ? "rgb(58 168 175)" : "#8e9926"}>
+          {status ? "Completed" : "Pending"}
+        </Typography>
       </div>
     </Box>
   );
@@ -81,6 +90,7 @@ const AddProperty = () => {
           return (
             <div
               onClick={() => setIsActive(i)}
+              style={x.status ? { background: "#e6f5f6" } : {}}
               className={i === isActive ? "box-stepper-scale" : "stepper-step"}
             >
               <Step title={x.title} key={i} status={x.status} />
