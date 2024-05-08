@@ -1,5 +1,8 @@
 .app-header header{
     background-color: white !important;
+    background-image: url('/public/images/header-back.png');
+    /* background-size: cover; */
+    background-repeat: repeat;
 }
 
 .app-header .css-dohfak-MuiAvatar-root{

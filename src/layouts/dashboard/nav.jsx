@@ -17,7 +17,7 @@ import Scrollbar from "../../components/scrollbar";
 import { NAV } from "./config-layout";
 import { routeConfig } from "../../pages/routeConfig";
 import "../layout.css";
-import { Collapse, List } from "@mui/material";
+import { Collapse, Divider, List } from "@mui/material";
 import Iconify from "../../components/iconify";
 import { Link, useNavigate } from "react-router-dom";
 import ConfirmationDialog from "../../components/dialog/ConfirmationDialog";
@@ -55,8 +55,8 @@ export default function Nav({ openNav, onCloseNav }) {
           display: "flex",
           flexDirection: "column",
         },
-        background: "white",
-        color: "#13556D",
+        // background: "white",
+        color: "white",
       }}
     >
       <Link to={"/dashboard"}>
@@ -64,13 +64,14 @@ export default function Nav({ openNav, onCloseNav }) {
           <img src="./images/logo.png" alt="no logo" />
         </div>
       </Link>
+      <Divider />
 
       {renderMenu}
 
       <Box style={{ height: 145 }}></Box>
-      <Box sx={{ px: 2 }}>
+      <Box sx={{ px: 2  }}>
         <ListItemButton
-          sx={{ color: "#13556D" }}
+          sx={{ color: "white" }}
           onClick={() => setLogoutPopup(true)}
         >
           <Iconify icon="basil:logout-outline" />
@@ -84,15 +85,24 @@ export default function Nav({ openNav, onCloseNav }) {
     <Box
       sx={{
         flexShrink: { lg: 0 },
+        backgroundImage: "url(/images/header-back.png)",
+        // backgroundSize : "cover",
+        backgroundRepeat: "repeat",
         width: { lg: NAV.WIDTH },
         overflow: "auto",
+        color: "white",
       }}
     >
       {upLg ? (
         <Box
           sx={{
             height: 1,
+            color:"white",
+            
+            zIndex : 99999,
             position: "fixed",
+            // background: "none",
+            
             width: NAV.WIDTH,
             overflow: "auto",
             borderRight: (theme) => `dashed 1px ${theme.palette.divider}`,
@@ -106,6 +116,8 @@ export default function Nav({ openNav, onCloseNav }) {
           onClose={onCloseNav}
           PaperProps={{
             sx: {
+            
+              color: "white",
               width: NAV.WIDTH,
             },
           }}
@@ -153,41 +165,46 @@ function NavItem({ item }) {
           typography: "body2",
           // margin: 5,
           marginTop: 5,
-          color: "#13556D",
+          color: "white",
           textTransform: "capitalize",
           fontWeight: "fontWeightMedium",
+          "&:hover": {
+            minHeight: 44,
+            backgroundColor: "#c8d73669",
+          },
           ...(active && {
             bgcolor: "#c8d736",
             color: "#13556d",
             fontWeight: "fontWeightSemiBold",
-
-            height: 10,
+           
+            minHeight: 44,
             fontSize: 13,
           }),
         }}
+        className="d-flex justify-content-between align-items-center w-100"
       >
-        <Box component="span" className="m-2">
-          {item.icon}
-        </Box>
-        <div className="nav-bar">
-          <Box className="unactive">
-            {item.title}
-
-            {item?.children?.length > 0 ? (
-              openCollapse ? (
-                <Iconify
-                  sx={{ width: 20, ml: 8, transition: "all 0.5s ease-out" }}
-                  icon="ic:outline-expand-less"
-                />
-              ) : (
-                <Iconify
-                  icon="iconamoon:arrow-right-2-duotone"
-                  sx={{ width: 20, ml: 8, transition: "all 0.5s ease-out" }}
-                />
-              )
-            ) : null}
+        <div>
+          <Box component="span" className="m-2">
+            {item.icon}
           </Box>
+
+          <>{item.title}</>
         </div>
+        <Box className="unactive">
+          {item?.children?.length > 0 ? (
+            openCollapse ? (
+              <Iconify
+                sx={{ width: 20, ml: 8, transition: "all 0.5s ease-out" }}
+                icon="ic:outline-expand-less"
+              />
+            ) : (
+              <Iconify
+                icon="iconamoon:arrow-right-2-duotone"
+                sx={{ width: 20, ml: 8, transition: "all 0.5s ease-out" }}
+              />
+            )
+          ) : null}
+        </Box>
       </ListItemButton>
       <Collapse
         in={openCollapse}
@@ -195,19 +212,23 @@ function NavItem({ item }) {
         translate="yes"
         sx={{ transition: "all 0.5s ease-out" }}
       >
-        <List component="div" disablePadding>
+        <List component="div">
           {item?.children?.length > 0 &&
             item?.children?.map((x, i) => {
               let subMenuActive = `/${x.link}` === pathname;
               return (
-                x.show && (
+                x?.show && (
                   <ListItemButton
                     sx={{
                       ml: 4,
                       minHeight: 44,
                       borderRadius: 0.75,
                       typography: "body2",
-                      color: "#13556D",
+                      "&:hover": {
+                        minHeight: 44,
+                        backgroundColor: "#c8d73669",
+                      },
+                      color: "white",
                       textTransform: "capitalize",
                       fontWeight: "fontWeightMedium",
 
@@ -216,20 +237,21 @@ function NavItem({ item }) {
                         color: "#13556d",
                         fontWeight: "fontWeightSemiBold",
 
-                        height: 10,
+                        minHeight: 44,
                         fontSize: 13,
                       }),
                     }}
-                    className="p-2"
+                    className="m-2"
                     key={i}
                     component={RouterLink}
                     href={x.link}
                   >
-                    <Box component="span" className="m-2">
-                      {x.icon}
-                    </Box>
-                    <div className="nav-bar">
-                      <Box className="unactive">{x.title}</Box>
+                    <div>
+                      <Box component="span" className="m-2">
+                        {x.icon}
+                      </Box>
+
+                      <>{x.title}</>
                     </div>
                   </ListItemButton>
                 )
