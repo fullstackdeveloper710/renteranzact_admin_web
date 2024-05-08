@@ -3,7 +3,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import { useState } from "react";
 import Iconify from "../../components/iconify";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
   clipPath: "inset(50%)",
@@ -18,13 +18,18 @@ const VisuallyHiddenInput = styled("input")({
 const AddBlogs = () => {
   const [textEditor, setTextEditor] = useState("");
   const { state } = useLocation();
-  console.log(state, "state");
+  const navigate = useNavigate();
   return (
     <div className="px-5">
       <div className="mt-3">
+        <div className="d-flex align-items-center gap-3">
+
+        <Iconify icon="zondicons:arrow-left" onClick={() => navigate(-1)} />
         <Typography variant="h4">
           {state !== null ? "Edit Blogs" : "Add Blogs"}
         </Typography>
+
+        </div>
         <Grid container spacing={4} mt={3}>
           <Grid item md={12}>
             <TextField value={state?.title} label="Title" fullWidth />
@@ -34,6 +39,7 @@ const AddBlogs = () => {
             <Button
               component="label"
               role={undefined}
+              className="global-button"
               variant="outlined"
               tabIndex={-1}
               startIcon={<Iconify icon="ep:upload-filled" />}
@@ -57,7 +63,7 @@ const AddBlogs = () => {
             />
           </Grid>
         </Grid>
-        <Button variant="contained" size="large" className="mt-4">
+        <Button variant="contained" size="large" className="global-button mt-4">
           Save
         </Button>
       </div>

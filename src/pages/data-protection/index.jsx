@@ -22,7 +22,7 @@ const DataProtection = () => {
           }}
         />
 
-        <Button variant="contained" size="large" className="mt-4">
+        <Button className="global-button mt-4" variant="contained" size="large" >
           Save
         </Button>
       </div>

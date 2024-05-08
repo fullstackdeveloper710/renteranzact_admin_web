@@ -69,7 +69,7 @@ const FAQ = () => {
       </div>
       <div className="d-flex justify-content-end mt-3">
 
-      <Button onClick={() => navigate('/add-faq')}  variant="contained" size="medium">
+      <Button className="global-button" onClick={() => navigate('/add-faq')}  variant="contained" size="medium">
         Add
       </Button>
 

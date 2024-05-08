@@ -100,7 +100,7 @@ const AddProperty = () => {
       </Box>
       <div className="mt-3">{renderConditionallyComponent(isActive)}</div>
       <div className="d-flex justify-content-center align-items-center mt-4">
-        <Button size="large" variant="contained" onClick={handleNext}>
+        <Button  className="global-button" size="large" variant="contained" onClick={handleNext}>
           {isActive > 2 ? "Post This Property" : "Next"}
         </Button>
       </div>

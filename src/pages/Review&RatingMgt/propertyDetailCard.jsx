@@ -1,55 +1,73 @@
-import { Box, Grid, Rating } from "@mui/material";
+import { Box, Button, Chip, Grid, Rating } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import React from "react";
 export default function PropertyDetailCard() {
   return (
-    <Box sx={{ flexGrow: 1 }} className="p-4 mt-4">
-      <Grid container>
-        <Grid xs={2}>
-          <img src="./images/houseProperty.jpg" />
-        </Grid>
-        <Grid xs={2}>
-          <Stack className="ps-2">
-            <Typography variant="subtitle1">
-              3 BHK Flat, Fully Furnished Rent:NGN 5000/Month
+    // <Box sx={{ flexGrow: 1 }} className="p-4 mt-4">
+    <Grid
+      container
+      spacing={4}
+      display={"flex"}
+      alignItems={"center"}
+      justifyContent={"space-between"}
+      mt={2}
+    >
+      <Grid item xs={12} md={3}>
+        <div className="d-flex justify-content-center align-items-center gap-3">
+          <img
+            style={{ borderRadius: 13, width: 150 }}
+            src="./images/houseProperty.jpg"
+          />
+          <div>
+            <span>#C01234</span>
+            <Typography variant="h5">Robert Patlison</Typography>
+            <Typography sx={{ width: "100%" }} variant="body1" color="grey">
+              Join on 26/04/2020, 12:42 AM
             </Typography>
-            <Typography>
-              6th floor, Tower A Spaze iTeckPark, Sector 49 Lagos
-            </Typography>
-          </Stack>
-        </Grid>
-        <Grid xs={2}>
-          <Typography variant="subtitle1">Star Ratings</Typography>
-          <Stack className="mt-2">
-            <Rating name="simple-controlled" value={2} />
-            <Typography level="body-sm" className="mt-2">
-              Property Owner a good and coperative Property is situated in a
-              good place
-            </Typography>
-          </Stack>
-        </Grid>
-        <Grid xs={2}>
-          <img src="./images/profile.png" alt="profileimage" />
-        </Grid>
-        <Grid xs={2}>
-          <Typography variant="subtitle1">
-            David, Lagos <br /> 9718****69 <br /> david@gmail.com <br /> Rented
-            on 07/11/2023
-          </Typography>
-        </Grid>
-        <Grid xs={2}>
-          <Stack>
-            <button className="btn global-button">Approve</button>
-          </Stack>
-          <Stack className="mt-2">
-            <button className="btn btn-danger">Rejected</button>
-          </Stack>
-          <Stack className="mt-2">
-            <button className="btn global-button">Publish</button>
-          </Stack>
-        </Grid>
+          </div>
+        </div>
       </Grid>
-    </Box>
+
+      <Grid item xs={12} md={3}>
+        Property Owner a good and coperative Property is situated in a good
+        place.
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        md={3}
+        display={"flex"}
+        alignItems={"center"}
+        justifyContent={"center"}
+        flexDirection={"column"}
+        gap={3}
+      >
+        <Chip size="medium" label="Excellent" color="info" />
+        <Rating size="large" value={5} />
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        md={3}
+        display={"flex"}
+        alignItems={"center"}
+        justifyContent={"center"}
+        gap={3}
+      >
+        <Button size="large" variant="outlined" color="success">
+          Approve
+        </Button>
+
+        <Button size="large" variant="outlined" color="error">
+          Rejected
+        </Button>
+
+        <Button size="large" variant="outlined">
+          Publish
+        </Button>
+      </Grid>
+    </Grid>
+    // </Box>
   );
 }

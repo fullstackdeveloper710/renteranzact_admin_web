@@ -157,9 +157,10 @@ function NavItem({ item }) {
           textTransform: "capitalize",
           fontWeight: "fontWeightMedium",
           ...(active && {
-            color: "#FFFFFF",
+            bgcolor: "#c8d736",
+            color: "#13556d",
             fontWeight: "fontWeightSemiBold",
-            bgcolor: "#13556D",
+
             height: 10,
             fontSize: 13,
           }),
@@ -175,20 +176,25 @@ function NavItem({ item }) {
             {item?.children?.length > 0 ? (
               openCollapse ? (
                 <Iconify
-                  sx={{ ml: 8, width: 20 }}
+                  sx={{ width: 20, ml: 8, transition: "all 0.5s ease-out" }}
                   icon="ic:outline-expand-less"
                 />
               ) : (
                 <Iconify
-                  sx={{ ml: 8, width: 20 }}
-                  icon="ic:outline-expand-more"
+                  icon="iconamoon:arrow-right-2-duotone"
+                  sx={{ width: 20, ml: 8, transition: "all 0.5s ease-out" }}
                 />
               )
             ) : null}
           </Box>
         </div>
       </ListItemButton>
-      <Collapse in={openCollapse} timeout="auto">
+      <Collapse
+        in={openCollapse}
+        timeout="auto"
+        translate="yes"
+        sx={{ transition: "all 0.5s ease-out" }}
+      >
         <List component="div" disablePadding>
           {item?.children?.length > 0 &&
             item?.children?.map((x, i) => {
@@ -204,10 +210,12 @@ function NavItem({ item }) {
                       color: "#13556D",
                       textTransform: "capitalize",
                       fontWeight: "fontWeightMedium",
+
                       ...(subMenuActive && {
-                        color: "#FFFFFF",
+                        bgcolor: "#c8d736",
+                        color: "#13556d",
                         fontWeight: "fontWeightSemiBold",
-                        bgcolor: "#13556D",
+
                         height: 10,
                         fontSize: 13,
                       }),

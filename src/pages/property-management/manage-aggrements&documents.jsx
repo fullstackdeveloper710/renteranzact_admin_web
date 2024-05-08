@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import Iconify from "../../components/iconify";
+import { useNavigate } from "react-router-dom";
 
 const ManageAggrementsDocuments = () => {
   const Document = () => (
@@ -27,11 +28,13 @@ const ManageAggrementsDocuments = () => {
       </CardActions>
     </Card>
   );
+  const navigate = useNavigate();
   return (
     <div className="px-5">
-      <Typography variant="h4" className="mt-2">
-        Verify Aggrements and Documents
-      </Typography>
+      <div className="d-flex align-items-center gap-3 mt-2">
+        <Iconify onClick={() => navigate(-1)} icon="zondicons:arrow-left" />
+        <Typography variant="h4">Verify Aggrements and Documents</Typography>
+      </div>
 
       <Typography className="mt-4" variant="h6">
         Aggrements

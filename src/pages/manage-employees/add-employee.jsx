@@ -8,17 +8,23 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import Iconify from "../../components/iconify";
+import { useNavigate } from "react-router-dom";
 
 const AddEmployee = () => {
+  const navigate = useNavigate();
   return (
     <div className="px-5">
       <Stack
         direction="row"
         alignItems="center"
-        justifyContent="space-between"
+        gap={2}
+        // justifyContent="center"
         className="mt-2"
       >
-        <Typography variant="h4">Add Employee</Typography>
+        <Iconify  onClick={() => navigate(-1)} icon="zondicons:arrow-left" />{" "}
+      
+        <Typography  variant="h4">Add Employee</Typography>
       </Stack>
 
       <Grid container spacing={6} className="mt-3">
@@ -43,7 +49,7 @@ const AddEmployee = () => {
             <MenuItem value={"female"}>Female</MenuItem>
           </Select>
         </Grid>
-       
+
         <Grid item xs={8} md={6}>
           <TextField fullWidth name="password" label="Password" type={"text"} />
         </Grid>

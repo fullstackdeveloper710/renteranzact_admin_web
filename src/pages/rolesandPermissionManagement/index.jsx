@@ -55,7 +55,9 @@ export default function ManageRolesAndPermission() {
         justifyContent="space-between"
         mb={5}
       >
-        <Typography className="mt-3" variant="h4">Roles & Permissions Mgt</Typography>
+        <Typography className="mt-3" variant="h4">
+          Roles & Permissions Mgt
+        </Typography>
 
         <div className="d-flex">
           <div></div>
@@ -105,7 +107,83 @@ export default function ManageRolesAndPermission() {
             <TableRow>
               <TableCell>{"Reviewer Admin"}</TableCell>
               <TableCell>
-                <p>Manage Users(Add/Edit/Delete)</p>
+                <p>
+                <b>
+                   Manage Users(Add/Edit/Delete),Manage Property
+                  <br />
+                  Listing Requests (View/Approve/Reject),Manage
+                  <br />
+                  Review & ratings (View/Approve/Remove/Publish){" "}
+                  </b> 
+                </p>
+              </TableCell>
+
+              <TableCell>
+                <Iconify icon="solar:eye-linear" />
+                &nbsp;
+                <Iconify
+                  onClick={() => setDeleteDialog(true)}
+                  icon="mingcute:delete-line"
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>{"Legal Admin"}</TableCell>
+              <TableCell>
+                <p>
+                <b> Manage Property related documents <br />
+                  (View/Approve/Reject/Request more documents)
+                  </b> 
+                </p>
+              </TableCell>
+
+              <TableCell>
+                <Iconify icon="solar:eye-linear" />
+                &nbsp;
+                <Iconify
+                  onClick={() => setDeleteDialog(true)}
+                  icon="mingcute:delete-line"
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>{"Legal Admin"}</TableCell>
+              <TableCell>
+                <p>
+                <b> Manage transactions (View/Download),Finance
+                  <br />
+                  Performance (View/Download)
+                  </b> 
+                </p>
+              </TableCell>
+
+              <TableCell>
+                <Iconify icon="solar:eye-linear" />
+                &nbsp;
+                <Iconify
+                  onClick={() => setDeleteDialog(true)}
+                  icon="mingcute:delete-line"
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>{"Super Admin"}</TableCell>
+              <TableCell>
+                <p>
+                 <b> User Management (View/Add/Edit/Delete),Manage
+                  <br />
+                  Employees(View/Add/Edit/Delete),Manage Property
+                  <br />
+                  (View/Add/Edit/Delete) Manage Roles & Permissions
+                  <br />
+                  (View/Add/Edit/Delete) Review & Rating Management <br />
+                  (View/Approve/Reject/Publish/Remove), Finance
+                  <br />
+                  Performance (View/Download),Manage Transactions
+                  <br />
+                  (View/Download),Activity Log (View)
+                  </b>
+                </p>
               </TableCell>
 
               <TableCell>

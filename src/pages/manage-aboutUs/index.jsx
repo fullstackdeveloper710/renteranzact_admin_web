@@ -5,7 +5,7 @@ import { Button, TextField, Typography } from "@mui/material";
 const ManageAboutUS = () => {
   return (
     <div className="px-5">
-      <Typography variant="h4">Manage About Us</Typography>
+      <Typography variant="h4" className="mt-3">Manage About Us</Typography>
       <div className="mt-5">
         <TextField label="Title" fullWidth />
         <div className="mt-4">
@@ -25,7 +25,7 @@ const ManageAboutUS = () => {
           />
         </div>
 
-        <Button variant="contained" size="large" className="mt-4">
+        <Button  className="global-button mt-4" variant="contained" size="large"  color="primary">
           Save
         </Button>
       </div>

@@ -57,6 +57,7 @@ const ManageBanners = () => {
         <Typography variant="h4">Banners</Typography>
         <Button
           variant="contained"
+          className="global-button"
           size="large"
           onClick={() => navigate("/add-banners")}
         >

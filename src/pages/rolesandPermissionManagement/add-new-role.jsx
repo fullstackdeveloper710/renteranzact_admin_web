@@ -14,6 +14,7 @@ import {
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Iconify from "../../components/iconify";
 const AddNewRole = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -31,17 +32,19 @@ const AddNewRole = () => {
     "Activity Logs (view)",
   ];
   console.log("--formData", formData);
+
   return (
     <div className="px-5">
       <Stack
         direction="row"
         alignItems="center"
-        justifyContent="space-between"
-        mb={5}
+       gap={3}
+      mt={3}
       >
+         <Iconify onClick={() => navigate(-1)} icon="zondicons:arrow-left" />
         <Typography variant="h4">Add New Role</Typography>
       </Stack>
-      <Grid container >
+      <Grid container mt={2} >
         <Grid item xs={12} >
           <TextField style={{width:"55%"}} name="role" label="Name" type={"text"} />
         </Grid>

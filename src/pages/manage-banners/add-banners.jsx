@@ -1,13 +1,16 @@
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import React from "react";
 import Iconify from "../../components/iconify";
+import { useNavigate } from "react-router-dom";
 
 const AddBanners = () => {
+  const navigate = useNavigate();
   return (
     <div className="px-5">
-      <Typography variant="h4" className="mt-4">
-        Add Banners
-      </Typography>
+      <div className="d-flex align-items-center gap-3 mt-3">
+        <Iconify icon="zondicons:arrow-left" onClick={() => navigate(-1)} />
+        <Typography variant="h4">Add Banners</Typography>
+      </div>
 
       <Grid container spacing={4} mt={2}>
         <Grid item md={6}>
@@ -23,6 +26,7 @@ const AddBanners = () => {
           <Button
             component="label"
             role={undefined}
+            className="global-button"
             fullWidth
             variant="outlined"
             tabIndex={-1}
@@ -33,7 +37,7 @@ const AddBanners = () => {
           </Button>
         </Grid>
       </Grid>
-      <Button variant="contained" size="large" className="mt-4">
+      <Button className="global-button mt-4" variant="contained" size="large">
         Save
       </Button>
     </div>

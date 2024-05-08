@@ -89,13 +89,14 @@ const PropertyManagement = () => {
             }
           />
 
-          <Button
+          {/* <Button
+           className="global-button"
             variant="contained"
             size="large"
             onClick={() => navigate("/add-property")}
           >
             Add
-          </Button>
+          </Button> */}
         </div>
         <Tabs
           className="mt-3"

@@ -38,7 +38,7 @@ const ManageSocialMediaLinks = () => {
     <div className="px-5">
       <div className="d-flex justify-content-between align-items-center w-100 mt-3">
         <Typography variant="h4">Social Media Links</Typography>
-        <Button variant="contained" size="large" onClick={( )=>navigate('/add-social-media-links')}>
+        <Button className="global-button" variant="contained" size="large" onClick={( )=>navigate('/add-social-media-links')}>
           Add
         </Button>
       </div>

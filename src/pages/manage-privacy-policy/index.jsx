@@ -3,11 +3,9 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import { Button, Typography } from "@mui/material";
 
 const ManagePrivacyPolicy = () => {
-
-
   return (
     <div className="px-5">
-      <Typography variant="h4">Manage Privacy Policy</Typography>
+      <Typography className="mt-3" variant="h4">Manage Privacy Policy</Typography>
       <div className="mt-5">
         <CKEditor
           editor={ClassicEditor}
@@ -24,7 +22,11 @@ const ManagePrivacyPolicy = () => {
           }}
         />
 
-        <Button variant="contained" size="large" className="mt-4">
+        <Button
+          variant="contained"
+          size="large"
+          className=" global-button mt-4"
+        >
           Save
         </Button>
       </div>

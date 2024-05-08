@@ -45,9 +45,8 @@ export default function UserTableToolbar({
       ) : (
         <>
         <div>
-
-
           <OutlinedInput
+
             value={filterName}
             onChange={onFilterName}
             placeholder="Search user..."
@@ -55,7 +54,7 @@ export default function UserTableToolbar({
               <InputAdornment position="start">
                 <Iconify
                   icon="eva:search-fill"
-                  sx={{ color: "text.disabled", width: 20, height: 20 }}
+                  // sx={{ color: "text.disabled", width: 20, height: 20 }}
                 />
               </InputAdornment>
             }
@@ -75,7 +74,7 @@ export default function UserTableToolbar({
             </Select>
           </FormControl>
         </div>
-          <Button
+          {/* <Button
             className="global-button"
             variant="contained"
             color="inherit"
@@ -83,7 +82,7 @@ export default function UserTableToolbar({
             onClick={() => navigate("/manage-users/add-user")}
           >
             Add User
-          </Button>
+          </Button> */}
         </>
       )}
 

@@ -43,12 +43,8 @@ const OnboardedProperties = ({ tableColumns, data, onClick }) => {
                 <Iconify onClick={onClick} icon="mingcute:delete-line" />
                 &nbsp;
                 <Iconify icon="bx:edit" />
-                &nbsp;
-                <Iconify
-                  label="Manage aggrements"
-                  icon="mingcute:documents-line"
-                  onClick={() => navigate("/manage-aggrements-documents")}
-                />
+               
+              
               </TableCell>
             </TableRow>
           );

@@ -20,6 +20,7 @@ const ManageCareers = () => {
           onClick={() => navigate("/add-careers")}
           size="large"
           variant="contained"
+          className="global-button"
         >
           Add
         </Button>

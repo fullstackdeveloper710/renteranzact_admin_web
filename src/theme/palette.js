@@ -5,7 +5,7 @@ import { alpha } from '@mui/material/styles';
 // SETUP COLORS
 
 export const grey = {
-  0: '#FFFFFF',
+  0: '#13556d',
   100: '#F9FAFB',
   200: '#F4F6F8',
   300: '#DFE3E8',
@@ -20,7 +20,7 @@ export const grey = {
 export const primary = {
   lighter: '#D0ECFE',
   light: '#73BAFB',
-  main: '#13556D',
+  main: '#c8d736',
   dark: '#0C44AE',
   darker: '#042174',
   contrastText: '#FFFFFF',
@@ -68,12 +68,12 @@ export const error = {
   main: '#FF5630',
   dark: '#B71D18',
   darker: '#7A0916',
-  contrastText: '#FFFFFF',
+  contrastText: '#13556d',
 };
 
 export const common = {
   black: '#000000',
-  white: '#FFFFFF',
+  white: '#13556d',
 };
 
 export const action = {

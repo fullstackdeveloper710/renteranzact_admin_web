@@ -1,11 +1,18 @@
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import React from "react";
 import Iconify from "../../components/iconify";
+import { useNavigate } from "react-router-dom";
 
 const AddSocialMediaLinks = () => {
+  const navigate = useNavigate()
   return (
     <div className="px-5">
-      <Typography variant="h4">Add Social Media Links</Typography>
+      <div className="d-flex align-items-center gap-3 mt-3">
+        <Iconify icon="zondicons:arrow-left" onClick={() => navigate(-1)} />
+        <Typography  variant="h4">
+          Add Social Media Links
+        </Typography>
+      </div>
       <Grid container spacing={4} mt={2}>
         <Grid item md={6}>
           <TextField fullWidth label="Title" />
@@ -28,7 +35,7 @@ const AddSocialMediaLinks = () => {
           </Button>
         </Grid>
       </Grid>
-      <Button variant="contained" size="large" className="mt-3">
+      <Button className="global-button mt-4" variant="contained" size="large">
         Save
       </Button>
     </div>

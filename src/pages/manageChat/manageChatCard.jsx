@@ -5,17 +5,17 @@ import { useNavigate } from "react-router-dom";
 export default function ManageChatCard() {
     const navigate = useNavigate()
   return (
-    <Box onClick = {()=>navigate("/user-chat")} sx={{ flexGrow: 1,cursor:"pointer" }} className="p-2 mt-4">
-      <Grid container className="align-items-center">
-        <Grid xs={2}>
+    <Box sx={{cursor : "pointer"}} onClick = {()=>navigate("/user-chat")}>
+      <Grid container spacing={4} display={'flex'} justifyContent={'space-between'} alignItems={'center'} mt={3}>
+        <Grid item xs={12} md={2}>
           <img src="./images/profile.png" alt="profileimage" />
         </Grid>
-        <Grid xs={2}>
+        <Grid item xs={12} md={2}>
           <Typography variant="subtitle1">
             David, Lagos <br />LAndlord
           </Typography>
         </Grid>
-        <Grid xs={8}>
+        <Grid item xs={12} md={8}>
           <Stack className="ps-2 text-center">
             <Typography>
               It is a long established fact that a reader will be distracted by

@@ -8,15 +8,21 @@ import {
   Grid,
   TextField,
   Typography,
-} from '@mui/material';
-import { Icon } from '@iconify/react';
-import Rating from '@mui/material/Rating';
+} from "@mui/material";
+import { Icon } from "@iconify/react";
+import Rating from "@mui/material/Rating";
+import Iconify from "../../components/iconify";
+import { useNavigate } from "react-router-dom";
 const UserDetails = () => {
+  const navigate=useNavigate()
   return (
     <div className="px-5">
+    <div className="d-flex align-items-center gap-3">
+      <Iconify onClick={() => navigate(-1)} icon="zondicons:arrow-left" />{" "}
       <Typography variant="h4" py={3}>
-        Manage Users {'>>'} David
+        Manage Users {">>"} David
       </Typography>
+      </div>  
       <Card style={{ padding: 15 }}>
         <Typography variant="h6">Personal Details</Typography>
         <Grid container spacing={4} mt={1}>
@@ -87,11 +93,11 @@ const UserDetails = () => {
           <Grid item md={4}>
             <TextField fullWidth label="Relationship with Kin" />
           </Grid>
-          <Grid item md={2} boxShadow={'revert'}>
+          <Grid item md={2} boxShadow={"revert"}>
             <Card sx={{ minWidth: 50 }}>
               <CardContent
                 className="d-flex justify-content-center align-items-center"
-                style={{ background: '#00800040' }}
+                style={{ background: "#00800040" }}
               >
                 <Icon fontSize={40} icon="material-symbols:file-copy" />
               </CardContent>
@@ -120,14 +126,14 @@ const UserDetails = () => {
               </div>
               <CardActions>
                 <div
-                  style={{ width: '100%' }}
+                  style={{ width: "100%" }}
                   className="d-flex justify-content-between align-items-center"
                 >
                   <Typography variant="body2">
                     3 BHK Flat, Fully Furnished
                     <div style={{ fontSize: 15 }}>
-                      <Icon icon="material-symbols:location-on-rounded" /> th floor, Tower A, Spaze
-                      iTechPark, Sector-49, Lagos
+                      <Icon icon="material-symbols:location-on-rounded" /> th
+                      floor, Tower A, Spaze iTechPark, Sector-49, Lagos
                     </div>
                   </Typography>
                   <Typography variant="body2">Rent: NGN 5000/ Month</Typography>
@@ -149,15 +155,15 @@ const UserDetails = () => {
               </div>
               <CardActions>
                 <div
-                  style={{ width: '100%' }}
+                  style={{ width: "100%" }}
                   className="d-flex justify-content-between align-items-center"
                 >
                   <Typography variant="body2">
                     3 BHK Flat, Fully Furnished
                     <div style={{ fontSize: 15 }}>
-                      {' '}
-                      <Icon icon="material-symbols:location-on-rounded" /> th floor, Tower A, Spaze
-                      iTechPark, Sector-49, Lagos
+                      {" "}
+                      <Icon icon="material-symbols:location-on-rounded" /> th
+                      floor, Tower A, Spaze iTechPark, Sector-49, Lagos
                     </div>
                   </Typography>
                   <Typography variant="body2">Rent: NGN 5000/ Month</Typography>
@@ -180,15 +186,15 @@ const UserDetails = () => {
               <CardContent></CardContent>
               <CardActions>
                 <div
-                  style={{ width: '100%' }}
+                  style={{ width: "100%" }}
                   className="d-flex justify-content-between align-items-center"
                 >
                   <Typography variant="body2">
                     3 BHK Flat, Fully Furnished
                     <div style={{ fontSize: 15 }}>
-                      {' '}
-                      <Icon icon="material-symbols:location-on-rounded" /> th floor, Tower A, Spaze
-                      iTechPark, Sector-49, Lagos
+                      {" "}
+                      <Icon icon="material-symbols:location-on-rounded" /> th
+                      floor, Tower A, Spaze iTechPark, Sector-49, Lagos
                     </div>
                   </Typography>
                   <Typography variant="body2">Rent: NGN 5000/ Month</Typography>
@@ -198,13 +204,24 @@ const UserDetails = () => {
           </Grid>
         </Grid>
       </Card>
-
       <div className="d-flex justify-content-center align-items-center mt-3">
-        <Button size="medium" type="submit" variant="contained" color="inherit">
+        <Button
+          size="medium"
+          type="submit"
+          variant="contained"
+          className="global-button"
+          color="inherit"
+        >
           Blacklist
         </Button>
         &nbsp; &nbsp;
-        <Button size="medium" type="submit" variant="contained" color="inherit">
+        <Button
+          size="medium"
+          type="submit"
+          variant="contained"
+          className="global-button"
+          color="inherit"
+        >
           Suspend
         </Button>
       </div>

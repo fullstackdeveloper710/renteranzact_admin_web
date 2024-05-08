@@ -2,6 +2,7 @@ import { Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import Iconify from "../../components/iconify/iconify";
 import { useNavigate } from "react-router-dom";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function ChatAsPerUser() {
   const naviagte = useNavigate();
@@ -9,12 +10,8 @@ export default function ChatAsPerUser() {
 
   return (
     <div className="px-5">
-      <div className="d-flex align-items-center mt-3">
-        <Iconify
-          icon="ion:arrow-back"
-          sx={{ color: "text.disabled", width: 20, height: 20 }}
-          onClick={() => naviagte(-1)}
-        />
+      <div className="d-flex align-items-center mt-3 gap-2">
+        <Iconify icon="zondicons:arrow-left" onClick={() => naviagte(-1)} />
         <Typography variant="h4" className="ms-2">
           David Lagos
         </Typography>
@@ -25,11 +22,7 @@ export default function ChatAsPerUser() {
             <div className="ms-2 text-center" style={{ width: "100%" }}>
               <h4>08/11/23</h4>
             </div>
-            <img
-              src="./images/profile.png"
-              style={{ height: "auto", width: "100px" }}
-              alt="profileimage"
-            />
+            <Icon fontSize={50} size icon="mingcute:user-4-line" className="mt-2" />
             <Grid
               item
               xs={8}
@@ -70,11 +63,7 @@ export default function ChatAsPerUser() {
                 </Typography>
               </div>
             </Grid>
-            <img
-              src="./images/profile.png"
-              style={{ height: "auto", width: "100px" }}
-              alt="profileimage"
-            />
+            <Icon fontSize={50} size icon="mingcute:user-4-line" className="mt-2" />
           </Grid>
         </>
       ))}

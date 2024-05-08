@@ -10,6 +10,7 @@ import Icon from "../../components/iconify";
 import { faker } from "@faker-js/faker";
 import { useState } from "react";
 import PropertyDetails from "./PropertyDetails";
+import { useNavigate } from "react-router-dom";
 const tableColumns = [
   "Landlord/PM",
   "Property",
@@ -20,6 +21,7 @@ const tableColumns = [
 ];
 const PropertyListingRequest = () => {
   const [showPropertyDetails, setShowPropertyDetails] = useState(false);
+  const navigate = useNavigate()
   const data = Array(10).fill({
     landlord: faker.person.firstName(),
     property: faker.location.city(),
@@ -57,6 +59,11 @@ const PropertyListingRequest = () => {
                 &nbsp;
                 <Icon icon="mdi:play" />
                 &nbsp;
+                <Icon
+                  label="Manage aggrements"
+                  icon="mingcute:documents-line"
+                  onClick={() => navigate("/manage-aggrements-documents")}
+                />
               </TableCell>
             </TableRow>
           );

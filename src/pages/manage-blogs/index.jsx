@@ -69,8 +69,13 @@ const ManageBlogs = () => {
         flexDirection={"row"}
         alignItems={"center"}
       >
+        <div>
+       
         <Typography variant="h4">Blogs</Typography>
+
+        </div>
         <Button
+        className="global-button"
           onClick={() => navigate("/add-blogs")}
           size="medium"
           variant="contained"

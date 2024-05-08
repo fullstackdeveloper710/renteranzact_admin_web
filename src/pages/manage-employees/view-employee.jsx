@@ -56,7 +56,7 @@ const ViewEmployee = () => {
         </Grid>
       </Grid>
 
-      <Button variant="contained" className="mt-3">Save</Button>
+      <Button variant="contained" className="global-button mt-3">Save</Button>
     </div>
   );
 };

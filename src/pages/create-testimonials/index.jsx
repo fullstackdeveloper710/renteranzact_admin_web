@@ -34,11 +34,12 @@ const Testimonials = () => {
   const navigate = useNavigate();
   return (
     <div className="px-5">
-      <div className="d-flex justify-content-between align-items-center w-100 mt-3">
+      <div className="d-flex justify-content-between align-items-center mt-3">
         <Typography variant="h4">Testimonials</Typography>
         <Button
           onClick={() => navigate("/add-testimonials")}
           size="large"
+          className="global-button"
           variant="contained"
         >
           Add
