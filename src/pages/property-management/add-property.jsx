@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import * as React from "react";
 import Pricing from "./add-property-forms/pricing";
 import Amenities from "./add-property-forms/amenities";
@@ -48,7 +48,7 @@ const AddProperty = () => {
   };
 
   const Step = ({ title, status }) => (
-    <Box sx={{ width: 300, p: 3 }} display={"flex"} gap={2}>
+    <Box sx={{ height: 100, p: 3 }} display={"flex"} gap={2}>
       <div
         style={
           !status
@@ -77,30 +77,42 @@ const AddProperty = () => {
         justifyContent="space-between"
         mb={5}
       >
-        <Typography variant="h4" className="mt-3">Add Property</Typography>
+        <Typography variant="h4" className="mt-3">
+          Add Property
+        </Typography>
       </Stack>
-      <Box
-        display={"flex"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-        width={"100%"}
+      <Grid
+        container
+        spacing={4}
+        // display={"flex"}
+        // justifyContent={"space-between"}
+        // alignItems={"center"}
         sx={{ mt: 2 }}
       >
         {steps.map((x, i) => {
           return (
-            <div
-              onClick={() => setIsActive(i)}
-              style={x.status ? { background: "#e6f5f6" } : {}}
-              className={i === isActive ? "box-stepper-scale" : "stepper-step"}
-            >
-              <Step title={x.title} key={i} status={x.status} />
-            </div>
+            <Grid item md={3} sm={6} xs={12}>
+              <div
+                onClick={() => setIsActive(i)}
+                style={x.status ? { background: "#e6f5f6" } : {}}
+                className={
+                  i === isActive ? "box-stepper-scale" : "stepper-step"
+                }
+              >
+                <Step title={x.title} key={i} status={x.status} />
+              </div>
+            </Grid>
           );
         })}
-      </Box>
+      </Grid>
       <div className="mt-3">{renderConditionallyComponent(isActive)}</div>
       <div className="d-flex justify-content-center align-items-center mt-4">
-        <Button  className="global-button" size="large" variant="contained" onClick={handleNext}>
+        <Button
+          className="global-button"
+          size="large"
+          variant="contained"
+          onClick={handleNext}
+        >
           {isActive > 2 ? "Post This Property" : "Next"}
         </Button>
       </div>

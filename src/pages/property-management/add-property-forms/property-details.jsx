@@ -162,6 +162,20 @@ const PropertyDetails = () => {
           </FormControl>
         </Grid>
       </Grid>
+      <Typography variant="h5" className="mt-3">
+        Landlord Information
+      </Typography>
+      <Grid container spacing={4} className="mt-1">
+        <Grid item md={6}>
+          <TextField fullWidth label="Name" />
+        </Grid>
+        <Grid item md={6}>
+          <TextField fullWidth label="Email" />
+        </Grid>
+        <Grid item md={6}>
+          <TextField fullWidth label="Contact" />
+        </Grid>
+      </Grid>
     </div>
   );
 };

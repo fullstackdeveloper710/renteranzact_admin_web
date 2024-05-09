@@ -46,7 +46,7 @@ export default function ManageTransactions() {
           alignItems={"center"}
           justify={"space-evenly"}
         >
-          <Grid item xs={2} md={2}>
+          <Grid item xs={2} md={3}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
               <Select
@@ -62,7 +62,7 @@ export default function ManageTransactions() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={2} md={3}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
               <Select
@@ -78,25 +78,30 @@ export default function ManageTransactions() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={2} mb={1}>
+          <Grid item xs={2} md={3} mb={1}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoContainer components={["DatePicker"]}>
-                <DatePicker label="11/11/23" />
+              <DemoContainer
+                sx={{ overflow: "hidden" }}
+                components={["DatePicker"]}
+              >
+                <DatePicker
+                  sx={{ width: "100%", overflow: "hidden" }}
+                  label="11/11/23"
+                />
               </DemoContainer>
             </LocalizationProvider>
           </Grid>
-          <Grid item xs={2}>
-          <Link>Clear Filters</Link>
+          <Grid item xs={1} md={1}>
+            <Link>Clear Filters</Link>
           </Grid>
-          {/* <Grid item xs={1}></Grid> */}
-          <Grid item xs={2}>
+          <Grid item xs={6} md={1} sm={4}>
             <Button
               variant="contained"
               color="inherit"
               className="global-button"
               startIcon={<Iconify icon="eva:download-fill" />}
-              size="large"
-             fullWidth
+              size="small"
+              fullWidth
             >
               Download
             </Button>

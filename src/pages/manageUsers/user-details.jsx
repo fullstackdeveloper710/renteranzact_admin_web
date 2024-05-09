@@ -1,15 +1,9 @@
 import {
   Box,
   Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardHeader,
-  CardMedia,
   Collapse,
   FormControl,
   Grid,
-  IconButton,
   InputAdornment,
   InputLabel,
   MenuItem,
@@ -17,11 +11,11 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-
 import Iconify from "../../components/iconify";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import CollapseWithTitle from "../../components/Collapse";
+import { Icon } from "@iconify/react/dist/iconify.js";
 const UserDetails = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -36,13 +30,13 @@ const UserDetails = () => {
   const [landlordCollapse, setLandlordCollapse] = useState(true);
   return (
     <div className="px-5">
-      <div className="d-flex align-items-center gap-3">
-        <Iconify onClick={() => navigate(-1)} icon="zondicons:arrow-left" />
+      <div className="d-flex align-items-center gap-4">
+        <Icon onClick={() => navigate(-1)} icon="zondicons:arrow-left" cursor={'pointer'} />
         <Typography variant="h4" py={3}>
           User Detail
         </Typography>
       </div>
-      <Grid container spacing={4}>
+      <Grid container spacing={4} className="mt-2">
         <Grid item md={12} xs={12}>
           <Grid container spacing={6}>
             <Grid item md={6} xs={12}>
@@ -63,7 +57,6 @@ const UserDetails = () => {
                   width={167}
                   display={"flex"}
                   justifyContent={"center"}
-                 
                   alignItems={"center"}
                   borderRadius={"50%"}
                   border={"1px solid white"}
@@ -382,7 +375,7 @@ const UserDetails = () => {
                     InputProps={{
                       endAdornment: (
                         <InputAdornment position="end">
-                          <Button size="small" variant="contained">
+                          <Button    className="global-button" size="small" variant="contained">
                             upload
                           </Button>
                         </InputAdornment>

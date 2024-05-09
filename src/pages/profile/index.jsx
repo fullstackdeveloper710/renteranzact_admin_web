@@ -57,7 +57,7 @@ const Profile = () => {
         </Grid>
       </Grid>
       <div className="d-flex mt-4 gap-2">
-        <Button variant="contained">Save</Button>
+        <Button className="global-button" variant="contained">Save</Button>
       </div>
       </Card>
 

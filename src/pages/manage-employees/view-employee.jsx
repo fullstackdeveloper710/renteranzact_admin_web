@@ -1,5 +1,5 @@
 import {
-    Button,
+  Button,
   FormControl,
   Grid,
   InputLabel,
@@ -41,22 +41,25 @@ const ViewEmployee = () => {
           <FormControl fullWidth className="mt-2">
             <InputLabel id="demo-simple-select-label">Role</InputLabel>
             <Select
-            fullWidth
+              fullWidth
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               // value={age}
+              value={'All'}
               label="Role"
             >
-              <MenuItem value={10}>All</MenuItem>
-              <MenuItem value={10}>Property Managers</MenuItem>
-              <MenuItem value={20}>Landlords</MenuItem>
-              <MenuItem value={30}>Renters</MenuItem>
+              <MenuItem value={'All'}>All</MenuItem>
+              <MenuItem value={"reviewerAdmin"}>Reviewer Admin</MenuItem>
+              <MenuItem value={"financeAdmin"}>Finance Admin</MenuItem>
+              <MenuItem value={"legalAdmin"}>Legal Admin</MenuItem>
             </Select>
           </FormControl>
         </Grid>
       </Grid>
 
-      <Button variant="contained" className="global-button mt-3">Save</Button>
+      <Button variant="contained" className="global-button mt-3">
+        Save
+      </Button>
     </div>
   );
 };

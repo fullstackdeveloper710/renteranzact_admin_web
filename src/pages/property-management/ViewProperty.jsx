@@ -13,6 +13,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from "react-router-dom";
+import { Document } from "./manage-aggrements&documents";
 const ViewProperty = () => {
   const navigate = useNavigate();
   return (
@@ -310,6 +311,15 @@ const ViewProperty = () => {
               </Grid>
               <Grid item md={4}></Grid>
             </Grid>
+          </div>
+          <Typography className="mt-4" variant="h5">
+            Documents
+          </Typography>
+
+          <div className="d-flex align-item-center mt-3 gap-5">
+            <Document />
+            <Document />
+            <Document />
           </div>
         </Grid>
       </Grid>

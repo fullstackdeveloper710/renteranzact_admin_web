@@ -104,6 +104,10 @@ export const PropertyRequestDetail = lazy(() =>
   import("../pages/property-management/PropertyDetails")
 );
 
+export const LeaseAggrements = lazy(() =>
+  import("../pages/property-management/lease-aggrements")
+);
+
 const LoadDynamicComponent = (object) => {
   const Component = lazy(() => import(`${object}`));
   return <Component />;
@@ -313,6 +317,10 @@ export default function Router() {
         {
           element: <PropertyRequestDetail />,
           path: "property-request-detail",
+        },
+        {
+          element: <LeaseAggrements />,
+          path: "lease-aggrements",
         },
       ],
     },

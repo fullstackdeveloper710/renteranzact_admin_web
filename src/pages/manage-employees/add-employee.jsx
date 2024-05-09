@@ -1,7 +1,9 @@
 import {
   Button,
   Container,
+  FormControl,
   Grid,
+  InputLabel,
   MenuItem,
   Select,
   Stack,
@@ -22,9 +24,8 @@ const AddEmployee = () => {
         // justifyContent="center"
         className="mt-2"
       >
-        <Iconify  onClick={() => navigate(-1)} icon="zondicons:arrow-left" />{" "}
-      
-        <Typography  variant="h4">Add Employee</Typography>
+        <Iconify onClick={() => navigate(-1)} icon="zondicons:arrow-left" />{" "}
+        <Typography variant="h4">Add Employee</Typography>
       </Stack>
 
       <Grid container spacing={6} className="mt-3">
@@ -38,16 +39,19 @@ const AddEmployee = () => {
           <TextField fullWidth name="mobile" label="Mobile" type={"text"} />
         </Grid>
         <Grid item xs={8} md={6}>
-          <Select
-            fullWidth
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={"male"}
-            label="Role"
-          >
-            <MenuItem value={"male"}>Male</MenuItem>
-            <MenuItem value={"female"}>Female</MenuItem>
-          </Select>
+          <FormControl fullWidth>
+            <InputLabel>Gender</InputLabel>
+            <Select
+              fullWidth
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={"male"}
+              label="Role"
+            >
+              <MenuItem value={"male"}>Male</MenuItem>
+              <MenuItem value={"female"}>Female</MenuItem>
+            </Select>
+          </FormControl>
         </Grid>
 
         <Grid item xs={8} md={6}>
@@ -62,17 +66,20 @@ const AddEmployee = () => {
           />
         </Grid>
         <Grid item xs={8} md={6}>
-          <Select
-            fullWidth
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={"reviewerAdmin"}
-            label="Role"
-          >
-            <MenuItem value={"reviewerAdmin"}>Reviewer Admin</MenuItem>
-            <MenuItem value={"financeAdmin"}>Finance Admin</MenuItem>
-            <MenuItem value={"legalAdmin"}>Legal Admin</MenuItem>
-          </Select>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Role</InputLabel>
+            <Select
+              fullWidth
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={"reviewerAdmin"}
+              label="Role"
+            >
+              <MenuItem value={"reviewerAdmin"}>Reviewer Admin</MenuItem>
+              <MenuItem value={"financeAdmin"}>Finance Admin</MenuItem>
+              <MenuItem value={"legalAdmin"}>Legal Admin</MenuItem>
+            </Select>
+          </FormControl>
         </Grid>
       </Grid>
 

@@ -11,7 +11,6 @@ export const routeConfig = [
   },
   {
     title: "Manage Users",
-    // link: "manage-users",
     icon: <Icon icon="mdi:users" />,
     path: "/src/pages/manageUsers/index",
     role: ["superAdmin", "reviewerAdmin"],
@@ -52,6 +51,14 @@ export const routeConfig = [
         title: "Add Property",
         link: "add-property",
         path: "./pages/add-property",
+        icon: <Icon icon="formkit:fastforward" />,
+        role: ["superAdmin", "reviewerAdmin", "legalAdmin"],
+        show: true,
+      },
+      {
+        title: "Lease Aggrements",
+        link: "lease-aggrements",
+        path: "./pages/property-managements/lease-aggrements",
         icon: <Icon icon="formkit:fastforward" />,
         role: ["superAdmin", "reviewerAdmin", "legalAdmin"],
         show: true,

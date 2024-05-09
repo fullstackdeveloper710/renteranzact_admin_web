@@ -15,7 +15,6 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 
 // ----------------------------------------------------------------------
 
@@ -59,17 +58,17 @@ export default function UserTableToolbar({
             }
           />&nbsp;&nbsp;&nbsp;&nbsp;
           <FormControl sx={{ width: 300 }}>
-            <InputLabel id="demo-simple-select-label">Filter Users</InputLabel>
+            <InputLabel id="demo-simple-select-label">Filter</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              // value={age}
+              value={'all'}
               label="Age"
             >
-                <MenuItem value={10}>All</MenuItem>
-              <MenuItem value={10}>Property Managers</MenuItem>
-              <MenuItem value={20}>Landlords</MenuItem>
-              <MenuItem value={30}>Renters</MenuItem>
+                <MenuItem value={'all'}>All</MenuItem>
+              <MenuItem value={'propertyManager'}>Property Managers</MenuItem>
+              <MenuItem value={'landlords'}>Landlords</MenuItem>
+              <MenuItem value={'renters'}>Renters</MenuItem>
             </Select>
           </FormControl>
         </div>

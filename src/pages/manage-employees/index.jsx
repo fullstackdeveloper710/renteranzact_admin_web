@@ -198,7 +198,7 @@ export default function UserPage() {
                     {moment(x.joiningDate).format("YYYY/DD/MM")}
                   </TableCell>
                   <TableCell>
-                    {i % 2 === 0 ? "Property Manager" : "Landlord"}
+                    {i % 2 === 0 ? "Reveiwer Admin" : "Legal Finance Admin"}
                   </TableCell>
                   <TableCell>
                     {i % 2 === 0 ? "Verified" : "Not Verified"}

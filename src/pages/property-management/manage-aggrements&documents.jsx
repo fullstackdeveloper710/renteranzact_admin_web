@@ -1,33 +1,24 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Button, Card, CardActions, Grid, Typography } from "@mui/material";
 import React from "react";
 import Iconify from "../../components/iconify";
 import { useNavigate } from "react-router-dom";
+export const Document = () => (
+  <Card>
+    <img src={"/images/pdf.png"} style={{ height: 200, width: "100%" }} />
 
+    <CardActions>
+      <Button size="small">
+        <Iconify icon="icon-park-outline:preview-open" />
+        &nbsp; Preview
+      </Button>
+      <Button size="small">
+        <Iconify icon="material-symbols-light:download-sharp" />
+        &nbsp; Download
+      </Button>
+    </CardActions>
+  </Card>
+);
 const ManageAggrementsDocuments = () => {
-  const Document = () => (
-    <Card>
-      <img src={"/images/pdf.png"} style={{ height: 200, width: "100%" }} />
-
-      <CardActions>
-        <Button size="small">
-          <Iconify icon="icon-park-outline:preview-open" />
-          &nbsp; Preview
-        </Button>
-        <Button size="small">
-          <Iconify icon="material-symbols-light:download-sharp" />
-          &nbsp; Download
-        </Button>
-      </CardActions>
-    </Card>
-  );
   const navigate = useNavigate();
   return (
     <div className="px-5">
@@ -65,7 +56,7 @@ const ManageAggrementsDocuments = () => {
         </Grid>
       </Grid>
       <div className="d-flex justify-content-center align-items-center mt-5 gap-3">
-        <Button size="medium" variant="contained">
+        <Button className="global-button" size="medium" variant="contained">
           <Iconify icon="fluent-mdl2:check-mark" />
           &nbsp; Approve
         </Button>
