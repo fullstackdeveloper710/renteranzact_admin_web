@@ -77,7 +77,7 @@ const AddProperty = () => {
         justifyContent="space-between"
         mb={5}
       >
-        <Typography variant="h4">Add Property</Typography>
+        <Typography variant="h4" className="mt-3">Add Property</Typography>
       </Stack>
       <Box
         display={"flex"}

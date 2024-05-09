@@ -104,7 +104,7 @@ const PropertyManagement = () => {
           onChange={handleChange}
           value={selectedTabs}
         >
-          <Tab label="Onboarded Properties" />
+          <Tab label="Onboarded Properties"/>
           <Tab label="Property Listing Requestes" />
         </Tabs>
 

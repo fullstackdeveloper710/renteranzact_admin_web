@@ -62,11 +62,18 @@ export default function UserTableRow({
         <TableCell>{mobile}</TableCell>
 
         <TableCell align="left">
-          {isVerified ? "Property Manager" : "Landlord"}
+          {name.startsWith("A")
+            ? "Property Manager"
+            : name.startsWith("D")
+            ? "Landlord"
+            : name.startsWith("B")
+            ? "Renter"
+            : "Landlord"}
         </TableCell>
 
         <TableCell>
           <Switch
+            color="primary"
             onChange={(e, checked) => {
               setDisableUser(true);
               managePopupText(checked);
@@ -79,7 +86,17 @@ export default function UserTableRow({
             <Iconify icon="eva:more-vertical-fill" />
           </IconButton> */}
           <Iconify
-            onClick={() => navigate("/manage-users/user-details")}
+            onClick={() =>
+              navigate("/manage-users/user-details", {
+                state: name.startsWith("A")
+                  ? "Property Manager"
+                  : name.startsWith("D")
+                  ? "Landlord"
+                  : name.startsWith("B")
+                  ? "Renter"
+                  : "Landlord",
+              })
+            }
             icon="solar:eye-linear"
           />
           &nbsp;

@@ -62,10 +62,6 @@ export default function PropertyDetailCard() {
         <Button size="large" variant="outlined" color="error">
           Rejected
         </Button>
-
-        <Button size="large" variant="outlined">
-          Publish
-        </Button>
       </Grid>
     </Grid>
     // </Box>

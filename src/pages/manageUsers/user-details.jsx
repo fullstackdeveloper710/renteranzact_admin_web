@@ -1,228 +1,435 @@
 import {
+  Box,
   Button,
   Card,
   CardActions,
   CardContent,
   CardHeader,
   CardMedia,
+  Collapse,
+  FormControl,
   Grid,
+  IconButton,
+  InputAdornment,
+  InputLabel,
+  MenuItem,
+  Select,
   TextField,
   Typography,
 } from "@mui/material";
-import { Icon } from "@iconify/react";
-import Rating from "@mui/material/Rating";
+
 import Iconify from "../../components/iconify";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import CollapseWithTitle from "../../components/Collapse";
 const UserDetails = () => {
-  const navigate=useNavigate()
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [collapsePersonalInformation, setCollapsePersonalInformation] =
+    useState(true);
+
+  const [addressInformationCollapse, setAddressInformationCollapse] =
+    useState(true);
+  const [employementDetailsCollapse, setEmployementDetailsCollapse] =
+    useState(true);
+  const [kinDetailsCollapse, setKinDetailsCollapse] = useState(true);
+  const [landlordCollapse, setLandlordCollapse] = useState(true);
   return (
     <div className="px-5">
-    <div className="d-flex align-items-center gap-3">
-      <Iconify onClick={() => navigate(-1)} icon="zondicons:arrow-left" />{" "}
-      <Typography variant="h4" py={3}>
-        Manage Users {">>"} David
-      </Typography>
-      </div>  
-      <Card style={{ padding: 15 }}>
-        <Typography variant="h6">Personal Details</Typography>
-        <Grid container spacing={4} mt={1}>
-          <Grid item md={4}>
-            <TextField fullWidth label="Name" />
-          </Grid>
-          <Grid item md={4}>
-            <TextField fullWidth label="Email" />
-          </Grid>
-          <Grid item md={4}>
-            <TextField fullWidth label="Mobile" />
-          </Grid>
-          <Grid item md={4}>
-            <TextField type="number" fullWidth label="No of Occupant" />
-          </Grid>
-          <Grid item md={4}>
-            <TextField fullWidth label="Maritial Status" />
-          </Grid>
-          <Grid item md={4}>
-            <TextField fullWidth label="Age" />
-          </Grid>
-          <Grid item md={6}>
-            <TextField fullWidth label="Permanent Address" />
-          </Grid>
-          <Grid item md={6}>
-            <TextField fullWidth label="Previous Address" />
-          </Grid>
-        </Grid>
-        <Typography mt={2}>Previous Landlord Details</Typography>
-        <Grid container spacing={4} mt={1}>
-          <Grid item md={6}>
-            <TextField fullWidth label="Name" />
-          </Grid>
-          <Grid item md={6}>
-            <TextField fullWidth label="Address" />
-          </Grid>
-        </Grid>
-      </Card>
-      <Card style={{ marginTop: 20, padding: 15 }}>
-        <Typography variant="h6">Employement Details</Typography>
-        <Grid container spacing={4} mt={1}>
-          <Grid item md={4}>
-            <TextField fullWidth label="Employement Status" />
-          </Grid>
-          <Grid item md={4}>
-            <TextField fullWidth label="Employer's Name" />
-          </Grid>
-          <Grid item md={4}>
-            <TextField fullWidth label="Address" />
-          </Grid>
-          <Grid item md={4}>
-            <TextField fullWidth label="Occupation" />
-          </Grid>
-        </Grid>
-      </Card>
-      <Card style={{ marginTop: 20, padding: 15 }}>
-        <Typography>Kin Details</Typography>
-        <Grid container spacing={4} mt={1}>
-          <Grid item md={4}>
-            <TextField fullWidth label="Name" />
-          </Grid>
-          <Grid item md={4}>
-            <TextField fullWidth label="Phone Number" />
-          </Grid>
-          <Grid item md={4}>
-            <TextField fullWidth label="Email" />
-          </Grid>
-          <Grid item md={4}>
-            <TextField fullWidth label="Relationship with Kin" />
-          </Grid>
-          <Grid item md={2} boxShadow={"revert"}>
-            <Card sx={{ minWidth: 50 }}>
-              <CardContent
-                className="d-flex justify-content-center align-items-center"
-                style={{ background: "#00800040" }}
+      <div className="d-flex align-items-center gap-3">
+        <Iconify onClick={() => navigate(-1)} icon="zondicons:arrow-left" />
+        <Typography variant="h4" py={3}>
+          User Detail
+        </Typography>
+      </div>
+      <Grid container spacing={4}>
+        <Grid item md={12} xs={12}>
+          <Grid container spacing={6}>
+            <Grid item md={6} xs={12}>
+              <Box
+                display={"flex"}
+                justifyContent={"center"}
+                gap={6}
+                alignItems={"center"}
+                sx={{
+                  backgroundImage: "url(/images/header-back.png)",
+                  height: 250,
+                  backgroundRepeat: "repeat",
+                  borderRadius: 2,
+                }}
               >
-                <Icon fontSize={40} icon="material-symbols:file-copy" />
-              </CardContent>
-              <CardActions className="d-flex justify-content-between align-items-center">
-                <Typography>Gov.Id Proof</Typography>
-                <Icon icon="material-symbols:download" />
-              </CardActions>
-            </Card>
+                <Box
+                  height={167}
+                  width={167}
+                  display={"flex"}
+                  justifyContent={"center"}
+                 
+                  alignItems={"center"}
+                  borderRadius={"50%"}
+                  border={"1px solid white"}
+                >
+                  <img
+                    src={"/images/user.png"}
+                    style={{ height: "155px", width: "155px" }}
+                  />
+                </Box>
+                <div>
+                  <div className="d-flex align-items-center  gap-2">
+                    <Typography color={"white"} variant="h3">
+                      Chidozie
+                    </Typography>
+
+                    <img
+                      src={"/images/user-verified.png"}
+                      style={{ height: 18, width: 62 }}
+                    />
+                  </div>
+
+                  <Typography
+                    color="#C8D736"
+                    fontSize={18}
+                    fontWeight={"bold"}
+                    variant="body1"
+                  >
+                    {location.state}
+                  </Typography>
+                </div>
+              </Box>
+            </Grid>
+            <Grid item md={6} xs={12} className="mt-3">
+              <div>
+                <TextField
+                  value={"chidozie@gmail.com"}
+                  disabled
+                  fullWidth
+                  label={"Email"}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <Button size="medium">Change</Button>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </div>
+              <TextField
+                value={"chidozie@gmail.com"}
+                disabled
+                className="mt-4"
+                fullWidth
+                label={"Password"}
+                type={"password"}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <Button size="medium">Change</Button>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <TextField
+                value={"+234 706 767 9128"}
+                disabled
+                className="mt-4"
+                fullWidth
+                label={"Contact Number"}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <Button size="medium">Change</Button>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </Grid>
           </Grid>
         </Grid>
-      </Card>
-      <Card sx={{ p: 3, mt: 4 }}>
-        <Typography variant="h6">Rented Property Details</Typography>
-        <Grid container spacing={2} mt={3}>
-          <Grid item md={6}>
-            <Card sx={{ maxWidth: 400 }}>
-              <CardHeader title="Rent Period - 01/01/2023 To Till Now" />
-              <CardMedia
-                component="img"
-                height="100"
-                image="https://miro.medium.com/v2/resize:fit:1400/1*5SqWT_rosWcElLsi1nfT0A.png"
-                alt="Paella dish"
+      </Grid>
+      <div className="mt-5">
+        <CollapseWithTitle
+          title={"Personal Information"}
+          open={collapsePersonalInformation}
+          setOpen={setCollapsePersonalInformation}
+        />
+        <Collapse in={collapsePersonalInformation}>
+          <Grid container spacing={4} className="mt-2">
+            <Grid item md={6} xs={12}>
+              <TextField
+                fullWidth
+                label="Number of occupant"
+                value={"chidozie"}
+                disabled
               />
-              <div className="d-flex flex-row-reverse">
-                <Rating name="read-only" value={3} readOnly />
-              </div>
-              <CardActions>
-                <div
-                  style={{ width: "100%" }}
-                  className="d-flex justify-content-between align-items-center"
+            </Grid>
+            <Grid item md={6} xs={12}>
+              <FormControl fullWidth>
+                <InputLabel htmlFor="grouped-select">
+                  Number of occupant
+                </InputLabel>
+                <Select
+                  disabled
+                  defaultValue={2}
+                  value={2}
+                  id="grouped-select"
+                  label="Number of occupant"
                 >
-                  <Typography variant="body2">
-                    3 BHK Flat, Fully Furnished
-                    <div style={{ fontSize: 15 }}>
-                      <Icon icon="material-symbols:location-on-rounded" /> th
-                      floor, Tower A, Spaze iTechPark, Sector-49, Lagos
-                    </div>
-                  </Typography>
-                  <Typography variant="body2">Rent: NGN 5000/ Month</Typography>
-                </div>
-              </CardActions>
-            </Card>
+                  <MenuItem value="2">
+                    <em>None</em>
+                  </MenuItem>
+
+                  <MenuItem value={1}>1</MenuItem>
+                  <MenuItem value={2}> 2</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid item md={6} xs={12}>
+              <FormControl fullWidth>
+                <InputLabel htmlFor="grouped-select">Marital status</InputLabel>
+                <Select
+                  disabled
+                  defaultValue={1}
+                  value={1}
+                  id="grouped-select"
+                  label="Marital status"
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+
+                  <MenuItem value={1}>Unmarried</MenuItem>
+                  <MenuItem value={2}>Option 2</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid item md={6} xs={12}>
+              <FormControl fullWidth>
+                <InputLabel htmlFor="grouped-select">Age</InputLabel>
+                <Select
+                  disabled
+                  defaultValue={1}
+                  value={1}
+                  id="grouped-select"
+                  label="Age"
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+
+                  <MenuItem value={1}>28</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
           </Grid>
-          <Grid item md={6}>
-            <Card sx={{ maxWidth: 400 }}>
-              <CardHeader title="Rent Period - 01/01/2023 To Till Now" />
-              <CardMedia
-                component="img"
-                height="100"
-                image="https://miro.medium.com/v2/resize:fit:1400/1*5SqWT_rosWcElLsi1nfT0A.png"
-                alt="Paella dish"
+        </Collapse>
+      </div>
+
+      <div className="mt-5">
+        <CollapseWithTitle
+          title={"Permanent Address"}
+          open={addressInformationCollapse}
+          setOpen={setAddressInformationCollapse}
+        />
+        <Collapse in={addressInformationCollapse}>
+          <Grid container spacing={4} className="mt-2">
+            <Grid item md={6} xs={12}>
+              <TextField
+                fullWidth
+                label="House Number/Flat Number"
+                value={"12/25"}
+                disabled
               />
-              <div className="d-flex flex-row-reverse">
-                <Rating name="read-only" value={3} readOnly />
-              </div>
-              <CardActions>
-                <div
-                  style={{ width: "100%" }}
-                  className="d-flex justify-content-between align-items-center"
-                >
-                  <Typography variant="body2">
-                    3 BHK Flat, Fully Furnished
-                    <div style={{ fontSize: 15 }}>
-                      {" "}
-                      <Icon icon="material-symbols:location-on-rounded" /> th
-                      floor, Tower A, Spaze iTechPark, Sector-49, Lagos
-                    </div>
-                  </Typography>
-                  <Typography variant="body2">Rent: NGN 5000/ Month</Typography>
-                </div>
-              </CardActions>
-            </Card>
-          </Grid>
-          <Grid item md={6}>
-            <Card sx={{ maxWidth: 400 }}>
-              <CardHeader title="Rent Period - 01/01/2023 To Till Now" />
-              <CardMedia
-                component="img"
-                height="100"
-                image="https://miro.medium.com/v2/resize:fit:1400/1*5SqWT_rosWcElLsi1nfT0A.png"
-                alt="Paella dish"
+            </Grid>
+            <Grid item md={6} xs={12}>
+              <TextField
+                fullWidth
+                label="Street name"
+                value={"Ilassan Lekki"}
+                disabled
               />
-              <div className="d-flex flex-row-reverse">
-                <Rating name="read-only" value={3} readOnly />
-              </div>
-              <CardContent></CardContent>
-              <CardActions>
-                <div
-                  style={{ width: "100%" }}
-                  className="d-flex justify-content-between align-items-center"
-                >
-                  <Typography variant="body2">
-                    3 BHK Flat, Fully Furnished
-                    <div style={{ fontSize: 15 }}>
-                      {" "}
-                      <Icon icon="material-symbols:location-on-rounded" /> th
-                      floor, Tower A, Spaze iTechPark, Sector-49, Lagos
-                    </div>
-                  </Typography>
-                  <Typography variant="body2">Rent: NGN 5000/ Month</Typography>
-                </div>
-              </CardActions>
-            </Card>
+            </Grid>
+            <Grid item md={6} xs={12}>
+              <TextField fullWidth label="City" value={"Lagos"} disabled />
+            </Grid>
+            <Grid item md={6} xs={12}>
+              <TextField fullWidth label="Zipcode" value={"105102"} disabled />
+            </Grid>
           </Grid>
-        </Grid>
-      </Card>
-      <div className="d-flex justify-content-center align-items-center mt-3">
+        </Collapse>
+      </div>
+      {location.state === "Renter" && (
+        <>
+          <div className="mt-5">
+            <CollapseWithTitle
+              title={"Employement details"}
+              open={employementDetailsCollapse}
+              setOpen={setEmployementDetailsCollapse}
+            />
+            <Collapse in={employementDetailsCollapse}>
+              <Grid container spacing={4} className="mt-2">
+                <Grid item md={6} xs={12}>
+                  <FormControl fullWidth>
+                    <InputLabel htmlFor="grouped-select">
+                      Employement status
+                    </InputLabel>
+                    <Select
+                      disabled
+                      defaultValue={2}
+                      placeholder="Select"
+                      value={2}
+                      id="grouped-select"
+                      label="Employement status"
+                    >
+                      <MenuItem value="2">
+                        <em>None</em>
+                      </MenuItem>
+
+                      <MenuItem value={1}>1</MenuItem>
+                      <MenuItem value={2}> 2</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item md={6} xs={12}>
+                  <TextField
+                    label="Employer's name"
+                    placeholder="Enter employer's name"
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item md={6} xs={12}>
+                  <TextField
+                    label="Employer's address"
+                    placeholder="Enter employer's address"
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item md={6} xs={12}>
+                  <FormControl fullWidth>
+                    <InputLabel htmlFor="grouped-select">Occupation</InputLabel>
+                    <Select
+                      disabled
+                      defaultValue={2}
+                      placeholder="Select"
+                      value={2}
+                      id="grouped-select"
+                      label="Occupation"
+                    >
+                      <MenuItem value="2">
+                        <em>None</em>
+                      </MenuItem>
+
+                      <MenuItem value={1}>1</MenuItem>
+                      <MenuItem value={2}> 2</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+              </Grid>
+            </Collapse>
+          </div>
+
+          <div className="mt-5">
+            <CollapseWithTitle
+              title={"Kin details"}
+              open={kinDetailsCollapse}
+              setOpen={setKinDetailsCollapse}
+            />
+
+            <Collapse in={kinDetailsCollapse}>
+              <Grid container spacing={4} className="mt-2">
+                <Grid item md={6}>
+                  <TextField fullWidth label="Name" placeholder="Enter name" />
+                </Grid>
+                <Grid item md={6}>
+                  <TextField
+                    fullWidth
+                    label="Contact Number"
+                    placeholder="Enter contact number"
+                  />
+                </Grid>
+                <Grid item md={6}>
+                  <TextField
+                    fullWidth
+                    label="Email"
+                    placeholder="Enter email address"
+                  />
+                </Grid>
+                <Grid item md={6}>
+                  <FormControl fullWidth>
+                    <InputLabel htmlFor="grouped-select">
+                      Relationship with Kin
+                    </InputLabel>
+                    <Select
+                      disabled
+                      defaultValue={2}
+                      placeholder="Select"
+                      value={2}
+                      id="grouped-select"
+                      label="Relationship with Kin"
+                    >
+                      <MenuItem value="2">
+                        <em>None</em>
+                      </MenuItem>
+
+                      <MenuItem value={1}>1</MenuItem>
+                      <MenuItem value={2}> 2</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid item md={6}>
+                  <TextField
+                    placeholder="Select"
+                    fullWidth
+                    label="Upload govt. id."
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <Button size="small" variant="contained">
+                            upload
+                          </Button>
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                </Grid>
+              </Grid>
+            </Collapse>
+          </div>
+
+          <div className="mt-5">
+            <CollapseWithTitle
+              title={"Previous landlord information"}
+              open={landlordCollapse}
+              setOpen={setLandlordCollapse}
+            />
+
+            <Collapse in={landlordCollapse}>
+              <Grid container spacing={4} className="mt-2">
+                <Grid md={12} item>
+                  <TextField
+                    fullWidth
+                    label="Name"
+                    placeholder="Enter previous landlord's name"
+                  />
+                </Grid>
+                <Grid md={12} item>
+                  <TextField
+                    fullWidth
+                    label="Address"
+                    placeholder="Enter previous landlord's address"
+                  />
+                </Grid>
+              </Grid>
+            </Collapse>
+          </div>
+        </>
+      )}
+      <div className="mt-5">
         <Button
-          size="medium"
-          type="submit"
+          size="large"
+          className="global_button"
+          disabled
           variant="contained"
-          className="global-button"
-          color="inherit"
         >
-          Blacklist
-        </Button>
-        &nbsp; &nbsp;
-        <Button
-          size="medium"
-          type="submit"
-          variant="contained"
-          className="global-button"
-          color="inherit"
-        >
-          Suspend
+          Update
         </Button>
       </div>
     </div>

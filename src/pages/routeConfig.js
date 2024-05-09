@@ -172,7 +172,7 @@ export const routeConfig = [
         link: "manage-careers",
         path: "./pages/manage-careers",
         role: ["superAdmin"],
-        icon: <Icon icon="marketeq:job" />,
+        icon: <Icon icon="eos-icons:job" />,
         show: true,
       },
       {

@@ -21,7 +21,7 @@ const tableColumns = [
 ];
 const PropertyListingRequest = () => {
   const [showPropertyDetails, setShowPropertyDetails] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const data = Array(10).fill({
     landlord: faker.person.firstName(),
     property: faker.location.city(),
@@ -50,14 +50,9 @@ const PropertyListingRequest = () => {
               <TableCell>
                 <Icon
                   icon="solar:eye-linear"
-                  onClick={() => setShowPropertyDetails(true)}
+                  onClick={() => navigate("/property-request-detail")}
                 />
-                &nbsp;
-                <Icon icon="fluent-mdl2:accept" />
-                &nbsp;
-                <Icon icon="basil:cross-outline" />
-                &nbsp;
-                <Icon icon="mdi:play" />
+               
                 &nbsp;
                 <Icon
                   label="Manage aggrements"

@@ -13,7 +13,8 @@ import { useNavigate } from "react-router-dom";
 const OnboardedProperties = ({ tableColumns, data, onClick }) => {
   const [isViewProperty, setIsViewProperty] = useState(false);
   const navigate = useNavigate();
-  return !isViewProperty ? (
+
+  return (
     <Table sx={{ minWidth: 800 }} className="mt-3">
       <TableHead>
         <TableRow>
@@ -37,22 +38,18 @@ const OnboardedProperties = ({ tableColumns, data, onClick }) => {
               <TableCell>
                 <Iconify
                   icon="solar:eye-linear"
-                  onClick={() => setIsViewProperty(true)}
+                  onClick={() => navigate('/view-onboarded-property')}
                 />
                 &nbsp;
                 <Iconify onClick={onClick} icon="mingcute:delete-line" />
                 &nbsp;
                 <Iconify icon="bx:edit" />
-               
-              
               </TableCell>
             </TableRow>
           );
         })}
       </TableBody>
     </Table>
-  ) : (
-    <ViewProperty />
   );
 };
 

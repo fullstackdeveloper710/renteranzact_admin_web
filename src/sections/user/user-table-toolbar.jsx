@@ -24,7 +24,6 @@ export default function UserTableToolbar({
   filterName,
   onFilterName,
 }) {
-  const navigate = useNavigate();
   return (
     <Toolbar
       sx={{
