@@ -49,6 +49,19 @@ export default function Nav({ openNav, onCloseNav }) {
     <Scrollbar
       sx={{
         height: 1,
+        "& .MuiDrawer-paper": {
+          scrollbarWidth: "thin",
+          "&::-webkit-scrollbar": {
+            width: "6px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: (theme) => theme.palette.primary.main,
+            borderRadius: "4px",
+          },
+          "&::-webkit-scrollbar-track": {
+            backgroundColor: (theme) => theme.palette.grey[200],
+          },
+        },
 
         "& .simplebar-content": {
           height: 1,
@@ -69,7 +82,7 @@ export default function Nav({ openNav, onCloseNav }) {
       {renderMenu}
 
       <Box style={{ height: 145 }}></Box>
-      <Box sx={{ px: 2  }}>
+      <Box sx={{ px: 2 }}>
         <ListItemButton
           sx={{ color: "white" }}
           onClick={() => setLogoutPopup(true)}
@@ -88,6 +101,7 @@ export default function Nav({ openNav, onCloseNav }) {
         backgroundImage: "url(/images/header-back.png)",
         // backgroundSize : "cover",
         backgroundRepeat: "repeat",
+
         width: { lg: NAV.WIDTH },
         overflow: "auto",
         color: "white",
@@ -96,13 +110,14 @@ export default function Nav({ openNav, onCloseNav }) {
       {upLg ? (
         <Box
           sx={{
+          
             height: 1,
-            color:"white",
-            
-            zIndex : 99999,
+            color: "white",
+
+            zIndex: 99999,
             position: "fixed",
             // background: "none",
-            
+
             width: NAV.WIDTH,
             overflow: "auto",
             borderRight: (theme) => `dashed 1px ${theme.palette.divider}`,
@@ -113,10 +128,10 @@ export default function Nav({ openNav, onCloseNav }) {
       ) : (
         <Drawer
           open={openNav}
+          
           onClose={onCloseNav}
           PaperProps={{
             sx: {
-            
               color: "white",
               width: NAV.WIDTH,
             },
@@ -176,7 +191,7 @@ function NavItem({ item }) {
             bgcolor: "#c8d736",
             color: "#13556d",
             fontWeight: "fontWeightSemiBold",
-           
+
             minHeight: 44,
             fontSize: 13,
           }),
