@@ -21,16 +21,16 @@ const AddUser = () => {
         <Typography variant="h4">Add Users</Typography>
       </Stack>
       <Grid container spacing={6} className="mt-3">
-        <Grid item xs={8} md={6}>
+        <Grid item xs={12} md={6} sm={6}>
           <TextField fullWidth name="name" label="Name" type={"text"} />
         </Grid>
-        <Grid item xs={8} md={6}>
+        <Grid item xs={12} md={6} sm={6}>
           <TextField fullWidth name="email" label="Email" type={"email"} />
         </Grid>
-        <Grid item xs={8} md={6}>
+        <Grid item xs={12} md={6} sm={6}>
           <TextField fullWidth name="mobile" label="Mobile" type={"text"} />
         </Grid>
-        <Grid item xs={8} md={6}>
+        <Grid item xs={12} md={6} sm={6}>
           <FormControl fullWidth>
             <InputLabel>Gender</InputLabel>
             <Select
@@ -45,7 +45,7 @@ const AddUser = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={8} md={6}>
+        <Grid item xs={12} md={6} sm={6}>
           <FormControl fullWidth>
             <InputLabel>Role</InputLabel>
             <Select
@@ -60,7 +60,7 @@ const AddUser = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={8} md={6}>
+        <Grid item xs={12} md={6} sm={6}>
           <TextField
             fullWidth
             name="password"
@@ -68,7 +68,7 @@ const AddUser = () => {
             type={"password"}
           />
         </Grid>
-        <Grid item xs={8} md={6}>
+        <Grid item xs={12} md={6} sm={6}>
           <TextField
             fullWidth
             name="confirmPassword"

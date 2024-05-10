@@ -11,6 +11,7 @@ import { faker } from "@faker-js/faker";
 import { useState } from "react";
 import PropertyDetails from "./PropertyDetails";
 import { useNavigate } from "react-router-dom";
+import TableContainerComponent from "../../components/TableContainerComponent";
 const tableColumns = [
   "Landlord/PM",
   "Property",
@@ -30,41 +31,42 @@ const PropertyListingRequest = () => {
     date: faker.date.recent(),
   });
   return !showPropertyDetails ? (
-    <Table sx={{ minWidth: 800 }} className="mt-3">
-      <TableHead>
-        <TableRow>
-          {tableColumns.map((x, i) => {
-            return <TableCell key={i}>{x}</TableCell>;
+    <TableContainerComponent>
+      <Table sx={{ minWidth: 800 }} className="mt-3">
+        <TableHead>
+          <TableRow>
+            {tableColumns.map((x, i) => {
+              return <TableCell key={i}>{x}</TableCell>;
+            })}
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.map((x, i) => {
+            return (
+              <TableRow key={i}>
+                <TableCell>{x.landlord}</TableCell>
+                <TableCell>{x.property}</TableCell>
+                <TableCell>{x.location}</TableCell>
+                <TableCell>{i === 0 % 2 ? "Pending" : "Complete"}</TableCell>
+                <TableCell>{moment(x.date).format("YYYY/MM/DD")}</TableCell>
+                <TableCell>
+                  <Icon
+                    icon="solar:eye-linear"
+                    onClick={() => navigate("/property-request-detail")}
+                  />
+                  &nbsp;
+                  <Icon
+                    label="Manage aggrements"
+                    icon="mingcute:documents-line"
+                    onClick={() => navigate("/manage-aggrements-documents")}
+                  />
+                </TableCell>
+              </TableRow>
+            );
           })}
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {data.map((x, i) => {
-          return (
-            <TableRow key={i}>
-              <TableCell>{x.landlord}</TableCell>
-              <TableCell>{x.property}</TableCell>
-              <TableCell>{x.location}</TableCell>
-              <TableCell>{i === 0 % 2 ? "Pending" : "Complete"}</TableCell>
-              <TableCell>{moment(x.date).format("YYYY/MM/DD")}</TableCell>
-              <TableCell>
-                <Icon
-                  icon="solar:eye-linear"
-                  onClick={() => navigate("/property-request-detail")}
-                />
-               
-                &nbsp;
-                <Icon
-                  label="Manage aggrements"
-                  icon="mingcute:documents-line"
-                  onClick={() => navigate("/manage-aggrements-documents")}
-                />
-              </TableCell>
-            </TableRow>
-          );
-        })}
-      </TableBody>
-    </Table>
+        </TableBody>
+      </Table>
+    </TableContainerComponent>
   ) : (
     <PropertyDetails />
   );

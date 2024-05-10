@@ -49,19 +49,6 @@ export default function Nav({ openNav, onCloseNav }) {
     <Scrollbar
       sx={{
         height: 1,
-        "& .MuiDrawer-paper": {
-          scrollbarWidth: "thin",
-          "&::-webkit-scrollbar": {
-            width: "6px",
-          },
-          "&::-webkit-scrollbar-thumb": {
-            backgroundColor: (theme) => theme.palette.primary.main,
-            borderRadius: "4px",
-          },
-          "&::-webkit-scrollbar-track": {
-            backgroundColor: (theme) => theme.palette.grey[200],
-          },
-        },
 
         "& .simplebar-content": {
           height: 1,
@@ -129,9 +116,13 @@ export default function Nav({ openNav, onCloseNav }) {
         <Drawer
           open={openNav}
           
+          
           onClose={onCloseNav}
           PaperProps={{
             sx: {
+              backgroundImage: "url(/images/header-back.png)",
+          // backgroundSize : "cover",
+          backgroundRepeat: "repeat",
               color: "white",
               width: NAV.WIDTH,
             },

@@ -6,35 +6,35 @@ const Amenities = () => {
     <div className="screen-transition">
       <Typography variant="h5">Anemities</Typography>
       <Grid container spacing={4} className="mt-1">
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <Checkbox />
           <span>Power Backup</span>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <Checkbox />
           <span>Lift</span>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <Checkbox />
           <span>Security</span>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <Checkbox />
           <span>Reserved Parking</span>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <Checkbox />
           <span>Visitor Parking</span>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <Checkbox />
           <span>Rain Water harvesting</span>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <Checkbox />
           <span>Water Storage</span>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <Checkbox />
           <span>Water Storage</span>
         </Grid>

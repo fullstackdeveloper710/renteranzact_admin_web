@@ -37,6 +37,7 @@ import { Button } from "@mui/material";
 import { faker } from "@faker-js/faker";
 import { Link, useNavigate } from "react-router-dom";
 import moment from "moment/moment";
+import TableContainerComponent from "../../components/TableContainerComponent";
 // ---------------------------------------------
 
 export default function FinancePerformance() {
@@ -102,7 +103,7 @@ export default function FinancePerformance() {
         justifyContent="space-between"
         alignItems={"center"}
       >
-        <Grid item md={2}>
+        <Grid item md={2} sm={4} xs={12}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
             <Select
@@ -119,7 +120,7 @@ export default function FinancePerformance() {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={2}>
+        <Grid item md={2} sm={4} xs={12}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
             <Select
@@ -135,7 +136,7 @@ export default function FinancePerformance() {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={3} style={{ alignSelf: "flex-start" }} mb={1}>
+        <Grid item md={3} sm={4} xs={12}style={{ alignSelf: "flex-start" }} mb={1} >
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer
               components={["DatePicker"]}
@@ -145,10 +146,10 @@ export default function FinancePerformance() {
             </DemoContainer>
           </LocalizationProvider>
         </Grid>
-        <Grid item md={2}>
+        <Grid item md={2} sm={4} xs={12}>
           <Link>Clear Filters</Link>
         </Grid>
-        <Grid item md={2}>
+        <Grid item md={2} sm={4} xs={12}>
           <Button
             variant="contained"
             color="inherit"
@@ -161,6 +162,7 @@ export default function FinancePerformance() {
           </Button>
         </Grid>
       </Grid>
+<TableContainerComponent>
 
       <Table sx={{ minWidth: 800, mt: 4 }} className="table-bordered">
         <TableHead>
@@ -191,8 +193,6 @@ export default function FinancePerformance() {
           {notFound && <TableNoData query={filterName} />}
         </TableBody>
       </Table>
-
-      <div className="d-flex">
         <Table sx={{ minWidth: 700, mt: 4 }} className="table-bordered">
           <TableHead>
             <TableRow>
@@ -217,32 +217,12 @@ export default function FinancePerformance() {
             {notFound && <TableNoData query={filterName} />}
           </TableBody>
         </Table>
+</TableContainerComponent>
 
-        <Table sx={{ minWidth: 400, mt: 4 }} className="table-bordered">
-          <TableHead>
-            <TableRow>
-              {revenueGenrateColumn.map((x, i) => {
-                return <TableCell key={i}>{x}</TableCell>;
-              })}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {employees.map((x, i) => {
-              return (
-                <TableRow key={i}>
-                  <TableCell>{x.month}</TableCell>
-                  <TableCell>40000</TableCell>
-                </TableRow>
-              );
-            })}
-            <TableEmptyRows
-              height={77}
-              emptyRows={emptyRows(page, rowsPerPage, users.length)}
-            />
-            {notFound && <TableNoData query={filterName} />}
-          </TableBody>
-        </Table>
+     
+
+      
       </div>
-    </div>
+  
   );
 }

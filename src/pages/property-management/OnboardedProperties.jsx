@@ -2,6 +2,7 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableContainer,
   TableHead,
   TableRow,
 } from "@mui/material";
@@ -10,11 +11,14 @@ import Iconify from "../../components/iconify";
 import { useState } from "react";
 import ViewProperty from "./ViewProperty";
 import { useNavigate } from "react-router-dom";
+import TableContainerComponent from "../../components/TableContainerComponent";
 const OnboardedProperties = ({ tableColumns, data, onClick }) => {
   const [isViewProperty, setIsViewProperty] = useState(false);
   const navigate = useNavigate();
 
   return (
+    <TableContainerComponent>
+
     <Table sx={{ minWidth: 800 }} className="mt-3">
       <TableHead>
         <TableRow>
@@ -50,6 +54,8 @@ const OnboardedProperties = ({ tableColumns, data, onClick }) => {
         })}
       </TableBody>
     </Table>
+
+    </TableContainerComponent>
   );
 };
 

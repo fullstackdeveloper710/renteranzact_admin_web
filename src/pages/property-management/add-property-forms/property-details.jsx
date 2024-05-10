@@ -15,7 +15,7 @@ const PropertyDetails = () => {
       <Typography variant="h5"> Property Details</Typography>
 
       <Grid container spacing={4} className="mt-1">
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">
               Property Category
@@ -31,7 +31,7 @@ const PropertyDetails = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Property Type</InputLabel>
             <Select
@@ -45,7 +45,7 @@ const PropertyDetails = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">
               Furnishing Type
@@ -61,7 +61,7 @@ const PropertyDetails = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Rent Type</InputLabel>
             <Select
@@ -75,7 +75,7 @@ const PropertyDetails = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">City</InputLabel>
             <Select
@@ -89,13 +89,13 @@ const PropertyDetails = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <TextField fullWidth label="Landmark" />
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <TextField fullWidth label="Address" />
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">No. of floors</InputLabel>
             <Select
@@ -109,13 +109,13 @@ const PropertyDetails = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <TextField fullWidth label="Super Area" />
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <TextField fullWidth label="Carpet Area" />
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Availability</InputLabel>
             <Select
@@ -129,7 +129,7 @@ const PropertyDetails = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">
               Age of Construction
@@ -145,7 +145,7 @@ const PropertyDetails = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">
               Type of Community
@@ -166,13 +166,13 @@ const PropertyDetails = () => {
         Landlord Information
       </Typography>
       <Grid container spacing={4} className="mt-1">
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <TextField fullWidth label="Name" />
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <TextField fullWidth label="Email" />
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <TextField fullWidth label="Contact" />
         </Grid>
       </Grid>

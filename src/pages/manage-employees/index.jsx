@@ -33,6 +33,7 @@ import { faker } from "@faker-js/faker";
 import { useNavigate } from "react-router-dom";
 import moment from "moment/moment";
 import ConfirmationDialog from "../../components/dialog/ConfirmationDialog";
+import TableContainerComponent from "../../components/TableContainerComponent";
 // ----------------------------------------------------------------------
 export default function UserPage() {
   const [page, setPage] = useState(0);
@@ -177,9 +178,8 @@ export default function UserPage() {
           </Button>
         </div>
 
-        {/* <Scrollbar>
-          <TableContainer sx={{ overflow: 'unset' }}> */}
-        <Table sx={{ minWidth: 800 }}>
+      
+        <TableContainerComponent><Table sx={{ minWidth: 800 }}>
           <TableHead>
             <TableRow>
               {tableColumns.map((x, i) => {
@@ -224,18 +224,8 @@ export default function UserPage() {
             {notFound && <TableNoData query={filterName} />}
           </TableBody>
         </Table>
-        {/* </TableContainer>
-        </Scrollbar> */}
-
-        {/* <TablePagination
-          page={page}
-          component="div"
-          count={users.length}
-          rowsPerPage={rowsPerPage}
-          onPageChange={handleChangePage}
-          rowsPerPageOptions={[5, 10, 25]}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        /> */}
+          </TableContainerComponent>
+       
 
         <ConfirmationDialog
           open={deleteDialog}

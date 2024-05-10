@@ -11,6 +11,7 @@ import Iconify from "../../components/iconify";
 import {
   Button,
   FormControl,
+  Grid,
   InputLabel,
   MenuItem,
   Select,
@@ -26,7 +27,8 @@ export default function UserTableToolbar({
   return (
     <Toolbar
       sx={{
-        height: 96,
+        height: '100px',
+       
         display: "flex",
         justifyContent: "space-between",
         p: (theme) => theme.spacing(0, 1, 0, 3),
@@ -41,47 +43,40 @@ export default function UserTableToolbar({
           {numSelected} selected
         </Typography>
       ) : (
-        <>
-        <div>
-          <OutlinedInput
-
-            value={filterName}
-            onChange={onFilterName}
-            placeholder="Search user..."
-            startAdornment={
-              <InputAdornment position="start">
-                <Iconify
-                  icon="eva:search-fill"
-                  // sx={{ color: "text.disabled", width: 20, height: 20 }}
-                />
-              </InputAdornment>
-            }
-          />&nbsp;&nbsp;&nbsp;&nbsp;
-          <FormControl sx={{ width: 300 }}>
-            <InputLabel id="demo-simple-select-label">Filter</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={'all'}
-              label="Age"
-            >
-                <MenuItem value={'all'}>All</MenuItem>
-              <MenuItem value={'propertyManager'}>Property Managers</MenuItem>
-              <MenuItem value={'landlords'}>Landlords</MenuItem>
-              <MenuItem value={'renters'}>Renters</MenuItem>
-            </Select>
-          </FormControl>
-        </div>
-          {/* <Button
-            className="global-button"
-            variant="contained"
-            color="inherit"
-            startIcon={<Iconify icon="eva:plus-fill" />}
-            onClick={() => navigate("/manage-users/add-user")}
-          >
-            Add User
-          </Button> */}
-        </>
+        <Grid container spacing={4}>
+          <Grid item md={4} sm={4} xs={6}>
+            <OutlinedInput
+              fullWidth
+              value={filterName}
+              onChange={onFilterName}
+              placeholder="Search user..."
+              startAdornment={
+                <InputAdornment position="start">
+                  <Iconify
+                    icon="eva:search-fill"
+                    // sx={{ color: "text.disabled", width: 20, height: 20 }}
+                  />
+                </InputAdornment>
+              }
+            />
+          </Grid>
+          <Grid item md={4} sm={4} xs={6}>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Filter</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={"all"}
+                label="Age"
+              >
+                <MenuItem value={"all"}>All</MenuItem>
+                <MenuItem value={"propertyManager"}>Property Managers</MenuItem>
+                <MenuItem value={"landlords"}>Landlords</MenuItem>
+                <MenuItem value={"renters"}>Renters</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+        </Grid>
       )}
 
       {/* {numSelected > 0 ? (

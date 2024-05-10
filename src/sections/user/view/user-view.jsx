@@ -24,6 +24,8 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import ConfirmationDialog from "../../../components/dialog/ConfirmationDialog";
+import { Paper } from "@mui/material";
+import TableContainerComponent from "../../../components/TableContainerComponent";
 
 // ----------------------------------------------------------------------
 let text = "";
@@ -140,50 +142,52 @@ export default function UserPage() {
           filterName={filterName}
           onFilterName={handleFilterByName}
         />
-        <Table sx={{ minWidth: 800 }}>
-          <UserTableHead
-            order={order}
-            orderBy={orderBy}
-            rowCount={users.length}
-            numSelected={selected.length}
-            onRequestSort={handleSort}
-            onSelectAllClick={handleSelectAllClick}
-            headLabel={[
-              { id: "name", label: "Name" },
-              { id: "email", label: "Email" },
-              { id: "mobile", label: "Mobile No." },
-              { id: "userType", label: "User Type" },
-              { id: "status", label: "Status" },
-              { id: "action", label: "Action" },
-            ]}
-          />
-          <TableBody>
-            {dataFiltered
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => (
-                <UserTableRow
-                  key={row.id}
-                  name={row.name}
-                  email={row.email}
-                  mobile={row.mobile}
-                  userType={row.status}
-                  avatarUrl={row.avatarUrl}
-                  selected={selected.indexOf(row.name) !== -1}
-                  handleClick={(event) => handleClick(event, row.name)}
-                  setDeleteDialog={setDeleteDialog}
-                  setDisableUser={setDisableUser}
-                  managePopupText={managePopupText}
-                />
-              ))}
-
-            <TableEmptyRows
-              height={77}
-              emptyRows={emptyRows(page, rowsPerPage, users.length)}
+        <TableContainerComponent>
+          <Table sx={{ minWidth: 800 }}>
+            <UserTableHead
+              order={order}
+              orderBy={orderBy}
+              rowCount={users.length}
+              numSelected={selected.length}
+              onRequestSort={handleSort}
+              onSelectAllClick={handleSelectAllClick}
+              headLabel={[
+                { id: "name", label: "Name" },
+                { id: "email", label: "Email" },
+                { id: "mobile", label: "Mobile No." },
+                { id: "userType", label: "User Type" },
+                { id: "status", label: "Status" },
+                { id: "action", label: "Action" },
+              ]}
             />
+            <TableBody>
+              {dataFiltered
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map((row) => (
+                  <UserTableRow
+                    key={row.id}
+                    name={row.name}
+                    email={row.email}
+                    mobile={row.mobile}
+                    userType={row.status}
+                    avatarUrl={row.avatarUrl}
+                    selected={selected.indexOf(row.name) !== -1}
+                    handleClick={(event) => handleClick(event, row.name)}
+                    setDeleteDialog={setDeleteDialog}
+                    setDisableUser={setDisableUser}
+                    managePopupText={managePopupText}
+                  />
+                ))}
 
-            {notFound && <TableNoData query={filterName} />}
-          </TableBody>
-        </Table>
+              <TableEmptyRows
+                height={77}
+                emptyRows={emptyRows(page, rowsPerPage, users.length)}
+              />
+
+              {notFound && <TableNoData query={filterName} />}
+            </TableBody>
+          </Table>
+        </TableContainerComponent>
 
         {/* <TablePagination
           page={page}

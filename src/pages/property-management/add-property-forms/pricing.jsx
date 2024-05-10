@@ -14,10 +14,10 @@ const Pricing = () => {
     <div className="screen-transition">
       <Typography variant="h5">Pricing</Typography>
       <Grid container spacing={4} className="mt-1">
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <TextField label="Rent" fullWidth />
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">
               Monthly
@@ -33,10 +33,10 @@ const Pricing = () => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <TextField label="Service Charges" fullWidth />
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={6} xs={12} sm={6}>
           <TextField label="Caution Deposit" fullWidth />
         </Grid>
       </Grid>

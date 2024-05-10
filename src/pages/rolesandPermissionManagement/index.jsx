@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 import moment from "moment";
 import TableEmptyRows from "../../sections/user/table-empty-rows";
 import ConfirmationDialog from "../../components/dialog/ConfirmationDialog";
+import TableContainerComponent from "../../components/TableContainerComponent";
 
 export default function ManageRolesAndPermission() {
   const navigate = useNavigate();
@@ -95,6 +96,8 @@ export default function ManageRolesAndPermission() {
             Add New Role
           </Button>
         </div>
+        <TableContainerComponent>
+
         <Table sx={{ minWidth: 800 }}>
           <TableHead>
             <TableRow>
@@ -203,6 +206,7 @@ export default function ManageRolesAndPermission() {
                 {notFound && <TableNoData query={filterName} />} */}
           </TableBody>
         </Table>
+        </TableContainerComponent>
       </Card>
       {deleteDialog && (
         <ConfirmationDialog
