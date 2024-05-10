@@ -56,7 +56,7 @@ export const routeConfig = [
         show: true,
       },
       {
-        title: "Lease Aggrements",
+        title: "Lease Agreements",
         link: "lease-aggrements",
         path: "./pages/property-managements/lease-aggrements",
         icon: <Icon icon="formkit:fastforward" />,
@@ -241,7 +241,7 @@ export const routeConfig = [
         show: true,
       },
       {
-        title: "Manage Aggrements",
+        title: "Manage Agreements",
         link: "manage-aggrements",
         path: "./pages/manage-aggrements",
         role: ["superAdmin"],
@@ -249,7 +249,7 @@ export const routeConfig = [
         show: true,
       },
       {
-        title: "Add Aggrements",
+        title: "Add Agreements",
         link: "add-aggrements",
         path: "./pages/manage-aggrements/add-aggrements",
         role: ["superAdmin"],

@@ -6,7 +6,7 @@ export const users = [...Array(30)].map((_, index) => (
   avatarUrl: `/assets/images/avatars/avatar_${index + 1}.jpg`,
   name: faker.person.fullName(),
   email: faker.internet.email(),
-  mobile: faker.phone.number(),
+  mobile: 784559124,
   status: sample(['active', 'banned']),
   role: sample([
     'Leader',

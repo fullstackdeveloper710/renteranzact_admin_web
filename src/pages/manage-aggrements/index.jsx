@@ -36,10 +36,10 @@ const ManageAggrements = () => {
   return (
     <div className="px-5">
       <div className="d-flex justify-content-between align-items-center w-100 mt-4">
-        <Typography variant="h4">Manage Aggrements</Typography>
+        <Typography variant="h4">Manage Agreements</Typography>
         <FormControl sx={{ width: 300 }}>
-            <InputLabel id="demo-simple-select-label">Filter Aggrements</InputLabel>
-        <Select  label="Select">
+            <InputLabel id="demo-simple-select-label">Filter Agreements</InputLabel>
+        <Select  label="Filter Agreements">
           <MenuItem>Landlord</MenuItem>
           <MenuItem>Property Manager</MenuItem>
           <MenuItem>Renter</MenuItem>

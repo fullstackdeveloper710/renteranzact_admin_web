@@ -111,7 +111,7 @@ export default function FinancePerformance() {
               id="demo-simple-select"
               value={""}
               fullWidth
-              label="Age"
+              label="Monthly"
               // onChange={handleChange}
             >
               <MenuItem value={10}>Ten</MenuItem>
@@ -127,7 +127,7 @@ export default function FinancePerformance() {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={""}
-              label="Age"
+              label="Monthly"
               // onChange={handleChange}
             >
               <MenuItem value={10}>Ten</MenuItem>

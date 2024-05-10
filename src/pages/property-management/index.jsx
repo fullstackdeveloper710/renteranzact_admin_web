@@ -13,6 +13,12 @@ import {
   TableRow,
   TableHead,
   Button,
+  Autocomplete,
+  TextField,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
 } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -34,6 +40,27 @@ export const tableColumns = [
   "Onboarding Date",
   "Mobile",
   "Action",
+];
+
+let cities = [
+  {
+    label: "Aba South",
+  },
+  { label: "Arochukwu" },
+  { label: "Bende" },
+  { label: "Ikwuano" },
+  { label: "Isiala Ngwa North" },
+  { label: "Isiala Ngwa South" },
+  { label: "Isuikwuato" },
+  { label: "Obi Ngwa" },
+  { label: "Ohafia" },
+  { label: "Osisioma}" },
+  { label: "Ugwunagbo" },
+  { label: "Ukwa East" },
+  { label: "Ukwa West" },
+  { label: "Umuahia North" },
+  { label: "Umuahia South" },
+  { label: "Umu Nneochi" },
 ];
 const PropertyManagement = () => {
   const [selectedTabs, setSelectedTabs] = React.useState(0);
@@ -76,9 +103,9 @@ const PropertyManagement = () => {
         </div>
       </Stack>
       <Card className="p-4">
-        <div className="d-flex justify-content-between align-items-center">
+        <div className="d-flex gap-3 align-items-center">
           <OutlinedInput
-            placeholder="Search user..."
+            placeholder="Search property..."
             startAdornment={
               <InputAdornment position="start">
                 <Iconify
@@ -88,6 +115,35 @@ const PropertyManagement = () => {
               </InputAdornment>
             }
           />
+
+          <Autocomplete
+            disablePortal
+            id="combo-box-demo"
+            options={cities}
+            sx={{ width: 300 }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Cities"
+                placeholder="Select Cities"
+              />
+            )}
+          />
+
+          <FormControl>
+            <InputLabel id="demo-simple-select-label">Property</InputLabel>
+            <Select
+              sx={{ width: 300 }}
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={"all"}
+              label="Property"
+            >
+              <MenuItem value={"all"}>All</MenuItem>
+              <MenuItem value={"vacant"}>Vacant</MenuItem>
+              <MenuItem value={"rented"}>Rented</MenuItem>
+            </Select>
+          </FormControl>
 
           {/* <Button
            className="global-button"
@@ -104,8 +160,8 @@ const PropertyManagement = () => {
           onChange={handleChange}
           value={selectedTabs}
         >
-          <Tab label="Onboarded Properties"/>
-          <Tab label="Property Listing Requestes" />
+          <Tab label="Onboarded Properties" />
+          <Tab label="Property listings Requests" />
         </Tabs>
 
         {/* <Scrollbar> */}

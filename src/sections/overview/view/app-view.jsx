@@ -432,6 +432,7 @@ export default function AppView() {
           );
         })}
       </Grid>
+
       <Grid
         className={"mt-4"}
         container
@@ -486,61 +487,71 @@ export default function AppView() {
         </Grid>
 
         <Grid item xs={12} sm={6} md={12}>
-          <ReactApexChart
-            type="bar"
-            height={400}
-            options={barchartState.options}
-            series={barchartState.series}
-          />
+          <Card  sx={{p : 2}}>
+            <ReactApexChart
+              type="bar"
+              height={400}
+              options={barchartState.options}
+              series={barchartState.series}
+            />
+          </Card>
         </Grid>
 
-        <Grid item md={8} xs={12} sm={6} >
-          <Typography variant="h4" className="text-center">
-            Monthly User Onboarding
-          </Typography>
-          <ReactApexChart
-            options={onboardingChatState.options}
-            series={onboardingChatState.series}
-            type="bar"
-            height={400}
-          />
-        </Grid>
-        <Grid item  xs={12} sm={6} md={4}>
-          <div
-            style={{ height: "500px" }}
-            className="d-flex justify-content-center align-items-center"
-          >
+        <Grid item md={8} xs={12} sm={6}>
+          <Card  sx={{p : 2}}>
+            <Typography variant="h6" >
+              Monthly User Onboarding
+            </Typography>
             <ReactApexChart
-              options={donutChartState.options}
-              series={donutChartState.series}
-              type="pie"
-              width={400}
+              options={onboardingChatState.options}
+              series={onboardingChatState.series}
+              type="bar"
               height={400}
             />
-          </div>
+          </Card>
         </Grid>
-        <Grid item md={12} xs={12} sm={6} >
-          <Typography variant="h4">Total Revenue Generated</Typography>
-          <ReactApexChart
-            options={revenueChartState.options}
-            series={revenueChartState.series}
-            type="bar"
-            height={400}
-          />
+        <Grid item xs={12} sm={6} md={4}>
+          <Card  sx={{p : 2}}>
+            <div
+              style={{ height: "450px" }}
+              className="d-flex justify-content-center align-items-center"
+            >
+              <ReactApexChart
+                options={donutChartState.options}
+                series={donutChartState.series}
+                type="pie"
+                width={400}
+                height={400}
+              />
+            </div>
+          </Card>
         </Grid>
-        <Grid item md={8} xs={12} sm={6} >
-          <Typography variant="h4">Payout Made</Typography>
+        <Grid item md={12} xs={12} sm={6}>
+          <Card  sx={{p : 2}}>
+            <Typography variant="h6">Total Revenue Generated</Typography>
+            <ReactApexChart
+              options={revenueChartState.options}
+              series={revenueChartState.series}
+              type="bar"
+              height={400}
+            />
+          </Card>
+        </Grid>
+        <Grid item md={8} xs={12} sm={6}>
+          <Card sx={{p : 2}}>
+            <Typography variant="h6">Payout Made</Typography>
 
-          <ReactApexChart
-            options={payoutChartState.options}
-            series={payoutChartState.series}
-            type="bar"
-            height={400}
-          />
+            <ReactApexChart
+              options={payoutChartState.options}
+              series={payoutChartState.series}
+              type="bar"
+              height={400}
+            />
+          </Card>
         </Grid>
-        <Grid item md={4} xs={12} sm={6} >
-          <Typography variant="h4">Payout To be Made</Typography>
+        <Grid item md={4} xs={12} sm={6}>
 
+          <Typography variant="h6">Payout To be Made</Typography>
           <Card
             className="d-flex justify-content-around align-items-center flex-column py-3"
             style={{ height: 400 }}

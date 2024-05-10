@@ -53,7 +53,7 @@ export default function ManagePayouts() {
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={""}
-                label="Age"
+                label="Monthly"
                 // onChange={handleChange}
               >
                 <MenuItem value={10}>Ten</MenuItem>
@@ -69,7 +69,7 @@ export default function ManagePayouts() {
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={""}
-                label="Age"
+                label="Monthly"
                 // onChange={handleChange}
               >
                 <MenuItem value={10}>Ten</MenuItem>

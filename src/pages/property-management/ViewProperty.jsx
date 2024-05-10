@@ -68,7 +68,7 @@ const ViewProperty = () => {
 
           <div className="mt-4">
             <Typography variant="h4">Review & Rating</Typography>
-            <Card>
+            <Card sx={{p:2}}>
               <div className="d-flex  align-items-center mt-2 gap-2">
                 <img
                   style={{ borderRadius: 10, height: 70, width: 70 }}

@@ -12,9 +12,11 @@ import React from "react";
 const PropertyDetails = () => {
   return (
     <div className="screen-transition">
-      <Typography variant="h5"> Property Details</Typography>
+      <Typography variant="h5" className="mt-4 px-1">
+        Property Details
+      </Typography>
 
-      <Grid container spacing={4} className="mt-1">
+      <Grid container spacing={3} className="mt-1">
         <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">
@@ -154,26 +156,44 @@ const PropertyDetails = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Type of Community"
+            
             >
-              <MenuItem value={10}>Ten</MenuItem>
+               <MenuItem value={10}>Ten</MenuItem>
               <MenuItem value={20}>Twenty</MenuItem>
               <MenuItem value={30}>Thirty</MenuItem>
             </Select>
           </FormControl>
         </Grid>
-      </Grid>
-      <Typography variant="h5" className="mt-3">
-        Landlord Information
-      </Typography>
-      <Grid container spacing={4} className="mt-1">
         <Grid item md={6} xs={12} sm={6}>
-          <TextField fullWidth label="Name" />
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Landlords</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="Lanlords"
+             
+            >
+              <MenuItem value={10}>Brandy Rowe</MenuItem>
+              <MenuItem value={20}>Catherine Jenkins</MenuItem>
+              <MenuItem value={30}>Courtney Auer</MenuItem>
+            </Select>
+          </FormControl>
         </Grid>
         <Grid item md={6} xs={12} sm={6}>
-          <TextField fullWidth label="Email" />
-        </Grid>
-        <Grid item md={6} xs={12} sm={6}>
-          <TextField fullWidth label="Contact" />
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">
+              Property Manager
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="Property Manager"
+            >
+              <MenuItem value={10}>Brandy Rowe</MenuItem>
+              <MenuItem value={20}>Catherine Jenkins</MenuItem>
+              <MenuItem value={30}>Courtney Auer</MenuItem>
+            </Select>
+          </FormControl>
         </Grid>
       </Grid>
     </div>

@@ -14,15 +14,15 @@ const LeaseAggrements = () => {
   return (
     <div className="px-5">
       <div className="d-flex justify-content-between align-items-center mt-4">
-        <Typography variant="h4">Lease Aggrements</Typography>
+        <Typography variant="h4">Lease Agreements</Typography>
 
         <FormControl sx={{ minWidth: 300 }}>
-          <InputLabel htmlFor="grouped-select">Lease aggrements</InputLabel>
+          <InputLabel htmlFor="grouped-select">Lease agreements</InputLabel>
           <Select
             defaultValue={2}
             value={"approved"}
             id="grouped-select"
-            label="Lease aggrements"
+            label="Lease agreements"
           >
             <MenuItem value="2">
               <em>None</em>

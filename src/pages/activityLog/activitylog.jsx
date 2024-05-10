@@ -45,7 +45,7 @@ export default function Activitylog() {
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={""}
-                label="Age"
+                label="Select Role"
                 // onChange={handleChange}
               >
                 <MenuItem value={10}>Ten</MenuItem>
@@ -61,7 +61,7 @@ export default function Activitylog() {
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={""}
-                label="Age"
+                label="Select User"
                 // onChange={handleChange}
               >
                 <MenuItem value={10}>Ten</MenuItem>

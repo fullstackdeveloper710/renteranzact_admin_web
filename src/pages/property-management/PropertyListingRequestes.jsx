@@ -56,7 +56,7 @@ const PropertyListingRequest = () => {
                   />
                   &nbsp;
                   <Icon
-                    label="Manage aggrements"
+                    label="Manage agreements"
                     icon="mingcute:documents-line"
                     onClick={() => navigate("/manage-aggrements-documents")}
                   />
