@@ -485,7 +485,7 @@ export default function AppView() {
           <Link>Clear Filters</Link>
         </Grid>
 
-        <Grid item md={12}>
+        <Grid item xs={12} sm={6} md={12}>
           <ReactApexChart
             type="bar"
             height={400}
@@ -494,7 +494,7 @@ export default function AppView() {
           />
         </Grid>
 
-        <Grid item md={8}>
+        <Grid item md={8} xs={12} sm={6} >
           <Typography variant="h4" className="text-center">
             Monthly User Onboarding
           </Typography>
@@ -505,7 +505,7 @@ export default function AppView() {
             height={400}
           />
         </Grid>
-        <Grid item md={4}>
+        <Grid item  xs={12} sm={6} md={4}>
           <div
             style={{ height: "500px" }}
             className="d-flex justify-content-center align-items-center"
@@ -519,7 +519,7 @@ export default function AppView() {
             />
           </div>
         </Grid>
-        <Grid item md={12}>
+        <Grid item md={12} xs={12} sm={6} >
           <Typography variant="h4">Total Revenue Generated</Typography>
           <ReactApexChart
             options={revenueChartState.options}
@@ -528,7 +528,7 @@ export default function AppView() {
             height={400}
           />
         </Grid>
-        <Grid item md={8}>
+        <Grid item md={8} xs={12} sm={6} >
           <Typography variant="h4">Payout Made</Typography>
 
           <ReactApexChart
@@ -538,7 +538,7 @@ export default function AppView() {
             height={400}
           />
         </Grid>
-        <Grid item md={4}>
+        <Grid item md={4} xs={12} sm={6} >
           <Typography variant="h4">Payout To be Made</Typography>
 
           <Card

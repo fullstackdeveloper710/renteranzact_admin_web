@@ -20,7 +20,7 @@ const Pricing = () => {
         <Grid item md={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">
-              Rent Frequency
+              Monthly
             </InputLabel>
             <Select
               labelId="demo-simple-select-label"
