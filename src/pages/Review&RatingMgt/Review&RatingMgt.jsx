@@ -17,6 +17,7 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import Iconify from "../../components/iconify";
 import PropertyDetailCard from "./propertyDetailCard";
 import React from "react";
+import PaginationComponent from "../../components/Pagination";
 export default function ReviewAndRatingMgt() {
   const [value, setValue] = React.useState(0);
   const propertyArray = [1, 2, 3, 4, 5, 6];
@@ -53,18 +54,18 @@ export default function ReviewAndRatingMgt() {
       </Stack>
       <div className="d-flex justify-content-between align-items-center">
         {/*  */}
-      <Tabs
-        className="mt-4"
-        value={value}
-        onChange={(e, newValue) => setValue(newValue)}
-        aria-label="basic tabs example"
-      >
-        <Tab sx={{ fontSize: 17 }} label="All" />
-        <Tab sx={{ fontSize: 17 }} label="Published" />
-        <Tab sx={{ fontSize: 17 }} label="Deleted" />
-      </Tabs>
-      <OutlinedInput
-      size="small"
+        <Tabs
+          className="mt-4"
+          value={value}
+          onChange={(e, newValue) => setValue(newValue)}
+          aria-label="basic tabs example"
+        >
+          <Tab sx={{ fontSize: 17 }} label="All" />
+          <Tab sx={{ fontSize: 17 }} label="Published" />
+          <Tab sx={{ fontSize: 17 }} label="Deleted" />
+        </Tabs>
+        <OutlinedInput
+          size="small"
           placeholder="Search user..."
           startAdornment={
             <InputAdornment position="start">
@@ -77,6 +78,10 @@ export default function ReviewAndRatingMgt() {
         />
       </div>
       {value < 4 && propertyArray?.map(() => <PropertyDetailCard />)}
+
+      <div className="p-3 d-flex justify-content-center align-items-center">
+        <PaginationComponent />
+      </div>
     </div>
   );
 }

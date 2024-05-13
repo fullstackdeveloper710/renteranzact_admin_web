@@ -63,6 +63,16 @@ export const routeConfig = [
         role: ["superAdmin", "reviewerAdmin", "legalAdmin"],
         show: true,
       },
+
+      {
+        title: "Property",
+        link: "property-management/:id",
+        path: "./pages/property-managements/updateProperty",
+        icon: <Icon icon="formkit:fastforward" />,
+        role: ["superAdmin", "reviewerAdmin", "legalAdmin"],
+        show: false,
+      },
+     
     ],
     show: true,
   },
@@ -154,6 +164,14 @@ export const routeConfig = [
     icon: <Icon icon="majesticons:chat-line" />,
     show: true,
   },
+  {
+    title: "Notifications",
+    link: "notifications",
+    path: "./pages/notifications",
+    icon: <Icon icon="material-symbols:notifications" />,
+    role: ["superAdmin", "reviewerAdmin", "legalAdmin"],
+    show: true,
+  },
 
   {
     title: "CMS Pages",
@@ -240,14 +258,14 @@ export const routeConfig = [
         icon: <Icon icon="flat-color-icons:data-protection" />,
         show: true,
       },
-      {
-        title: "Manage Agreements",
-        link: "manage-aggrements",
-        path: "./pages/manage-aggrements",
-        role: ["superAdmin"],
-        icon: <Icon icon="ph:file" />,
-        show: true,
-      },
+      // {
+      //   title: "Manage Agreements",
+      //   link: "manage-aggrements",
+      //   path: "./pages/manage-aggrements",
+      //   role: ["superAdmin"],
+      //   icon: <Icon icon="ph:file" />,
+      //   show: true,
+      // },
       {
         title: "Add Agreements",
         link: "add-aggrements",
@@ -257,6 +275,7 @@ export const routeConfig = [
         show: false,
       },
     ],
+  
     role: ["superAdmin"],
     icon: <Icon icon="fluent:content-view-16-regular" />,
     show: true,

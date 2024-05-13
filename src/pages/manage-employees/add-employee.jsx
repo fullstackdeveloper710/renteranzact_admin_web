@@ -46,7 +46,7 @@ const AddEmployee = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={"male"}
-              label="Role"
+              label="Gender"
             >
               <MenuItem value={"male"}>Male</MenuItem>
               <MenuItem value={"female"}>Female</MenuItem>

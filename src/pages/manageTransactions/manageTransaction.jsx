@@ -46,7 +46,7 @@ export default function ManageTransactions() {
           alignItems={"center"}
           justify={"space-evenly"}
         >
-          <Grid item xs={2} md={3}>
+          <Grid item xs={6} md={2}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
               <Select
@@ -62,7 +62,7 @@ export default function ManageTransactions() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={2} md={3}>
+          <Grid item xs={6} md={2}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
               <Select
@@ -78,29 +78,29 @@ export default function ManageTransactions() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={2} md={3} mb={1}>
+          <Grid item xs={6} md={2} >
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoContainer
+              {/* <DemoContainer
                 sx={{ overflow: "hidden" }}
                 components={["DatePicker"]}
-              >
+              > */}
                 <DatePicker
                   sx={{ width: "100%", overflow: "hidden" }}
                   label="11/11/23"
                 />
-              </DemoContainer>
+              {/* </DemoContainer> */}
             </LocalizationProvider>
           </Grid>
-          <Grid item xs={1} md={1}>
+          <Grid item xs={6} md={2}>
             <Link>Clear Filters</Link>
           </Grid>
-          <Grid item xs={6} md={1} sm={4}>
+          <Grid item xs={6} md={2} >
             <Button
               variant="contained"
               color="inherit"
               className="global-button"
               startIcon={<Iconify icon="eva:download-fill" />}
-              size="small"
+              size="large"
               fullWidth
             >
               Download

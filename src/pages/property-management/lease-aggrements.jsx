@@ -4,7 +4,6 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  TextField,
   Typography,
 } from "@mui/material";
 import React from "react";
@@ -24,12 +23,10 @@ const LeaseAggrements = () => {
             id="grouped-select"
             label="Lease agreements"
           >
-            <MenuItem value="2">
-              <em>None</em>
-            </MenuItem>
+            <MenuItem value="2">All</MenuItem>
 
             <MenuItem value={"approved"}>Approved</MenuItem>
-            <MenuItem value={"rejected"}> Rejected</MenuItem>
+            <MenuItem value={"rejected"}> Pending</MenuItem>
           </Select>
         </FormControl>
       </div>

@@ -333,7 +333,6 @@ const PropertyDetails = () => {
         <div className="d-flex justify-content-center align-items-center">
           <Button variant="contained">Accept</Button>&nbsp;&nbsp;
           <Button color="error" variant="contained">
-            {" "}
             Reject
           </Button>
         </div>

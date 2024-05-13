@@ -26,6 +26,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import ConfirmationDialog from "../../../components/dialog/ConfirmationDialog";
 import { Paper } from "@mui/material";
 import TableContainerComponent from "../../../components/TableContainerComponent";
+import PaginationComponent from "../../../components/Pagination";
 
 // ----------------------------------------------------------------------
 let text = "";
@@ -198,6 +199,9 @@ export default function UserPage() {
           rowsPerPageOptions={[5, 10, 25]}
           onRowsPerPageChange={handleChangeRowsPerPage}
         /> */}
+       <div className="p-3 d-flex justify-content-center align-items-center">
+        <PaginationComponent />
+        </div> 
 
         {deleteDialog && (
           <ConfirmationDialog

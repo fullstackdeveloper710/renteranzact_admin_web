@@ -1,24 +1,36 @@
-.app-header header{
-    background-color: white !important;
-    background-image: url('/public/images/header-back.png');
-    /* background-size: cover; */
-    background-repeat: repeat;
+.app-header header {
+  background-color: white !important;
+  background-image: url("/public/images/header-back.png");
+  /* background-size: cover; */
+  background-repeat: repeat;
 }
 
-.app-header .css-dohfak-MuiAvatar-root{
-    background-color: #C8D736;
+.app-header .css-dohfak-MuiAvatar-root {
+  background-color: #c8d736;
 }
-.nav-logo{
-    text-align: center;
-    padding: 27px 10px;
-    background-color: white;
+.nav-logo {
+  /* position: fixed; */
+  text-align: center;
+  padding: 27px 10px;
+  /* width : 330px; */
+  background-color: white;
 }
+.nav-link {
+  position: sticky;
+  top: 0px;
+  z-index: 9999;
+}
+.nav-link .nav-logo img {
+  height: 25px;
+  width: 220px;
+}
+
 .nav-bar span {
-    color: #fff !important;
+  color: #fff !important;
 }
 
- .css-16pm499-MuiButtonBase-root-MuiListItemButton-root{
-    background-color: #C8D736 !important;
-    color: white !important;
-    font-size:"15px" !important
+.css-16pm499-MuiButtonBase-root-MuiListItemButton-root {
+  background-color: #c8d736 !important;
+  color: white !important;
+  font-size: "15px" !important;
 }

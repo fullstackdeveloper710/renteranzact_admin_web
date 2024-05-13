@@ -48,7 +48,17 @@ const AddProperty = () => {
   };
 
   const Step = ({ title, status }) => (
-    <Box sx={{ height: 100, p: 3 }} display={"flex"} gap={2}>
+    <Box
+      sx={{
+        height: 100,
+        p: 3,
+        "@media (min-width:900px)": {
+          width: "100%",
+        },
+      }}
+      display={"flex"}
+      gap={2}
+    >
       <div
         style={
           !status
@@ -60,10 +70,21 @@ const AddProperty = () => {
         <b>12/12</b>
       </div>
       <div>
-        <Typography variant="h6" color={"rgb(7 38 46)"}>
+        <Typography
+          sx={{
+            fontSize: { md: "18px", sm: "14px", xs: "12px" },
+            "@media (min-width:913px)": {
+              fontSize: "14px",
+            },
+          }}
+          color={"rgb(7 38 46)"}
+        >
           <b>{title}</b>
         </Typography>
-        <Typography color={status ? "rgb(58 168 175)" : "#8e9926"}>
+        <Typography
+          sx={{ fontSize: { md: "14px", sm: "14px", xs: "12px" } }}
+          color={status ? "rgb(58 168 175)" : "#8e9926"}
+        >
           {status ? "Completed" : "Pending"}
         </Typography>
       </div>

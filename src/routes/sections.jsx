@@ -28,6 +28,9 @@ export const ManageEmployees = lazy(() =>
 export const AddEmployees = lazy(() =>
   import("../pages/manage-employees/add-employee")
 );
+export const Notifications = lazy(() =>
+  import("../pages/notifications")
+);
 const ManageFaq = lazy(() => import("../pages/manage-faq"));
 const AddFAQ = lazy(() => import("../pages/manage-faq/add-faq"));
 export const ManageUsers = lazy(() => import("../pages/manageUsers/index"));
@@ -106,6 +109,10 @@ export const PropertyRequestDetail = lazy(() =>
 
 export const LeaseAggrements = lazy(() =>
   import("../pages/property-management/lease-aggrements")
+);
+
+export const UpdateProperty = lazy(() =>
+  import("../pages/property-management/updateProperty")
 );
 
 const LoadDynamicComponent = (object) => {
@@ -319,9 +326,17 @@ export default function Router() {
           path: "property-request-detail",
         },
         {
+          element: <UpdateProperty />,
+          path: "property-management/:id",
+        },
+        {
           element: <LeaseAggrements />,
           path: "lease-aggrements",
         },
+        {
+          element : <Notifications />,
+          path : "notifications"
+        }
       ],
     },
     {

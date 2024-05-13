@@ -59,7 +59,7 @@ export default function Nav({ openNav, onCloseNav }) {
         color: "white",
       }}
     >
-      <Link to={"/dashboard"}>
+      <Link className="nav-link" to={"/dashboard"}>
         <div className="nav-logo">
           <img src="./images/logo.png" alt="no logo" />
         </div>
@@ -69,7 +69,7 @@ export default function Nav({ openNav, onCloseNav }) {
       {renderMenu}
 
       <Box style={{ height: 145 }}></Box>
-      <Box sx={{ px: 2 }}>
+      <Box sx={{ px: 2, position: "sticky", bottom: 0, background: "#13556d" }}>
         <ListItemButton
           sx={{ color: "white" }}
           onClick={() => setLogoutPopup(true)}
@@ -97,7 +97,6 @@ export default function Nav({ openNav, onCloseNav }) {
       {upLg ? (
         <Box
           sx={{
-          
             height: 1,
             color: "white",
 
@@ -115,14 +114,12 @@ export default function Nav({ openNav, onCloseNav }) {
       ) : (
         <Drawer
           open={openNav}
-          
-          
           onClose={onCloseNav}
           PaperProps={{
             sx: {
               backgroundImage: "url(/images/header-back.png)",
-          // backgroundSize : "cover",
-          backgroundRepeat: "repeat",
+              // backgroundSize : "cover",
+              backgroundRepeat: "repeat",
               color: "white",
               width: NAV.WIDTH,
             },

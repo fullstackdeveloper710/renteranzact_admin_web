@@ -34,6 +34,7 @@ import { useNavigate } from "react-router-dom";
 import moment from "moment/moment";
 import ConfirmationDialog from "../../components/dialog/ConfirmationDialog";
 import TableContainerComponent from "../../components/TableContainerComponent";
+import PaginationComponent from "../../components/Pagination";
 // ----------------------------------------------------------------------
 export default function UserPage() {
   const [page, setPage] = useState(0);
@@ -224,6 +225,9 @@ export default function UserPage() {
             {notFound && <TableNoData query={filterName} />}
           </TableBody>
         </Table>
+        <div className="p-3 d-flex justify-content-center align-items-center">
+        <PaginationComponent />
+        </div> 
           </TableContainerComponent>
        
 

@@ -4,21 +4,15 @@ import {
   OutlinedInput,
   Stack,
   Tab,
-  Table,
   Tabs,
   Typography,
-  TableContainer,
-  TableBody,
-  TableCell,
-  TableRow,
-  TableHead,
-  Button,
   Autocomplete,
   TextField,
   FormControl,
   InputLabel,
   Select,
   MenuItem,
+  Grid,
 } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -26,12 +20,11 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import Iconify from "../../components/iconify";
 import React from "react";
-import moment from "moment";
-import Scrollbar from "../../components/scrollbar";
 import { faker } from "@faker-js/faker";
 import OnboardedProperties from "./OnboardedProperties";
 import PropertyListingRequest from "./PropertyListingRequestes";
 import { useNavigate } from "react-router-dom";
+import PaginationComponent from "../../components/Pagination";
 export const tableColumns = [
   "Image",
   "Landlord/PM",
@@ -76,8 +69,6 @@ const PropertyManagement = () => {
     date: faker.date.birthdate(),
     mobile: faker.phone.number(),
   });
-
-  const navigate = useNavigate();
   return (
     <div className="px-5">
       <Stack
@@ -103,57 +94,76 @@ const PropertyManagement = () => {
         </div>
       </Stack>
       <Card className="p-4">
-        <div className="d-flex gap-3 align-items-center">
-          <OutlinedInput
-            placeholder="Search property..."
-            startAdornment={
-              <InputAdornment position="start">
-                <Iconify
-                  icon="eva:search-fill"
-                  sx={{ color: "text.disabled", width: 20, height: 20 }}
-                />
-              </InputAdornment>
-            }
-          />
+        <Grid container spacing={2}>
+          <Grid item md={3} sm={6} xs={12}>
+            <OutlinedInput
+              placeholder="Search property..."
+              startAdornment={
+                <InputAdornment position="start">
+                  <Iconify
+                    icon="eva:search-fill"
+                    sx={{ color: "text.disabled", width: 20, height: 20 }}
+                  />
+                </InputAdornment>
+              }
+            />
+          </Grid>
 
-          <Autocomplete
-            disablePortal
-            id="combo-box-demo"
-            options={cities}
-            sx={{ width: 300 }}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Cities"
-                placeholder="Select Cities"
-              />
-            )}
-          />
-
-          <FormControl>
-            <InputLabel id="demo-simple-select-label">Property</InputLabel>
-            <Select
+          <Grid item md={3} sm={6} xs={12}>
+            {" "}
+            <Autocomplete
+              disablePortal
+              id="combo-box-demo"
+              options={cities}
               sx={{ width: 300 }}
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={"all"}
-              label="Property"
-            >
-              <MenuItem value={"all"}>All</MenuItem>
-              <MenuItem value={"vacant"}>Vacant</MenuItem>
-              <MenuItem value={"rented"}>Rented</MenuItem>
-            </Select>
-          </FormControl>
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Cities"
+                  placeholder="Select Cities"
+                />
+              )}
+            />
+          </Grid>
 
-          {/* <Button
-           className="global-button"
-            variant="contained"
-            size="large"
-            onClick={() => navigate("/add-property")}
-          >
-            Add
-          </Button> */}
-        </div>
+          <Grid item md={3} sm={6} xs={12}>
+            {" "}
+            <FormControl>
+              <InputLabel id="demo-simple-select-label">Property</InputLabel>
+              <Select
+                sx={{ width: 300 }}
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={"all"}
+                label="Property"
+              >
+                <MenuItem value={"all"}>All</MenuItem>
+                <MenuItem value={"vacant"}>Vacant</MenuItem>
+                <MenuItem value={"rented"}>Rented</MenuItem>
+              </Select>
+            </FormControl>{" "}
+          </Grid>
+
+          <Grid item md={3} sm={6} xs={12}>
+            {" "}
+            <FormControl>
+              <InputLabel id="demo-simple-select-label">
+                Property Type
+              </InputLabel>
+              <Select
+                sx={{ width: 300 }}
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={"Residential"}
+                label="Property Type"
+              >
+                <MenuItem value={"Residential"}>Residential</MenuItem>
+                <MenuItem value={"Commercial"}>Commercial </MenuItem>
+                <MenuItem value={"Short-Stays"}>Short-Stays</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+        </Grid>
         <Tabs
           className="mt-3"
           variant="standard"
@@ -164,15 +174,15 @@ const PropertyManagement = () => {
           <Tab label="Property listings Requests" />
         </Tabs>
 
-        {/* <Scrollbar> */}
-        {/* <TableContainer sx={{ overflow: "unset", mt: 3 }}> */}
         {selectedTabs === 0 ? (
           <OnboardedProperties tableColumns={tableColumns} data={properties} />
         ) : (
           <PropertyListingRequest />
         )}
-        {/* </TableContainer> */}
-        {/* </Scrollbar> */}
+
+        <div className="p-3 d-flex justify-content-center align-items-center">
+          <PaginationComponent />
+        </div>
       </Card>
     </div>
   );

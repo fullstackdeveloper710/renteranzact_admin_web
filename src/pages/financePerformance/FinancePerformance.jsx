@@ -61,14 +61,14 @@ export default function FinancePerformance() {
   });
   const tableColumns = [
     "Month",
-    "Cautioin Fee",
+    "Caution Fee",
     "Rent Fee",
     "Legal Fee",
     "Service Charges",
-    "Agenecy Fee",
+    "Agency Fee",
     "Transaction fee",
   ];
-  const revenueGenrateColumn = ["Month", "Revenue Regenrated"];
+  const revenueGenrateColumn = ["Month", "Revenue Regenerated"];
   return (
     <div className="px-5">
       <Stack
@@ -136,7 +136,14 @@ export default function FinancePerformance() {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={3} sm={4} xs={12}style={{ alignSelf: "flex-start" }} mb={1} >
+        <Grid
+          item
+          md={3}
+          sm={4}
+          xs={12}
+          style={{ alignSelf: "flex-start" }}
+          mb={1}
+        >
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer
               components={["DatePicker"]}
@@ -162,37 +169,36 @@ export default function FinancePerformance() {
           </Button>
         </Grid>
       </Grid>
-<TableContainerComponent>
-
-      <Table sx={{ minWidth: 800, mt: 4 }} className="table-bordered">
-        <TableHead>
-          <TableRow>
-            {tableColumns.map((x, i) => {
-              return <TableCell key={i}>{x}</TableCell>;
+      <TableContainerComponent>
+        <Table sx={{ minWidth: 800, mt: 4 }} className="table-bordered">
+          <TableHead>
+            <TableRow>
+              {tableColumns.map((x, i) => {
+                return <TableCell key={i}>{x}</TableCell>;
+              })}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {employees.map((x, i) => {
+              return (
+                <TableRow key={i}>
+                  <TableCell>{x.month}</TableCell>
+                  <TableCell>40000</TableCell>
+                  <TableCell>20000</TableCell>
+                  <TableCell>100000</TableCell>
+                  <TableCell>50000</TableCell>
+                  <TableCell>60000</TableCell>
+                  <TableCell>70000</TableCell>
+                </TableRow>
+              );
             })}
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {employees.map((x, i) => {
-            return (
-              <TableRow key={i}>
-                <TableCell>{x.month}</TableCell>
-                <TableCell>40000</TableCell>
-                <TableCell>20000</TableCell>
-                <TableCell>100000</TableCell>
-                <TableCell>50000</TableCell>
-                <TableCell>60000</TableCell>
-                <TableCell>70000</TableCell>
-              </TableRow>
-            );
-          })}
-          <TableEmptyRows
-            height={77}
-            emptyRows={emptyRows(page, rowsPerPage, users.length)}
-          />
-          {notFound && <TableNoData query={filterName} />}
-        </TableBody>
-      </Table>
+            <TableEmptyRows
+              height={77}
+              emptyRows={emptyRows(page, rowsPerPage, users.length)}
+            />
+            {notFound && <TableNoData query={filterName} />}
+          </TableBody>
+        </Table>
         <Table sx={{ minWidth: 700, mt: 4 }} className="table-bordered">
           <TableHead>
             <TableRow>
@@ -217,12 +223,7 @@ export default function FinancePerformance() {
             {notFound && <TableNoData query={filterName} />}
           </TableBody>
         </Table>
-</TableContainerComponent>
-
-     
-
-      
-      </div>
-  
+      </TableContainerComponent>
+    </div>
   );
 }

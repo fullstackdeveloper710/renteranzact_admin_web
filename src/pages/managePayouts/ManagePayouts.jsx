@@ -20,12 +20,7 @@ export default function ManagePayouts() {
   const managePayouyArray = [1, 2, 3, 4, 5];
   return (
     <div className="px-5">
-      <Stack
-        direction="row"
-        alignItems="center"
-        justifyContent="space-between"
-       
-      >
+      <Stack direction="row" alignItems="center" justifyContent="space-between">
         <Typography variant="h4">Manage Payouts</Typography>
         <div className="d-flex">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -43,10 +38,15 @@ export default function ManagePayouts() {
       </Stack>
       <Stack>
         {/* <Typography variant="h4">Collected Amount</Typography> */}
-        <Grid container gap={2} className="mt-4" direction={"row"}
+        <Grid
+          container
+          gap={2}
+          className="mt-4"
+          direction={"row"}
           alignItems={"center"}
-          justify={"space-evenly"}>
-          <Grid item xs={2}>
+          justify={"space-evenly"}
+        >
+          <Grid item xs={6} md={2}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
               <Select
@@ -62,7 +62,7 @@ export default function ManagePayouts() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={6} md={2}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
               <Select
@@ -78,14 +78,14 @@ export default function ManagePayouts() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={2} mb={1}>
+          <Grid item xs={6} md={2}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoContainer components={["DatePicker"]}>
-                <DatePicker label="11/11/23" />
-              </DemoContainer>
+              {/* <DemoContainer components={["DatePicker"]}> */}
+              <DatePicker label="11/11/23" />
+              {/* </DemoContainer> */}
             </LocalizationProvider>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={6} md={2}>
             {/* <Button
               variant="contained"
               color="inherit"
@@ -98,14 +98,14 @@ export default function ManagePayouts() {
             <Link>Clear Filters</Link>
           </Grid>
           {/* <Grid item xs={1}></Grid> */}
-          <Grid item xs={2}>
+          <Grid item xs={2} md={2}>
             <Button
               variant="contained"
               color="inherit"
               className="global-button"
               startIcon={<Iconify icon="eva:download-fill" />}
-             fullWidth
-             size="large"
+              fullWidth
+              size="large"
             >
               Download
             </Button>

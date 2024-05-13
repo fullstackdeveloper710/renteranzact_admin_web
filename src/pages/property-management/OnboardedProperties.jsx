@@ -13,7 +13,6 @@ import ViewProperty from "./ViewProperty";
 import { useNavigate } from "react-router-dom";
 import TableContainerComponent from "../../components/TableContainerComponent";
 const OnboardedProperties = ({ tableColumns, data, onClick }) => {
-  const [isViewProperty, setIsViewProperty] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -48,7 +47,12 @@ const OnboardedProperties = ({ tableColumns, data, onClick }) => {
                   &nbsp;
                   <Iconify onClick={onClick} icon="mingcute:delete-line" />
                   &nbsp;
-                  <Iconify icon="bx:edit" />
+                  <Iconify
+                    icon="bx:edit"
+                    onClick={() =>
+                      navigate(`/property-management/${x.id}`, { state: x })
+                    }
+                  />
                 </TableCell>
               </TableRow>
             );
