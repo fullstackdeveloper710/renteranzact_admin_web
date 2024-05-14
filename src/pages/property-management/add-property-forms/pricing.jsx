@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import { listOfMonths } from "../../../sections/user/utils";
 
 const Pricing = () => {
   return (
@@ -19,17 +20,17 @@ const Pricing = () => {
         </Grid>
         <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">
-              Monthly
-            </InputLabel>
+            <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              label="Rent Frequency"
+              label="Monthly"
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              {listOfMonths.map((x, i) => (
+                <MenuItem key={i} value={x}>
+                  {x}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         </Grid>

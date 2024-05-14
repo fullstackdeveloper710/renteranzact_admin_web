@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import { propertyType } from "../../../sections/user/utils";
 
 const PropertyDetails = () => {
   return (
@@ -27,9 +28,9 @@ const PropertyDetails = () => {
               id="demo-simple-select"
               label="Property Category"
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              <MenuItem value={10}>Residential</MenuItem>
+              <MenuItem value={20}>Short-Stays</MenuItem>
+              <MenuItem value={30}>Commercial</MenuItem>
             </Select>
           </FormControl>
         </Grid>
@@ -41,9 +42,13 @@ const PropertyDetails = () => {
               id="demo-simple-select"
               label="Property Type"
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              {propertyType.map((x, i) => {
+                return (
+                  <MenuItem value={x.title} key={i}>
+                    {x.title}
+                  </MenuItem>
+                );
+              })}
             </Select>
           </FormControl>
         </Grid>
@@ -57,9 +62,9 @@ const PropertyDetails = () => {
               id="demo-simple-select"
               label="Furnishing Type"
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              <MenuItem value={10}>Serviced</MenuItem>
+              <MenuItem value={20}>Furnished</MenuItem>
+              <MenuItem value={30}>Unfurnished</MenuItem>
             </Select>
           </FormControl>
         </Grid>
@@ -71,9 +76,9 @@ const PropertyDetails = () => {
               id="demo-simple-select"
               label="Rent Type"
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              <MenuItem value={10}>Monthly</MenuItem>
+              <MenuItem value={20}>Quarterly </MenuItem>
+              <MenuItem value={30}>Yearly</MenuItem>
             </Select>
           </FormControl>
         </Grid>
@@ -105,9 +110,11 @@ const PropertyDetails = () => {
               id="demo-simple-select"
               label="No. of floors"
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              {[0, 1, 2, 3, 4, 5, 6].map((x, index) => (
+                <MenuItem key={index} value={x}>
+                  {x}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         </Grid>
@@ -125,13 +132,14 @@ const PropertyDetails = () => {
               id="demo-simple-select"
               label="Availabilty"
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              <MenuItem value={10}>Immediate</MenuItem>
+              <MenuItem value={20}>{"<"} 15 Days</MenuItem>
+              <MenuItem value={30}>{"<"} 30 Days</MenuItem>
+              <MenuItem value={30}>{">"} 30 Days</MenuItem>
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={6} xs={12} sm={6}>
+        {/* <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">
               Age of Construction
@@ -146,7 +154,7 @@ const PropertyDetails = () => {
               <MenuItem value={30}>Thirty</MenuItem>
             </Select>
           </FormControl>
-        </Grid>
+        </Grid> */}
         <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">
@@ -156,11 +164,9 @@ const PropertyDetails = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Type of Community"
-            
             >
-               <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              <MenuItem value={10}>Gated Community</MenuItem>
+              <MenuItem value={20}>Open Community</MenuItem>
             </Select>
           </FormControl>
         </Grid>
@@ -171,7 +177,6 @@ const PropertyDetails = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Lanlords"
-             
             >
               <MenuItem value={10}>Brandy Rowe</MenuItem>
               <MenuItem value={20}>Catherine Jenkins</MenuItem>

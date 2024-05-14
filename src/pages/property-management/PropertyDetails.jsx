@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import Iconify from "../../components/iconify/iconify";
 import { useNavigate } from "react-router-dom";
+import { Icon } from "@iconify/react/dist/iconify.js";
 const PropertyDetails = () => {
   const navigate = useNavigate();
   return (
@@ -263,7 +264,43 @@ const PropertyDetails = () => {
 
           <Grid container spacing={1} mt={1}>
             <Grid item md={2}>
-              <Card style={{ height: 200 }}>
+              <Card style={{ height: 150 }}>
+                <CardContent
+                  className="d-flex justify-content-center align-items-center"
+                  style={{ background: "#00800040" }}
+                >
+                  <Icon
+                    cursor={"pointer"}
+                    fontSize={25}
+                    style={{
+                      position: "absolute",
+                      right: 3,
+                      top: 2,
+                      zIndex: 2,
+                    }}
+                    icon="openmoji:cross-mark"
+                  />
+                  <Iconify fontSize={40} icon="material-symbols:file-copy" />
+                </CardContent>
+                <CardActions className="d-flex justify-content-between align-items-center">
+                  <Typography>Gov.Id Proof</Typography>
+                  <Iconify icon="material-symbols:download" />
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid item md={2}>
+              <Card style={{ height: 150 }}>
+                <Icon
+                  cursor={"pointer"}
+                  fontSize={25}
+                  style={{
+                    position: "absolute",
+                    right: 3,
+                    top: 2,
+                    zIndex: 2,
+                  }}
+                  icon="openmoji:cross-mark"
+                />
                 <CardContent
                   className="d-flex justify-content-center align-items-center"
                   style={{ background: "#00800040" }}
@@ -277,7 +314,18 @@ const PropertyDetails = () => {
               </Card>
             </Grid>
             <Grid item md={2}>
-              <Card style={{ height: 200 }}>
+              <Card style={{ height: 150 }}>
+                <Icon
+                  cursor={"pointer"}
+                  fontSize={25}
+                  style={{
+                    position: "absolute",
+                    right: 3,
+                    top: 2,
+                    zIndex: 2,
+                  }}
+                  icon="openmoji:cross-mark"
+                />
                 <CardContent
                   className="d-flex justify-content-center align-items-center"
                   style={{ background: "#00800040" }}
@@ -291,21 +339,18 @@ const PropertyDetails = () => {
               </Card>
             </Grid>
             <Grid item md={2}>
-              <Card style={{ height: 200 }}>
-                <CardContent
-                  className="d-flex justify-content-center align-items-center"
-                  style={{ background: "#00800040" }}
-                >
-                  <Iconify fontSize={40} icon="material-symbols:file-copy" />
-                </CardContent>
-                <CardActions className="d-flex justify-content-between align-items-center">
-                  <Typography>Gov.Id Proof</Typography>
-                  <Iconify icon="material-symbols:download" />
-                </CardActions>
-              </Card>
-            </Grid>
-            <Grid item md={2}>
-              <Card style={{ height: 200 }}>
+              <Card style={{ height: 150 }}>
+                <Icon
+                  cursor={"pointer"}
+                  fontSize={25}
+                  style={{
+                    position: "absolute",
+                    right: 3,
+                    top: 2,
+                    zIndex: 2,
+                  }}
+                  icon="openmoji:cross-mark"
+                />
                 <CardContent
                   className="d-flex justify-content-center align-items-center"
                   style={{ background: "#00800040" }}
@@ -320,7 +365,9 @@ const PropertyDetails = () => {
             </Grid>
           </Grid>
         </div>
-        <Typography className="mt-2">Legal representative Detail</Typography>
+        <Typography className="mt-4">
+          <b>Legal representative Detail</b>
+        </Typography>
         <textarea style={{ width: "100%", overflowY: "hidden" }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

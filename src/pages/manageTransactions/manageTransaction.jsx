@@ -15,6 +15,7 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import Iconify from "../../components/iconify";
 import ManageTransactionCard from "./manageTransactionCard";
 import { Link } from "react-router-dom";
+import { listOfMonths } from "../../sections/user/utils";
 
 export default function ManageTransactions() {
   const managePayouyArray = [1, 2, 3, 4, 5];
@@ -40,13 +41,14 @@ export default function ManageTransactions() {
         {/* <Typography variant="h4">Collected Amount</Typography> */}
         <Grid
           container
-          gap={2}
-          className="mt-4"
+          // gap={2}
+          className="mt-3"
           direction={"row"}
+          spacing={2}
           alignItems={"center"}
           justify={"space-evenly"}
         >
-          <Grid item xs={6} md={2}>
+          <Grid item xs={6} md={3}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
               <Select
@@ -56,29 +58,16 @@ export default function ManageTransactions() {
                 label="Monthly"
                 // onChange={handleChange}
               >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+               {listOfMonths.map((x, i) => (
+                <MenuItem key={i} value={x}>
+                  {x}
+                </MenuItem>
+              ))}
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={6} md={2}>
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={""}
-                label="Monthly"
-                // onChange={handleChange}
-              >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={6} md={2} >
+     
+          <Grid item xs={6} md={3} >
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               {/* <DemoContainer
                 sx={{ overflow: "hidden" }}
@@ -91,10 +80,10 @@ export default function ManageTransactions() {
               {/* </DemoContainer> */}
             </LocalizationProvider>
           </Grid>
-          <Grid item xs={6} md={2}>
+          <Grid item xs={6} md={3}>
             <Link>Clear Filters</Link>
           </Grid>
-          <Grid item xs={6} md={2} >
+          <Grid item xs={6} md={3} >
             <Button
               variant="contained"
               color="inherit"

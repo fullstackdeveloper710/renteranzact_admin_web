@@ -7,6 +7,7 @@ import {
   Rating,
   Tabs,
   Tab,
+  Divider,
 } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
@@ -65,7 +66,7 @@ export default function ReviewAndRatingMgt() {
           <Tab sx={{ fontSize: 17 }} label="Deleted" />
         </Tabs>
         <OutlinedInput
-          size="small"
+          size="medium"
           placeholder="Search user..."
           startAdornment={
             <InputAdornment position="start">
@@ -77,6 +78,54 @@ export default function ReviewAndRatingMgt() {
           }
         />
       </div>
+      <Grid
+        container
+        display={"flex"}
+        alignItems={"center"}
+        justifyContent={"space-between"}
+        mt={5}
+      >
+        <Grid
+          item
+          xs={12}
+          md={3}
+          // justifyContent={"center"}
+          gap={3}
+        >
+          <Typography textAlign={"center"} variant="subtitle1">
+            Image
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={3}>
+          <Typography textAlign={"center"} variant="subtitle1">
+            Descriptions
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={3}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          gap={3}
+        >
+          {" "}
+          <Typography variant="subtitle1">Rating</Typography>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={3}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          gap={3}
+        >
+          <Typography variant="subtitle1">Status</Typography>
+        </Grid>
+      </Grid>
+      <Divider className="mt-3" component={'li'} style={{listStyleType : "none"}} />
       {value < 4 && propertyArray?.map(() => <PropertyDetailCard />)}
 
       <div className="p-3 d-flex justify-content-center align-items-center">

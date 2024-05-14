@@ -2,12 +2,12 @@ export const visuallyHidden = {
   border: 0,
   margin: -1,
   padding: 0,
-  width: '1px',
-  height: '1px',
-  overflow: 'hidden',
-  position: 'absolute',
-  whiteSpace: 'nowrap',
-  clip: 'rect(0 0 0 0)',
+  width: "1px",
+  height: "1px",
+  overflow: "hidden",
+  position: "absolute",
+  whiteSpace: "nowrap",
+  clip: "rect(0 0 0 0)",
 };
 
 export function emptyRows(page, rowsPerPage, arrayLength) {
@@ -30,7 +30,7 @@ function descendingComparator(a, b, orderBy) {
   return 0;
 }
 export function getComparator(order, orderBy) {
-  return order === 'desc'
+  return order === "desc"
     ? (a, b) => descendingComparator(a, b, orderBy)
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
@@ -54,3 +54,69 @@ export function applyFilter({ inputData, comparator, filterName }) {
 
   return inputData;
 }
+
+export const propertyType = [
+  {
+    title: "Detached Duplexes",
+  },
+  {
+    title: "Semi-detached Duplexes",
+  },
+  {
+    title: "Detached Bungalows",
+  },
+  {
+    title: "Semi-detached Bungalows",
+  },
+  {
+    title: "Terraced Bungalows",
+  },
+  {
+    title: "Terraced Duplexes",
+  },
+  {
+    title: "Block of Flats",
+  },
+  {
+    title: "Studio Apartment",
+  },
+  {
+    title: "Mini Flat",
+  },
+  {
+    title: "Office Space",
+  },
+  {
+    title: "Shope",
+  },
+  {
+    title: "Warehouse",
+  },
+  {
+    title: "Open Space",
+  },
+  {
+    title: "Complex",
+  },
+  {
+    title: "Plaza",
+  },
+  {
+    title: "Mall",
+  },
+];
+export const listOfMonths = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+

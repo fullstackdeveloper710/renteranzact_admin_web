@@ -25,7 +25,7 @@ import Scrollbar from "../../../components/scrollbar";
 
 // ----------------------------------------------------------------------
 
-const NOTIFICATIONS = [
+export const NOTIFICATIONS = [
   {
     id: faker.string.uuid(),
     title: "Your order is placed",
@@ -206,7 +206,7 @@ NotificationItem.propTypes = {
   }),
 };
 
-function NotificationItem({ notification }) {
+export function NotificationItem({ notification }) {
   const { avatar, title } = renderContent(notification);
 
   return (

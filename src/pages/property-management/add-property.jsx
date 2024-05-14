@@ -76,6 +76,10 @@ const AddProperty = () => {
             "@media (min-width:913px)": {
               fontSize: "14px",
             },
+            "@media (max-width:1320px)": {
+              fontSize: "14px",
+              
+            },
           }}
           color={"rgb(7 38 46)"}
         >

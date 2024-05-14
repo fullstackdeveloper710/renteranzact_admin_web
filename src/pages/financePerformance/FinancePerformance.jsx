@@ -14,6 +14,7 @@ import {
   emptyRows,
   applyFilter,
   getComparator,
+  listOfMonths,
 } from "../../sections/user/utils";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -96,14 +97,15 @@ export default function FinancePerformance() {
       <Typography variant="h5">Collected Amount</Typography>
       <Grid
         container
-        gap={2}
-        // className="mt-4"
+        // gap={2}
+        className="mt-3"
+        spacing={2}
         // direction={"row"}
         // alignItems={"center"}
         justifyContent="space-between"
         alignItems={"center"}
       >
-        <Grid item md={2} sm={4} xs={12}>
+        <Grid item md={3} sm={4} xs={12}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
             <Select
@@ -114,49 +116,34 @@ export default function FinancePerformance() {
               label="Monthly"
               // onChange={handleChange}
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              {listOfMonths.map((x, i) => (
+                <MenuItem key={i} value={x}>
+                  {x}
+                </MenuItem>
+              ))}
+             
             </Select>
           </FormControl>
         </Grid>
-        <Grid item md={2} sm={4} xs={12}>
-          <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={""}
-              label="Monthly"
-              // onChange={handleChange}
-            >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
-          </FormControl>
-        </Grid>
+    
         <Grid
           item
           md={3}
           sm={4}
           xs={12}
           style={{ alignSelf: "flex-start" }}
-          mb={1}
+      
         >
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DemoContainer
-              components={["DatePicker"]}
-              sx={{ overflowX: "hidden" }}
-            >
+           
               <DatePicker sx={{ width: "100%" }} label="11/11/23" />
-            </DemoContainer>
+           
           </LocalizationProvider>
         </Grid>
-        <Grid item md={2} sm={4} xs={12}>
+        <Grid item md={3} sm={4} xs={12}>
           <Link>Clear Filters</Link>
         </Grid>
-        <Grid item md={2} sm={4} xs={12}>
+        <Grid item md={3} sm={4} xs={12}>
           <Button
             variant="contained"
             color="inherit"

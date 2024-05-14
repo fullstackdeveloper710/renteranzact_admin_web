@@ -25,12 +25,14 @@ export const Dashboard = lazy(() => import("../pages/app"));
 export const ManageEmployees = lazy(() =>
   import("../pages/manage-employees/index")
 );
+
+export const CreateNotification = lazy(() =>
+  import("../pages/notifications/create-notifications")
+);
 export const AddEmployees = lazy(() =>
   import("../pages/manage-employees/add-employee")
 );
-export const Notifications = lazy(() =>
-  import("../pages/notifications")
-);
+export const Notifications = lazy(() => import("../pages/notifications"));
 const ManageFaq = lazy(() => import("../pages/manage-faq"));
 const AddFAQ = lazy(() => import("../pages/manage-faq/add-faq"));
 export const ManageUsers = lazy(() => import("../pages/manageUsers/index"));
@@ -334,9 +336,13 @@ export default function Router() {
           path: "lease-aggrements",
         },
         {
-          element : <Notifications />,
-          path : "notifications"
-        }
+          element: <Notifications />,
+          path: "notifications",
+        },
+        {
+          element: <CreateNotification />,
+          path: "create-notifications",
+        },
       ],
     },
     {

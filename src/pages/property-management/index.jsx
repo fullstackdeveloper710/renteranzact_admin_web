@@ -94,9 +94,11 @@ const PropertyManagement = () => {
         </div>
       </Stack>
       <Card className="p-4">
-        <Grid container spacing={2}>
+        <Grid container  spacing={3}>
+
           <Grid item md={3} sm={6} xs={12}>
             <OutlinedInput
+            fullWidth
               placeholder="Search property..."
               startAdornment={
                 <InputAdornment position="start">
@@ -112,12 +114,14 @@ const PropertyManagement = () => {
           <Grid item md={3} sm={6} xs={12}>
             {" "}
             <Autocomplete
+              fullWidth
               disablePortal
               id="combo-box-demo"
               options={cities}
-              sx={{ width: 300 }}
+              sx={{ width: '100%' }}
               renderInput={(params) => (
                 <TextField
+                fullWidth
                   {...params}
                   label="Cities"
                   placeholder="Select Cities"
@@ -128,10 +132,10 @@ const PropertyManagement = () => {
 
           <Grid item md={3} sm={6} xs={12}>
             {" "}
-            <FormControl>
+            <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Property</InputLabel>
               <Select
-                sx={{ width: 300 }}
+                sx={{ width: '100%' }}
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={"all"}
@@ -146,12 +150,12 @@ const PropertyManagement = () => {
 
           <Grid item md={3} sm={6} xs={12}>
             {" "}
-            <FormControl>
+            <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">
                 Property Type
               </InputLabel>
               <Select
-                sx={{ width: 300 }}
+                sx={{ width: '100%' }}
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={"Residential"}

@@ -19,9 +19,37 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import moment from "moment";
 
 export default function ManageChat() {
-  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const navigate = useNavigate();
+  const [recentUsers] = useState([
+    {
+      user: "Hiragi Kangami",
+      email: "HiragiKangami@gmail.com",
+    },
+    {
+      user: "Hiragi Kangami",
+      email: "HiragiKangami@gmail.com",
+    },
+    {
+      user: "Hiragi Kangami",
+      email: "HiragiKangami@gmail.com",
+    },
+    {
+      user: "Hiragi Kangami",
+      email: "HiragiKangami@gmail.com",
+    },
+  ]);
   const [messages, setMessages] = useState([
+    { text: "Hello, how can I help you?", sender: "sender", time: new Date() },
+    {
+      text: "Hi! I need assistance with my order.",
+      sender: "user",
+      time: new Date(),
+    },
+    { text: "Hello, how can I help you?", sender: "sender", time: new Date() },
+    {
+      text: "Hi! I need assistance with my order.",
+      sender: "user",
+      time: new Date(),
+    },
     { text: "Hello, how can I help you?", sender: "sender", time: new Date() },
     {
       text: "Hi! I need assistance with my order.",
@@ -68,39 +96,61 @@ export default function ManageChat() {
             </Button>
           </div>
           <div>
-            <Box
-              display={"flex"}
-              justifyContent={"space-between"}
-              alignItems={"center"}
-              sx={{ background: "#13556d", mt: 2, cursor: "pointer" }}
-              p={1}
-              borderRadius={2}
-            >
-              <div className="d-flex justify-content-between align-items-center gap-3">
-                <img
-                  style={{ borderRadius: "50%", height: 30, width: 35 }}
-                  src={"/images/profile.png"}
-                />
-                <div className="">
-                  <Typography component={"b"} variant="h6" color={"white"}>
-                    Hiragi Kangami
-                  </Typography>
-                  <Typography color={"white"} variant="body2">
-                    HiragiKangami@gmail.com
-                  </Typography>
-                </div>
-              </div>
-              <div className="d-flex justify-content-center align-items-center gap-2">
-                <Typography color="white" variant="body2">
-                  User
-                </Typography>
-                <Icon color="white" icon="material-symbols:delete" />
-              </div>
-            </Box>
+           
+            {recentUsers.map((x, i) => {
+              return (
+                <Box
+                  display={"flex"}
+                  justifyContent={"space-between"}
+                  alignItems={"center"}
+                  sx={{ background: "#13556d", mt: 2, cursor: "pointer" }}
+                  p={1}
+                  borderRadius={2}
+                >
+                  <div className="d-flex justify-content-between align-items-center gap-3">
+                    <img
+                      style={{ borderRadius: "50%", height: 30, width: 35 }}
+                      src={"/images/profile.png"}
+                    />
+                    <div className="">
+                      <Typography variant="subtitle1" color={"white"}>
+                        {x.user}
+                      </Typography>
+                      <Typography color={"white"} variant="subtitle2">
+                        {x.email}
+                      </Typography>
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-center align-items-center gap-2">
+                    <Typography color="white" variant="body2">
+                      User
+                    </Typography>
+                    <Icon color="white" icon="material-symbols:delete" />
+                  </div>
+                </Box>
+              );
+            })}
           </div>
         </Grid>
         <Grid item md={8}>
           <div className="chat-container">
+            <div className="d-flex justify-content-center align-items-center">
+
+
+          <div
+          className="py-3"
+              style={{
+                background: "#13556da8",
+                padding: 10,
+                textAlign: "center",
+                borderRadius: 10,
+                color : "white",
+                width : 200
+              }}
+            >
+              13/05/2024
+            </div>
+            </div>
             <div className="chat-messages">
               {messages.map((message, index) => (
                 <Box key={index} className={`message ${message.sender}`}>
