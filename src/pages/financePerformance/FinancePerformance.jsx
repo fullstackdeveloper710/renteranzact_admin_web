@@ -94,7 +94,7 @@ export default function FinancePerformance() {
         </div>
       </Stack>
 
-      <Typography variant="h5">Collected Amount</Typography>
+      <Typography variant="subtitle1">Collected Amount</Typography>
       <Grid
         container
         // gap={2}

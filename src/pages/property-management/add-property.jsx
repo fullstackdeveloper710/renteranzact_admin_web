@@ -100,7 +100,7 @@ const AddProperty = () => {
         direction="row"
         alignItems="center"
         justifyContent="space-between"
-        mb={5}
+        // mb={5}
       >
         <Typography variant="h4" className="mt-3">
           Add Property
@@ -108,7 +108,7 @@ const AddProperty = () => {
       </Stack>
       <Grid
         container
-        spacing={4}
+        spacing={2}
         // display={"flex"}
         // justifyContent={"space-between"}
         // alignItems={"center"}

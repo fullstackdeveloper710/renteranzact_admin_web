@@ -96,7 +96,6 @@ export default function ManageChat() {
             </Button>
           </div>
           <div>
-           
             {recentUsers.map((x, i) => {
               return (
                 <Box
@@ -135,21 +134,19 @@ export default function ManageChat() {
         <Grid item md={8}>
           <div className="chat-container">
             <div className="d-flex justify-content-center align-items-center">
-
-
-          <div
-          className="py-3"
-              style={{
-                background: "#13556da8",
-                padding: 10,
-                textAlign: "center",
-                borderRadius: 10,
-                color : "white",
-                width : 200
-              }}
-            >
-              13/05/2024
-            </div>
+              <div
+                className="py-3"
+                style={{
+                  background: "#13556da8",
+                  padding: 10,
+                  textAlign: "center",
+                  borderRadius: 10,
+                  color: "white",
+                  width: 200,
+                }}
+              >
+                13/05/2024
+              </div>
             </div>
             <div className="chat-messages">
               {messages.map((message, index) => (

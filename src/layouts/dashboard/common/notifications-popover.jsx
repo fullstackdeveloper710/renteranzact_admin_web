@@ -22,6 +22,7 @@ import { fToNow } from "../../../utils/format-time";
 
 import Iconify from "../../../components/iconify/iconify";
 import Scrollbar from "../../../components/scrollbar";
+import { useNavigate } from "react-router-dom";
 
 // ----------------------------------------------------------------------
 
@@ -75,6 +76,7 @@ export const NOTIFICATIONS = [
 
 export default function NotificationsPopover() {
   const [notifications, setNotifications] = useState(NOTIFICATIONS);
+  const navigate = useNavigate();
 
   const totalUnRead = notifications.filter(
     (item) => item.isUnRead === true
@@ -101,9 +103,13 @@ export default function NotificationsPopover() {
 
   return (
     <>
-      <IconButton color={'#c8d736'} onClick={handleOpen}>
+      <IconButton color={"#c8d736"} onClick={handleOpen}>
         <Badge badgeContent={totalUnRead} color="error">
-          <Iconify sx={{color : "#c8d736"}} width={24} icon="solar:bell-bing-bold-duotone" />
+          <Iconify
+            sx={{ color: "#c8d736" }}
+            width={24}
+            icon="solar:bell-bing-bold-duotone"
+          />
         </Badge>
       </IconButton>
 
@@ -183,7 +189,11 @@ export default function NotificationsPopover() {
         <Divider sx={{ borderStyle: "dashed" }} />
 
         <Box sx={{ p: 1 }}>
-          <Button fullWidth disableRipple>
+          <Button
+            fullWidth
+            disableRipple
+            onClick={() => navigate("/notifications")}
+          >
             View All
           </Button>
         </Box>

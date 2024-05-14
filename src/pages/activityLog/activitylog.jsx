@@ -79,10 +79,10 @@ export default function Activitylog() {
       <Box direction={"row"} sx={{ border: 1 }} className="mt-4">
         <Grid container className="m-4">
           <Grid xs={4}>
-            <Typography variant="h4">When</Typography>
+            <Typography variant="subtitle1">When</Typography>
           </Grid>
           <Grid xs={8}>
-            <Typography variant="h4">What Happened</Typography>
+            <Typography variant="subtitle1">What Happened</Typography>
           </Grid>
         </Grid>
       </Box>

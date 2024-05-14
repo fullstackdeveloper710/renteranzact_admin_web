@@ -9,14 +9,12 @@ import {
 } from "@mui/material";
 import React from "react";
 import { cities, propertyType } from "../../../sections/user/utils";
+import PaperForm from "../../../components/PaperForm";
 
 const PropertyDetails = () => {
   return (
     <div className="screen-transition">
-      <Typography variant="h5" className="mt-4 px-1">
-        Property Details
-      </Typography>
-
+      <PaperForm title={'Property Details'}>
       <Grid container spacing={3} className="mt-1">
         <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
@@ -205,6 +203,11 @@ const PropertyDetails = () => {
           </FormControl>
         </Grid>
       </Grid>
+
+      </PaperForm>
+    
+
+     
     </div>
   );
 };

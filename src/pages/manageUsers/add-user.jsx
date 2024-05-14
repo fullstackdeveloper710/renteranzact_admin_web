@@ -5,27 +5,18 @@ import {
   Grid,
   InputLabel,
   MenuItem,
+  Paper,
   Select,
   Stack,
   TextField,
   Typography,
 } from "@mui/material";
+import PaperForm from "../../components/PaperForm";
 const AddUser = () => {
   return (
     <div className="px-5">
-      <Stack
-        direction="row"
-        alignItems="center"
-        justifyContent="space-between"
-        className="mt-2"
-      ></Stack>
-
-      <Card sx={{ p: 2 }}>
-        <Typography component="div" variant="h4">
-          Add Users
-        </Typography>
-
-        <Grid container spacing={6} className="mt-3">
+      <PaperForm title={"Add Users"}>
+        <Grid container spacing={3} className="mt-3">
           <Grid item xs={12} md={6} sm={6}>
             <TextField fullWidth name="name" label="Name" type={"text"} />
           </Grid>
@@ -94,7 +85,7 @@ const AddUser = () => {
         >
           Save
         </Button>
-      </Card>
+      </PaperForm>
     </div>
   );
 };

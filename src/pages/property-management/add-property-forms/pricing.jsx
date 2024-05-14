@@ -9,12 +9,13 @@ import {
 } from "@mui/material";
 import React from "react";
 import { listOfMonths } from "../../../sections/user/utils";
+import PaperForm from "../../../components/PaperForm";
 
 const Pricing = () => {
   return (
     <div className="screen-transition">
-      <Typography variant="h5">Pricing</Typography>
-      <Grid container spacing={4} className="mt-1">
+
+      <PaperForm title={'Pricing'}> <Grid container spacing={4} className="mt-1">
         <Grid item md={6} xs={12} sm={6}>
           <TextField label="Rent" fullWidth />
         </Grid>
@@ -40,7 +41,8 @@ const Pricing = () => {
         <Grid item md={6} xs={12} sm={6}>
           <TextField label="Caution Deposit" fullWidth />
         </Grid>
-      </Grid>
+      </Grid></PaperForm>
+     
     </div>
   );
 };
