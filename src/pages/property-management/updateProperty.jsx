@@ -17,7 +17,7 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import moment from "moment";
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { listOfMonths, propertyType } from "../../sections/user/utils";
+import { cities, listOfMonths, propertyType } from "../../sections/user/utils";
 
 const UpdateProperty = () => {
   const location = useLocation();
@@ -33,40 +33,6 @@ const UpdateProperty = () => {
         <Typography variant="h4">Update Property</Typography>
       </Stack>
 
-      {/* <Grid container spacing={4} mt={2}>
-        <Grid item md={6}>
-          <TextField
-            value={location?.state?.landlord}
-            fullWidth
-            label="Landlord"
-          />
-        </Grid>
-        <Grid item md={6}>
-          <TextField value={location?.state?.mobile} fullWidth label="Mobile" />
-        </Grid>
-        <Grid item md={6}>
-          <TextField value={location?.state?.city} fullWidth label="City" />
-        </Grid>
-        <Grid item md={6}>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-          
-              <DatePicker
-               
-                sx={{ width: "100%" }}
-                label="Onboarding date"
-                value={moment()}
-                renderInput={(params) => (
-                  <TextField {...params} helperText={null} />
-                )}
-              />
-        
-          </LocalizationProvider>
-        </Grid>
-        <Grid item md={6}>
-            <label className="mb-2">Image</label>
-            <img style={{height : 500 , width : "100%"}}  src={location?.state?.image}/>
-        </Grid>
-      </Grid> */}
       <label className="mt-4">
         <b>Property details</b>
       </label>
@@ -80,10 +46,11 @@ const UpdateProperty = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Property Category"
+              value={"Residential"}
             >
-              <MenuItem value={10}>Residential</MenuItem>
-              <MenuItem value={20}>Short-Stays</MenuItem>
-              <MenuItem value={30}>Commercial</MenuItem>
+              <MenuItem value={"Residential"}>Residential</MenuItem>
+              <MenuItem value={"Short-Stays"}>Short-Stays</MenuItem>
+              <MenuItem value={"Commercial"}>Commercial</MenuItem>
             </Select>
           </FormControl>
         </Grid>
@@ -94,6 +61,7 @@ const UpdateProperty = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Property Type"
+              value={"Semi-detached Duplexes"}
             >
               {propertyType.map((x, i) => {
                 return (
@@ -114,10 +82,11 @@ const UpdateProperty = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Furnishing Type"
+              value={"Serviced"}
             >
-              <MenuItem value={10}>Serviced</MenuItem>
-              <MenuItem value={20}>Furnished</MenuItem>
-              <MenuItem value={30}>Unfurnished</MenuItem>
+              <MenuItem value={"Serviced"}>Serviced</MenuItem>
+              <MenuItem value={"Furnished"}>Furnished</MenuItem>
+              <MenuItem value={"Unfurnished"}>Unfurnished</MenuItem>
             </Select>
           </FormControl>
         </Grid>
@@ -128,10 +97,11 @@ const UpdateProperty = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Rent Type"
+              value="Quarterly"
             >
-              <MenuItem value={10}>Monthly</MenuItem>
-              <MenuItem value={20}>Quarterly </MenuItem>
-              <MenuItem value={30}>Yearly</MenuItem>
+              <MenuItem value={"Monthly"}>Monthly</MenuItem>
+              <MenuItem value={"Quarterly"}>Quarterly </MenuItem>
+              <MenuItem value={"Yearly"}>Yearly</MenuItem>
             </Select>
           </FormControl>
         </Grid>
@@ -142,10 +112,11 @@ const UpdateProperty = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="City"
+              value="Isuikwuato"
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              {cities.map((x, i) => (
+                <MenuItem value={x}>{x}</MenuItem>
+              ))}
             </Select>
           </FormControl>
         </Grid>
@@ -162,6 +133,7 @@ const UpdateProperty = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="No. of floors"
+              value={3}
             >
               {[0, 1, 2, 3, 4, 5, 6].map((x, index) => (
                 <MenuItem key={index} value={x}>
@@ -184,11 +156,12 @@ const UpdateProperty = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Availabilty"
+              value={"Immediate"}
             >
-              <MenuItem value={10}>Immediate</MenuItem>
-              <MenuItem value={20}>{"<"} 15 Days</MenuItem>
-              <MenuItem value={30}>{"<"} 30 Days</MenuItem>
-              <MenuItem value={30}>{">"} 30 Days</MenuItem>
+              <MenuItem value={"Immediate"}>Immediate</MenuItem>
+              <MenuItem value={" < 15 Days"}>{"<"} 15 Days</MenuItem>
+              <MenuItem value={"< 30 Days"}>{"<"} 30 Days</MenuItem>
+              <MenuItem value={"> 30 Days"}>{">"} 30 Days</MenuItem>
             </Select>
           </FormControl>
         </Grid>
@@ -217,9 +190,10 @@ const UpdateProperty = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Type of Community"
+              value="Gated Community"
             >
-              <MenuItem value={10}>Gated Community</MenuItem>
-              <MenuItem value={20}>Open Community</MenuItem>
+              <MenuItem value={"Gated Community"}>Gated Community</MenuItem>
+              <MenuItem value={"Open Community"}>Open Community</MenuItem>
             </Select>
           </FormControl>
         </Grid>
@@ -230,10 +204,11 @@ const UpdateProperty = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Lanlords"
+              value="Brandy Rowe"
             >
-              <MenuItem value={10}>Brandy Rowe</MenuItem>
-              <MenuItem value={20}>Catherine Jenkins</MenuItem>
-              <MenuItem value={30}>Courtney Auer</MenuItem>
+              <MenuItem value={"Brandy Rowe"}>Brandy Rowe</MenuItem>
+              <MenuItem value={"Catherine Jenkins"}>Catherine Jenkins</MenuItem>
+              <MenuItem value={"Courtney Auer"}>Courtney Auer</MenuItem>
             </Select>
           </FormControl>
         </Grid>
@@ -246,10 +221,11 @@ const UpdateProperty = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Property Manager"
+              value="Catherine Jenkins"
             >
-              <MenuItem value={10}>Brandy Rowe</MenuItem>
-              <MenuItem value={20}>Catherine Jenkins</MenuItem>
-              <MenuItem value={30}>Courtney Auer</MenuItem>
+              <MenuItem value={"Brandy Rowe"}>Brandy Rowe</MenuItem>
+              <MenuItem value={"Catherine Jenkins"}>Catherine Jenkins</MenuItem>
+              <MenuItem value={"Courtney Auer"}>Courtney Auer</MenuItem>
             </Select>
           </FormControl>
         </Grid>
@@ -269,6 +245,7 @@ const UpdateProperty = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Monthly"
+              value="December"
             >
               {listOfMonths.map((x, i) => (
                 <MenuItem key={i} value={x}>

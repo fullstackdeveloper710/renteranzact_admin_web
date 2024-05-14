@@ -6,7 +6,15 @@ import {
   TextField,
   Checkbox,
   Button,
+  Paper,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
 } from "@mui/material";
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import React from "react";
 
 const CreateNotification = () => {
@@ -22,7 +30,7 @@ const CreateNotification = () => {
 
         <Grid item md={6}>
           <Card sx={{ p: 2 }}>
-            <Typography variant="h6">Create Notifications</Typography>
+            <Typography variant="subtitle1">Create Notifications</Typography>
             <Divider className="mt-2" component={"div"} />
             <Grid container spacing={2} mt={3}>
               <Grid item md={12}>
@@ -34,7 +42,7 @@ const CreateNotification = () => {
             </Grid>
             <Divider className="mt-4" component={"div"} />
 
-            <Typography variant="h6" className="mt-2">
+            <Typography variant="subtitle1" className="mt-2">
               Send Notification To:
               <Grid container gap={2} mt={2}>
                 <Grid item md={5}>
@@ -81,16 +89,44 @@ const CreateNotification = () => {
                     <Typography variant={"body2"}>Super admin</Typography>
                   </div>
                 </Grid>
-                <Grid item md={12} xs={12}>
-                  <TextField fullWidth label="Locations" />
-                </Grid>
-                <Grid item md={12} xs={12}>
-                  <TextField fullWidth label="Industries" />
-                </Grid>
               </Grid>
             </Typography>
+          </Card>
+        </Grid>
 
-            <Button variant="contained" className="global-button mt-2">
+        <Grid item md={3}>
+          <Card sx={{ p: 2 }}>
+            <Typography variant="subtitle1">Publish Details</Typography>
+            <Grid container gap={2} mt={2}>
+              <Grid item md={12}>
+                {" "}
+                <FormControl fullWidth>
+                  <InputLabel>Status</InputLabel>
+                  <Select label="Status">
+                    <MenuItem value="Draft">Draft</MenuItem>
+                    <MenuItem value={"Send for approval"}>
+                      Send for approval
+                    </MenuItem>
+                    <MenuItem value="Approved">Approved</MenuItem>
+                    <MenuItem value="Scheduled">Scheduled</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+
+              <Grid item md={12}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DemoContainer components={["DatePicker"]}>
+                    <DatePicker sx={{ width: "100%" }} label="Publish On" />
+                  </DemoContainer>
+                </LocalizationProvider>
+              </Grid>
+            </Grid>
+
+            <Button
+              variant="contained"
+              className="global-button mt-2"
+              size="medium"
+            >
               Submit
             </Button>
           </Card>

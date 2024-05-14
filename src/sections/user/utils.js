@@ -120,3 +120,22 @@ export const listOfMonths = [
   "December"
 ];
 
+export const cities= [
+  "Aba South",
+  "Arochukwu",
+  "Bende",
+  "Ikwuano",
+  "Isiala Ngwa North",
+  "Isiala Ngwa South",
+  "Isuikwuato",
+  "Obi Ngwa",
+  "Ohafia",
+  "Osisioma",
+  "Ugwunagbo",
+  "Ukwa East",
+  "Ukwa West",
+  "Umuahia North",
+  "Umuahia South",
+  "Umu Nneochi"
+]
+
