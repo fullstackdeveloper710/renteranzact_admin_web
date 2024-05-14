@@ -99,7 +99,7 @@ const CreateNotification = () => {
             <Typography variant="subtitle1">Publish Details</Typography>
             <Grid container gap={2} mt={2}>
               <Grid item md={12}>
-                {" "}
+                
                 <FormControl fullWidth>
                   <InputLabel>Status</InputLabel>
                   <Select label="Status">
@@ -116,19 +116,20 @@ const CreateNotification = () => {
               <Grid item md={12}>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DemoContainer components={["DatePicker"]}>
-                    <DatePicker sx={{ width: "100%" }} label="Publish On" />
+                    <DatePicker sx={{ width: "100%" }} label="Publish on" />
                   </DemoContainer>
                 </LocalizationProvider>
               </Grid>
             </Grid>
-
-            <Button
-              variant="contained"
-              className="global-button mt-2"
-              size="medium"
-            >
-              Submit
-            </Button>
+           
+              <Button
+                variant="contained"
+                className="global-button mt-3"
+                size="medium"
+              >
+                Submit
+              </Button>
+           
           </Card>
         </Grid>
       </Grid>

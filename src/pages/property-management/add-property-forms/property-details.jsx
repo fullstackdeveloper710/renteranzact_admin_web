@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { propertyType } from "../../../sections/user/utils";
+import { cities, propertyType } from "../../../sections/user/utils";
 
 const PropertyDetails = () => {
   return (
@@ -90,9 +90,13 @@ const PropertyDetails = () => {
               id="demo-simple-select"
               label="City"
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              {cities.map((x, i) => {
+                return (
+                  <MenuItem key={i} value={x}>
+                    {x}
+                  </MenuItem>
+                );
+              })}
             </Select>
           </FormControl>
         </Grid>

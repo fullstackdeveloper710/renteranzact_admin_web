@@ -28,7 +28,7 @@ const AddEmployee = () => {
         <Typography variant="h4">Add Employee</Typography>
       </Stack>
 
-      <Grid container spacing={6} className="mt-3">
+      <Grid container spacing={2} className="mt-3">
         <Grid item xs={8} md={6}>
           <TextField fullWidth name="name" label="Name" type={"text"} />
         </Grid>

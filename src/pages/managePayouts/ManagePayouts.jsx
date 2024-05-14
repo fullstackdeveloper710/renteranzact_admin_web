@@ -58,11 +58,11 @@ export default function ManagePayouts() {
                 label="Monthly"
                 // onChange={handleChange}
               >
-                 {listOfMonths.map((x, i) => (
-                <MenuItem key={i} value={x}>
-                  {x}
-                </MenuItem>
-              ))}
+                {listOfMonths.map((x, i) => (
+                  <MenuItem key={i} value={x}>
+                    {x}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
           </Grid>
@@ -86,7 +86,7 @@ export default function ManagePayouts() {
             <Link>Clear Filters</Link>
           </Grid>
           {/* <Grid item xs={1}></Grid> */}
-          <Grid item xs={2} md={3}>
+          <Grid item xs={6} md={3}>
             <Button
               variant="contained"
               color="inherit"

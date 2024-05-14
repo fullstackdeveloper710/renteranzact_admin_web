@@ -2,10 +2,16 @@ import { Button, Card, CardActions, Grid, Typography } from "@mui/material";
 import React from "react";
 import Iconify from "../../components/iconify";
 import { useNavigate } from "react-router-dom";
+import { Icon } from "@iconify/react/dist/iconify.js";
 export const Document = () => (
   <Card>
     <img src={"/images/pdf.png"} style={{ height: 200, width: "100%" }} />
-
+    <Icon
+            cursor={"pointer"}
+            fontSize={25}
+            style={{ position: "absolute", right: 1, top: -1 }}
+            icon="openmoji:cross-mark"
+          />
     <CardActions>
       <Button size="small">
         <Iconify icon="icon-park-outline:preview-open" />
