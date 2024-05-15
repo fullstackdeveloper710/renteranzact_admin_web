@@ -55,6 +55,9 @@ const Profile = () => {
           <Grid item md={6}>
             <TextField fullWidth type="password" label="New Password" />
           </Grid>
+          <Grid item md={6}>
+            <TextField fullWidth type="password" label="Confirm Password" />
+          </Grid>
         </Grid>
         <div className="d-flex mt-4 gap-2">
           <Button size="large" className="global-button" variant="contained">

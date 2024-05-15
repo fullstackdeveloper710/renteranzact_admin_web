@@ -67,15 +67,23 @@ export default function Nav({ openNav, onCloseNav }) {
       <Divider />
 
       {renderMenu}
-
-      <Box style={{ height: 145 }}></Box>
-      <Box sx={{ px: 2, position: "sticky", bottom: 0, background: "#13556d" }}>
+      <Box sx={{ flexGrow: 1, minHeight: "12vh" }}></Box>
+      <Box
+        sx={{
+          px: 2,
+          position: "sticky",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          background: "#13556d",
+        }}
+      >
         <ListItemButton
           sx={{ color: "white" }}
           onClick={() => setLogoutPopup(true)}
         >
           <Iconify icon="basil:logout-outline" />
-          <Typography sx={{ ml: 4 }}>Logout</Typography>
+          <Typography sx={{ ml: 2 }}>Logout</Typography>
         </ListItemButton>
       </Box>
     </Scrollbar>

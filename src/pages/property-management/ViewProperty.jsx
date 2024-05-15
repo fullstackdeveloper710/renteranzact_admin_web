@@ -297,12 +297,12 @@ const ViewProperty = () => {
                   <span>Resevered Parking</span>
                 </div>
               </Grid>
-              <Grid item md={4}>
+              {/* <Grid item md={4}>
                 <div>
                   <Checkbox defaultChecked />
                   <span>Water Storage</span>
                 </div>
-              </Grid>
+              </Grid> */}
               <Grid item md={4}>
                 <div>
                   <Checkbox defaultChecked />

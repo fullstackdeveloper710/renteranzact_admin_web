@@ -58,32 +58,32 @@ export default function ManageTransactions() {
                 label="Monthly"
                 // onChange={handleChange}
               >
-               {listOfMonths.map((x, i) => (
-                <MenuItem key={i} value={x}>
-                  {x}
-                </MenuItem>
-              ))}
+                {listOfMonths.map((x, i) => (
+                  <MenuItem key={i} value={x}>
+                    {x}
+                  </MenuItem>
+                ))}
               </Select>
             </FormControl>
           </Grid>
-     
-          <Grid item xs={6} md={3} >
+
+          <Grid item xs={6} md={3}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               {/* <DemoContainer
                 sx={{ overflow: "hidden" }}
                 components={["DatePicker"]}
               > */}
-                <DatePicker
-                  sx={{ width: "100%", overflow: "hidden" }}
-                  label="11/11/23"
-                />
+              <DatePicker
+                sx={{ width: "100%", overflow: "hidden" }}
+                label="11/11/23"
+              />
               {/* </DemoContainer> */}
             </LocalizationProvider>
           </Grid>
           <Grid item xs={6} md={3}>
             <Link>Clear Filters</Link>
           </Grid>
-          <Grid item xs={6} md={3} >
+          <Grid item xs={6} md={3}>
             <Button
               variant="contained"
               color="inherit"
@@ -97,6 +97,26 @@ export default function ManageTransactions() {
           </Grid>
         </Grid>
       </Stack>
+      <div className="row mt-5">
+        <div style={{ paddingLeft: 34 }} className="col-md-2">
+          <Typography variant="subtitle1">Image</Typography>
+        </div>
+        <div className="col-md-2">
+          <Typography variant="subtitle1">Title</Typography>
+        </div>
+        <div className="col-md-2">
+          <Typography variant="subtitle1">Address</Typography>
+        </div>
+        <div className="col-md-2">
+          <Typography variant="subtitle1">Rent</Typography>
+        </div>
+        <div className="col-md-2">
+          <Typography variant="subtitle1">Amount</Typography>
+        </div>
+        <div className="col-md-2">
+          <Typography variant="subtitle1">Action</Typography>
+        </div>
+      </div>
       {managePayouyArray.map(() => (
         <ManageTransactionCard />
       ))}

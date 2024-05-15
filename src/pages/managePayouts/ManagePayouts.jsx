@@ -41,14 +41,13 @@ export default function ManagePayouts() {
         {/* <Typography variant="h4">Collected Amount</Typography> */}
         <Grid
           container
-          // gap={2}
+          gap={2}
           className="mt-3"
           direction={"row"}
-          spacing={2}
           alignItems={"center"}
           justify={"space-evenly"}
         >
-          <Grid item xs={6} md={3}>
+          <Grid item xs={6} md={2}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
               <Select
@@ -66,14 +65,14 @@ export default function ManagePayouts() {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={6} md={3}>
+          <Grid item xs={6} md={2}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               {/* <DemoContainer components={["DatePicker"]}> */}
               <DatePicker label="11/11/23" />
               {/* </DemoContainer> */}
             </LocalizationProvider>
           </Grid>
-          <Grid item xs={6} md={3}>
+          <Grid item xs={6} md={2}>
             {/* <Button
               variant="contained"
               color="inherit"
@@ -86,7 +85,7 @@ export default function ManagePayouts() {
             <Link>Clear Filters</Link>
           </Grid>
           {/* <Grid item xs={1}></Grid> */}
-          <Grid item xs={6} md={3}>
+          <Grid item xs={2} md={2}>
             <Button
               variant="contained"
               color="inherit"
@@ -100,6 +99,23 @@ export default function ManagePayouts() {
           </Grid>
         </Grid>
       </Stack>
+      <div className="row mt-5">
+        <div style={{ paddingLeft: 34 }} className="col-md-2">
+          <Typography variant="subtitle1">Image</Typography>
+        </div>
+        <div className="col-md-2">
+          <Typography variant="subtitle1">Title</Typography>
+        </div>
+        <div className="col-md-4">
+          <Typography variant="subtitle1">Address</Typography>
+        </div>
+        <div className="col-md-2">
+          <Typography variant="subtitle1">Amount</Typography>
+        </div>
+        <div className="col-md-2">
+          <Typography variant="subtitle1">Action</Typography>
+        </div>
+      </div>
       {managePayouyArray.map(() => (
         <ManagePayoutCard />
       ))}

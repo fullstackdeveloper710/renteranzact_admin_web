@@ -209,12 +209,12 @@ const PropertyDetails = () => {
                 <span>Rain water harvesting</span>
               </div>
             </Grid>
-            <Grid item md={2}>
+            {/* <Grid item md={2}>
               <div>
                 <Checkbox defaultChecked />
                 <span> Water storage</span>
               </div>
-            </Grid>
+            </Grid> */}
           </Grid>
         </div>
         <div className="mt-4">
