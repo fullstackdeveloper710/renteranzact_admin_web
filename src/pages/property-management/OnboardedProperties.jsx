@@ -32,6 +32,7 @@ const OnboardedProperties = ({ tableColumns, data, onClick }) => {
                 <TableCell>
                   <img src={x.image} style={{ height: 50, width: 50 }} />
                 </TableCell>
+                <TableCell>Property Name</TableCell>
                 <TableCell>{x.landlord}</TableCell>
                 <TableCell>
                   {i % 2 == 0 ? "Short Stays" : "Resedential"}

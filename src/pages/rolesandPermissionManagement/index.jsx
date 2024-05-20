@@ -57,7 +57,7 @@ export default function ManageRolesAndPermission() {
         mb={5}
       >
         <Typography className="mt-3" variant="h4">
-          Roles & Permissions Mgt
+          Roles & Permissions Management
         </Typography>
 
         <div className="d-flex">
@@ -150,7 +150,7 @@ export default function ManageRolesAndPermission() {
               </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>{"Legal Admin"}</TableCell>
+              <TableCell>{"Finance Admin"}</TableCell>
               <TableCell>
                 <p>
                 <b> Manage transactions (View/Download),Finance

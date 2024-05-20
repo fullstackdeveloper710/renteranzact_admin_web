@@ -16,7 +16,7 @@ const ViewEmployee = () => {
   return (
     <div className="px-5">
       <Typography className="mt-3" variant="h5">
-        Employee
+      Employe Details
       </Typography>
 
       <Grid container mt={3} spacing={2}>
@@ -48,7 +48,7 @@ const ViewEmployee = () => {
               value={'All'}
               label="Role"
             >
-              <MenuItem value={'All'}>All</MenuItem>
+              {/* <MenuItem value={'All'}>All</MenuItem> */}
               <MenuItem value={"reviewerAdmin"}>Reviewer Admin</MenuItem>
               <MenuItem value={"financeAdmin"}>Finance Admin</MenuItem>
               <MenuItem value={"legalAdmin"}>Legal Admin</MenuItem>

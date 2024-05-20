@@ -79,7 +79,7 @@ export default function FinancePerformance() {
         mb={5}
       >
         <Typography variant="h4">Finance Performance</Typography>
-        <div className="d-flex">
+        {/* <div className="d-flex">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={["DatePicker"]}>
               <DatePicker label="From Date" />
@@ -91,7 +91,7 @@ export default function FinancePerformance() {
               <DatePicker label="To Date" />
             </DemoContainer>
           </LocalizationProvider>
-        </div>
+        </div> */}
       </Stack>
 
       <Typography variant="subtitle1">Collected Amount</Typography>

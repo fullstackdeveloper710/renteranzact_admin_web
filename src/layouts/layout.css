@@ -10,10 +10,13 @@
 }
 .nav-logo {
   /* position: fixed; */
-  text-align: center;
-  padding: 27px 10px;
+  padding: 15px 10px;
   /* width : 330px; */
   background-color: white;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .nav-link {
   position: sticky;
@@ -21,8 +24,7 @@
   z-index: 9999;
 }
 .nav-link .nav-logo img {
-  height: 25px;
-  width: 220px;
+  height: 38px;
 }
 
 .nav-bar span {

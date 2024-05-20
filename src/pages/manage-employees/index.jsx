@@ -21,8 +21,13 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import TableNoData from "../../sections/user/table-no-data";
 import {
+  FormControl,
   InputAdornment,
+  InputLabel,
+  MenuItem,
   OutlinedInput,
+  Select,
+  Switch,
   TableCell,
   TableHead,
   TableRow,
@@ -36,6 +41,7 @@ import ConfirmationDialog from "../../components/dialog/ConfirmationDialog";
 import TableContainerComponent from "../../components/TableContainerComponent";
 import PaginationComponent from "../../components/Pagination";
 // ----------------------------------------------------------------------
+let text =''
 export default function UserPage() {
   const [page, setPage] = useState(0);
   const [order, setOrder] = useState("asc");
@@ -43,6 +49,15 @@ export default function UserPage() {
   const [filterName, setFilterName] = useState("");
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [deleteDialog, setDeleteDialog] = useState(false);
+  const [employeeStatus, setEmployeeStatus] = useState(false);
+
+  const managePopupText = (checked) => {
+    if (checked) {
+      text = "Are you sure you want to enable this employee?";
+    } else {
+      text = "Are you sure you want to disable this employee?";
+    }
+  };
   // const handleSort = (event, id) => {
   //   const isAsc = orderBy === id && order === 'asc';
   //   if (id !== '') {
@@ -130,7 +145,7 @@ export default function UserPage() {
       >
         <Typography variant="h4">Manage Employees</Typography>
 
-        <div className="d-flex">
+        {/* <div className="d-flex">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={["DatePicker"]}>
               <DatePicker label="From Date" />
@@ -142,7 +157,7 @@ export default function UserPage() {
               <DatePicker label="To Date" />
             </DemoContainer>
           </LocalizationProvider>
-        </div>
+        </div> */}
         {/* <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:plus-fill" />}>
           New User
         </Button> */}
@@ -168,74 +183,104 @@ export default function UserPage() {
             }
           />
 
+        <div className="d-flex w-50 gap-3">
+        <FormControl fullWidth>
+              <InputLabel>Property</InputLabel>
+              <Select
+              >
+                <MenuItem >All</MenuItem>
+                <MenuItem >Reviewer Admin</MenuItem>
+                <MenuItem >Legal Admin</MenuItem>
+                <MenuItem >Finance Admin</MenuItem>
+              </Select>
+            </FormControl>
+            
           <Button
             variant="contained"
             color="inherit"
             startIcon={<Iconify icon="eva:plus-fill" />}
             onClick={() => navigate("/manage-employees/add-employees")}
-            className="global-button"
+            className="global-button w-100"
           >
             Add Employee
           </Button>
+          </div>
         </div>
 
-      
-        <TableContainerComponent><Table sx={{ minWidth: 800 }}>
-          <TableHead>
-            <TableRow>
-              {tableColumns.map((x, i) => {
-                return <TableCell key={i}>{x}</TableCell>;
+        <TableContainerComponent>
+          <Table sx={{ minWidth: 800 }}>
+            <TableHead>
+              <TableRow>
+                {tableColumns.map((x, i) => {
+                  return <TableCell key={i}>{x}</TableCell>;
+                })}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {employees.map((x, i) => {
+                return (
+                  <TableRow key={i}>
+                    <TableCell>{x.name}</TableCell>
+                    <TableCell>{x.email}</TableCell>
+                    <TableCell>{x.phone}</TableCell>
+                    <TableCell>
+                      {moment(x.joiningDate).format("YYYY/DD/MM")}
+                    </TableCell>
+                    <TableCell>
+                      {i % 2 === 0 ? "Reveiwer Admin" : "Legal Finance Admin"}
+                    </TableCell>
+                    <TableCell>
+                      <Switch
+                        value={employeeStatus}
+                        onChange={(event, newValue) =>{
+                          setEmployeeStatus(true)
+                          
+                          managePopupText(newValue)
+                        }
+                        }
+                      />
+                    </TableCell>
+                    <TableCell>
+                      <Iconify
+                        icon="bx:edit"
+                        onClick={() => navigate("/employee")}
+                      />
+                      &nbsp;
+                      <Iconify
+                        onClick={() => setDeleteDialog(true)}
+                        icon="mingcute:delete-line"
+                      />
+                      &nbsp;
+                    </TableCell>
+                  </TableRow>
+                );
               })}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {employees.map((x, i) => {
-              return (
-                <TableRow key={i}>
-                  <TableCell>{x.name}</TableCell>
-                  <TableCell>{x.email}</TableCell>
-                  <TableCell>{x.phone}</TableCell>
-                  <TableCell>
-                    {moment(x.joiningDate).format("YYYY/DD/MM")}
-                  </TableCell>
-                  <TableCell>
-                    {i % 2 === 0 ? "Reveiwer Admin" : "Legal Finance Admin"}
-                  </TableCell>
-                  <TableCell>
-                    {i % 2 === 0 ? "Verified" : "Not Verified"}
-                  </TableCell>
-                  <TableCell>
-                    <Iconify
-                      onClick={() => navigate("/employee")}
-                      icon="solar:eye-linear"
-                    />
-                    &nbsp;
-                    <Iconify
-                      onClick={() => setDeleteDialog(true)}
-                      icon="mingcute:delete-line"
-                    />
-                  </TableCell>
-                </TableRow>
-              );
-            })}
-            <TableEmptyRows
-              height={77}
-              emptyRows={emptyRows(page, rowsPerPage, users.length)}
-            />
-            {notFound && <TableNoData query={filterName} />}
-          </TableBody>
-        </Table>
-        <div className="p-3 d-flex justify-content-center align-items-center">
-        <PaginationComponent />
-        </div> 
-          </TableContainerComponent>
-       
+              <TableEmptyRows
+                height={77}
+                emptyRows={emptyRows(page, rowsPerPage, users.length)}
+              />
+              {notFound && <TableNoData query={filterName} />}
+            </TableBody>
+          </Table>
+          <div className="p-3 d-flex justify-content-center align-items-center">
+            <PaginationComponent />
+          </div>
+        </TableContainerComponent>
 
         <ConfirmationDialog
           open={deleteDialog}
           setDeleteDialog={setDeleteDialog}
           title={"Are you sure you want to delete?"}
         />
+         {employeeStatus && (
+          <ConfirmationDialog
+            open={employeeStatus}
+            setDeleteDialog={setEmployeeStatus}
+            managePopupText={managePopupText}
+            yes={() => setEmployeeStatus(false)}
+            title={text}
+          />
+        )}
       </Card>
     </div>
   );

@@ -13,11 +13,13 @@ export default function PropertyDetailCard() {
         alignItems={"center"}
         justifyContent={"space-between"}
         mt={2}
+        gap={1}
+        flexWrap={"nowrap"}
       >
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={2}>
           <div className="d-flex justify-content-center align-items-center gap-3">
             <img
-              style={{ borderRadius: 13, width: 150 }}
+              style={{ borderRadius: 13, width: 100 }}
               src="./images/houseProperty.jpg"
             />
             <div>
@@ -29,15 +31,20 @@ export default function PropertyDetailCard() {
             </div>
           </div>
         </Grid>
-
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={2}>
+        <Typography variant="subtitle1"></Typography>
+        </Grid>
+        <Grid item xs={12} md={2}>
+        <Typography variant="subtitle1"></Typography>
+        </Grid>
+        <Grid item xs={12} md={2}>
           Property Owner a good and coperative Property is situated in a good
           place.
         </Grid>
         <Grid
           item
           xs={12}
-          md={3}
+          md={2}
           display={"flex"}
           alignItems={"center"}
           justifyContent={"center"}
@@ -50,7 +57,7 @@ export default function PropertyDetailCard() {
         <Grid
           item
           xs={12}
-          md={3}
+          md={2}
           display={"flex"}
           alignItems={"center"}
           justifyContent={"center"}

@@ -27,11 +27,12 @@ import { useNavigate } from "react-router-dom";
 import PaginationComponent from "../../components/Pagination";
 export const tableColumns = [
   "Image",
+  "Property Name",
   "Landlord/PM",
-  "Property",
+  "Property Type",
   "Located In (City)",
   "Onboarding Date",
-  "Mobile",
+  "Mobile Number",
   "Action",
 ];
 

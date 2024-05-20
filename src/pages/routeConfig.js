@@ -30,6 +30,27 @@ export const routeConfig = [
         path: "/src/pages/manageUsers/index",
         show: true,
       },
+      {
+        title: "Renters",
+        link: "renters",
+        icon: <Icon icon="formkit:fastforward" />,
+        path: "/src/pages/manageUsers/index",
+        show: true,
+      },
+      {
+        title: "Landlords",
+        link: "landlords",
+        icon: <Icon icon="formkit:fastforward" />,
+        path: "/src/pages/manageUsers/index",
+        show: true,
+      },
+      {
+        title: "Property Managers",
+        link: "property-managers",
+        icon: <Icon icon="formkit:fastforward" />,
+        path: "/src/pages/manageUsers/index",
+        show: true,
+      },
     ],
   },
   {

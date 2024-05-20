@@ -30,6 +30,10 @@ const Amenities = () => {
           <Checkbox />
           <span>Rain Water harvesting</span>
         </Grid>
+        <Grid item md={6} xs={12} sm={6}>
+          <Checkbox />
+          <span>Water Storage</span>
+        </Grid>
         {/* <Grid item md={6} xs={12} sm={6}>
           <Checkbox />
           <span>Water Storage</span>

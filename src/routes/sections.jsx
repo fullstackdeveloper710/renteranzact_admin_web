@@ -117,6 +117,10 @@ export const UpdateProperty = lazy(() =>
   import("../pages/property-management/updateProperty")
 );
 
+export const Landlords = lazy(() => import('../pages/manageUsers/landlords'))
+export const Renters = lazy(() => import('../pages/manageUsers/renters'))
+export const PropertyManagers = lazy(() => import('../pages/manageUsers/property-managers'))
+
 const LoadDynamicComponent = (object) => {
   const Component = lazy(() => import(`${object}`));
   return <Component />;
@@ -342,6 +346,18 @@ export default function Router() {
         {
           element: <CreateNotification />,
           path: "create-notifications",
+        },
+        {
+          element: <Renters />,
+          path: "/renters",
+        },
+        {
+          element: <PropertyManagers />,
+          path: "property-managers",
+        },
+        {
+          element: <Landlords />,
+          path: "landlords",
         },
       ],
     },

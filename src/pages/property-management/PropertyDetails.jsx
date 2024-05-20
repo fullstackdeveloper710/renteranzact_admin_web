@@ -219,42 +219,126 @@ const PropertyDetails = () => {
         </div>
         <div className="mt-4">
           <h5>Images and Videos</h5>
-          <Grid container spacing={1} mt={1}>
-            <Grid item md={2}>
+          <Grid container spacing={2} mt={1}>
+            <Grid className="position-relative" item md={2}>
               <img
                 style={{ height: 200, width: "100%" }}
                 src="https://miro.medium.com/v2/resize:fit:1400/1*5SqWT_rosWcElLsi1nfT0A.png"
               />
+              <Icon
+                    cursor={"pointer"}
+                    fontSize={25}
+                    style={{
+                      position: "absolute",
+                      right: -10,
+                      top: 1,
+                      zIndex: 2,
+                      border:"1px solid #f00",
+                      borderRadius:"50%",
+                      background:"#fff",
+                    }}
+                    icon="openmoji:cross-mark"
+                  />
             </Grid>
-            <Grid item md={2}>
+            <Grid item md={2} className="position-relative">
               <img
                 style={{ height: 200, width: "100%" }}
                 src="https://miro.medium.com/v2/resize:fit:1400/1*5SqWT_rosWcElLsi1nfT0A.png"
               />
+              <Icon
+                    cursor={"pointer"}
+                    fontSize={25}
+                    style={{
+                      position: "absolute",
+                      right: -10,
+                      top: 1,
+                      zIndex: 2,
+                      border:"1px solid #f00",
+                      borderRadius:"50%",
+                      background:"#fff",
+                    }}
+                    icon="openmoji:cross-mark"
+                  />
             </Grid>
-            <Grid item md={2}>
+            <Grid item md={2} className="position-relative">
               <img
                 style={{ height: 200, width: "100%" }}
                 src="https://miro.medium.com/v2/resize:fit:1400/1*5SqWT_rosWcElLsi1nfT0A.png"
               />
+              <Icon
+                    cursor={"pointer"}
+                    fontSize={25}
+                    style={{
+                      position: "absolute",
+                      right: -10,
+                      top: 1,
+                      zIndex: 2,
+                      border:"1px solid #f00",
+                      borderRadius:"50%",
+                      background:"#fff",
+                    }}
+                    icon="openmoji:cross-mark"
+                  />
             </Grid>
-            <Grid item md={2}>
+            <Grid item md={2} className="position-relative">
               <img
                 style={{ height: 200, width: "100%" }}
                 src="https://miro.medium.com/v2/resize:fit:1400/1*5SqWT_rosWcElLsi1nfT0A.png"
               />
+              <Icon
+                    cursor={"pointer"}
+                    fontSize={25}
+                    style={{
+                      position: "absolute",
+                      right: -10,
+                      top: 1,
+                      zIndex: 2,
+                      border:"1px solid #f00",
+                      borderRadius:"50%",
+                      background:"#fff",
+                    }}
+                    icon="openmoji:cross-mark"
+                  />
             </Grid>
-            <Grid item md={2}>
+            <Grid item md={2} className="position-relative">
               <img
                 style={{ height: 200, width: "100%" }}
                 src="https://miro.medium.com/v2/resize:fit:1400/1*5SqWT_rosWcElLsi1nfT0A.png"
               />
+              <Icon
+                    cursor={"pointer"}
+                    fontSize={25}
+                    style={{
+                      position: "absolute",
+                      right: -10,
+                      top: 1,
+                      zIndex: 2,
+                      border:"1px solid #f00",
+                      borderRadius:"50%",
+                      background:"#fff",
+                    }}
+                    icon="openmoji:cross-mark"
+                  />
             </Grid>
-            <Grid item md={2}>
+            <Grid item md={2} className="position-relative">
               <img
                 style={{ height: 200, width: "100%" }}
                 src="https://miro.medium.com/v2/resize:fit:1400/1*5SqWT_rosWcElLsi1nfT0A.png"
               />
+              <Icon
+                    cursor={"pointer"}
+                    fontSize={25}
+                    style={{
+                      position: "absolute",
+                      right: -10,
+                      top: 1,
+                      zIndex: 2,
+                      border:"1px solid #f00",
+                      borderRadius:"50%",
+                      background:"#fff",
+                    }}
+                    icon="openmoji:cross-mark"
+                  />
             </Grid>
           </Grid>
         </div>
@@ -264,7 +348,7 @@ const PropertyDetails = () => {
 
           <Grid container spacing={1} mt={1}>
             <Grid item md={2}>
-              <Card style={{ height: 150 }}>
+              <Card className="overflow-visible" style={{ height: 150 }}>
                 <CardContent
                   className="d-flex justify-content-center align-items-center"
                   style={{ background: "#00800040" }}
@@ -274,9 +358,12 @@ const PropertyDetails = () => {
                     fontSize={25}
                     style={{
                       position: "absolute",
-                      right: 3,
-                      top: 2,
+                      right: -10,
+                      top: -10,
                       zIndex: 2,
+                      border:"1px solid #f00",
+                      borderRadius:"50%",
+                      background:"#fff",
                     }}
                     icon="openmoji:cross-mark"
                   />
@@ -289,15 +376,18 @@ const PropertyDetails = () => {
               </Card>
             </Grid>
             <Grid item md={2}>
-              <Card style={{ height: 150 }}>
+              <Card className="overflow-visible" style={{ height: 150 }}>
                 <Icon
                   cursor={"pointer"}
                   fontSize={25}
                   style={{
                     position: "absolute",
-                    right: 3,
-                    top: 2,
+                    right: -10,
+                    top: -10,
                     zIndex: 2,
+                    border:"1px solid #f00",
+                    borderRadius:"50%",
+                    background:"#fff",
                   }}
                   icon="openmoji:cross-mark"
                 />
@@ -314,15 +404,18 @@ const PropertyDetails = () => {
               </Card>
             </Grid>
             <Grid item md={2}>
-              <Card style={{ height: 150 }}>
+              <Card className="overflow-visible" style={{ height: 150 }}>
                 <Icon
                   cursor={"pointer"}
                   fontSize={25}
                   style={{
                     position: "absolute",
-                    right: 3,
-                    top: 2,
-                    zIndex: 2,
+                      right: -10,
+                      top: -10,
+                      zIndex: 2,
+                      border:"1px solid #f00",
+                      borderRadius:"50%",
+                      background:"#fff",
                   }}
                   icon="openmoji:cross-mark"
                 />
@@ -339,15 +432,18 @@ const PropertyDetails = () => {
               </Card>
             </Grid>
             <Grid item md={2}>
-              <Card style={{ height: 150 }}>
+              <Card className="overflow-visible" style={{ height: 150 }}>
                 <Icon
                   cursor={"pointer"}
                   fontSize={25}
                   style={{
                     position: "absolute",
-                    right: 3,
-                    top: 2,
+                    right: -10,
+                    top: -10,
                     zIndex: 2,
+                    border:"1px solid #f00",
+                    borderRadius:"50%",
+                    background:"#fff",
                   }}
                   icon="openmoji:cross-mark"
                 />

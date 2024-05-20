@@ -13,10 +13,10 @@ import PropertyDetails from "./PropertyDetails";
 import { useNavigate } from "react-router-dom";
 import TableContainerComponent from "../../components/TableContainerComponent";
 const tableColumns = [
+  "Property Name",
   "Landlord/PM",
-  "Property",
+  "Property Type",
   "Located In (City)",
-  "Status",
   "Request Date",
   "Action",
 ];
@@ -44,10 +44,11 @@ const PropertyListingRequest = () => {
           {data.map((x, i) => {
             return (
               <TableRow key={i}>
+                <TableCell>Property Name</TableCell>
                 <TableCell>{x.landlord}</TableCell>
                 <TableCell>{x.property}</TableCell>
                 <TableCell>{x.location}</TableCell>
-                <TableCell>{i === 0 % 2 ? "Pending" : "Complete"}</TableCell>
+                {/* <TableCell>{i === 0 % 2 ? "Pending" : "Complete"}</TableCell> */}
                 <TableCell>{moment(x.date).format("YYYY/MM/DD")}</TableCell>
                 <TableCell>
                   <Icon
@@ -55,11 +56,11 @@ const PropertyListingRequest = () => {
                     onClick={() => navigate("/property-request-detail")}
                   />
                   &nbsp;
-                  <Icon
+                  {/* <Icon
                     label="Manage agreements"
                     icon="mingcute:documents-line"
                     onClick={() => navigate("/manage-aggrements-documents")}
-                  />
+                  /> */}
                 </TableCell>
               </TableRow>
             );

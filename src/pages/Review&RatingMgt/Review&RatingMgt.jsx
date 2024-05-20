@@ -34,7 +34,7 @@ export default function ReviewAndRatingMgt() {
         justifyContent="space-between"
         mb={5}
       >
-        <Typography variant="h4">Review&Rating/Mgt</Typography>
+        <Typography variant="h4">Review&Rating/Management </Typography>
 
         <div className="d-flex">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -84,31 +84,55 @@ export default function ReviewAndRatingMgt() {
         alignItems={"center"}
         justifyContent={"space-between"}
         mt={5}
+        gap={1}
+        flexWrap={"nowrap"}
       >
         <Grid
           item
           xs={12}
-          md={3}
+          md={2}
           // justifyContent={"center"}
-          gap={3}
+          gap={2}
         >
-          <Typography textAlign={"center"} variant="subtitle1">
+          <Typography  variant="subtitle1">
             Image
           </Typography>
         </Grid>
-        <Grid item xs={12} md={3}>
-          <Typography textAlign={"center"} variant="subtitle1">
+        <Grid
+          item
+          xs={12}
+          md={2}
+          // justifyContent={"center"}
+          gap={2}
+        >
+          <Typography  variant="subtitle1">
+            Property
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={2}
+          // justifyContent={"center"}
+          gap={2}
+        >
+          <Typography  variant="subtitle1">
+            Landlord
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={2}>
+          <Typography  variant="subtitle1">
             Descriptions
           </Typography>
         </Grid>
         <Grid
           item
           xs={12}
-          md={3}
+          md={2}
           display={"flex"}
           alignItems={"center"}
-          justifyContent={"center"}
-          gap={3}
+          justifyContent={"start"}
+          gap={2}
         >
           {" "}
           <Typography variant="subtitle1">Rating</Typography>
@@ -116,17 +140,17 @@ export default function ReviewAndRatingMgt() {
         <Grid
           item
           xs={12}
-          md={3}
+          md={2}
           display={"flex"}
           alignItems={"center"}
-          justifyContent={"center"}
-          gap={3}
+          justifyContent={"start"}
+          gap={2}
         >
           <Typography variant="subtitle1">Status</Typography>
         </Grid>
       </Grid>
       <Divider className="mt-3" component={'li'} style={{listStyleType : "none"}} />
-      {value < 4 && propertyArray?.map(() => <PropertyDetailCard />)}
+      {value < 6 && propertyArray?.map(() => <PropertyDetailCard />)}
 
       <div className="p-3 d-flex justify-content-center align-items-center">
         <PaginationComponent />

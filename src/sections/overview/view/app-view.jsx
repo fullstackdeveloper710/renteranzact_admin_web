@@ -14,7 +14,7 @@ export default function AppView() {
     series: [
       {
         name: "Inflation",
-        data: [2000, 4000, 6000, 8000, 10000, 12000, 14000, 16000],
+        data: [2000, 4000, 6000, 8000, 10000],
       },
     ],
     options: {
@@ -50,7 +50,6 @@ export default function AppView() {
           "Legal Fee",
           "Service Charge",
           "Agency Fee",
-          "Transaction Fee",
         ],
         position: "bottom",
         axisBorder: {
@@ -102,15 +101,15 @@ export default function AppView() {
     series: [
       {
         name: "Renter",
-        data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 87],
+        data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 87,66, 87],
       },
       {
         name: "Property Manager",
-        data: [76, 85, 101, 98, 87, 105, 91, 114, 94, 90],
+        data: [76, 85, 101, 98, 87, 105, 91, 114, 94, 90,94, 90,],
       },
       {
         name: "Landlord",
-        data: [35, 41, 36, 26, 45, 48, 52, 53, 41, 49],
+        data: [35, 41, 36, 26, 45, 48, 52, 53, 41, 49,41, 49],
       },
     ],
     options: {
@@ -148,6 +147,8 @@ export default function AppView() {
           "AUG-23",
           "SEP-23",
           "OCT-23",
+          "NOV-23",
+          "DEC-23",
         ],
       },
       yaxis: {
@@ -163,7 +164,7 @@ export default function AppView() {
       tooltip: {
         y: {
           formatter: function (val) {
-            return "$ " + val + " thousands";
+            return " " + val + " thousands";
           },
         },
       },
@@ -204,7 +205,7 @@ export default function AppView() {
         name: "Inflation",
         data: [
           1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000,
-          12000, 13000,
+          12000,
         ],
       },
     ],
@@ -236,19 +237,18 @@ export default function AppView() {
 
       xaxis: {
         categories: [
-          "1-Nov",
-          "3-Nov",
-          "5-Nov",
-          "7-Nov",
-          "9-Nov",
-          "11-Nov",
-          "13-Nov",
-          "15-Nov",
-          "17-Nov",
-          "19-Nov",
+          "1-Jan",
+          "3-Feb",
+          "5-Mar",
+          "7-Apr",
+          "9-May",
+          "11-June",
+          "13-July",
+          "15-Aug",
+          "17-Sep",
+          "19-Oct",
           "21-Nov",
-          "23-Nov",
-          "25-Nov",
+          "23-Dec",
         ],
         position: "bottom",
         axisBorder: {
@@ -537,7 +537,7 @@ export default function AppView() {
             />
           </Card>
         </Grid>
-        <Grid item md={8} xs={12} sm={6}>
+        {/* <Grid item md={8} xs={12} sm={6}>
           <Card sx={{p : 2}}>
             <Typography variant="h6">Payout Made</Typography>
 
@@ -560,7 +560,7 @@ export default function AppView() {
               NGN 200000
             </Typography>
           </Card>
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   );

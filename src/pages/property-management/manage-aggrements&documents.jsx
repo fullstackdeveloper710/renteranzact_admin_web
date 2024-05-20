@@ -4,15 +4,16 @@ import Iconify from "../../components/iconify";
 import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react/dist/iconify.js";
 export const Document = () => (
-  <Card>
-    <img src={"/images/pdf.png"} style={{ height: 200, width: "100%" }} />
+  <Card className="overflow-visible">
+    <img src={"/images/pdf.png"} style={{ height: 130, width: "auto",margin:"10px auto",display:"block" }} />
+    <p className="text-center">Delight Apartment.pdf</p>
     <Icon
             cursor={"pointer"}
             fontSize={25}
-            style={{ position: "absolute", right: 1, top: -1 }}
+            style={{ position: "absolute", right: -10, top: -10,borderRadius:"50%",border:"1px solid #f00" }}
             icon="openmoji:cross-mark"
           />
-    <CardActions>
+    <CardActions className="justify-content-center">
       <Button size="small">
         <Iconify icon="icon-park-outline:preview-open" />
         &nbsp; Preview

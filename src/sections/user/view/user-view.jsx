@@ -104,7 +104,6 @@ export default function UserPage() {
   const notFound = !dataFiltered.length && !!filterName;
 
   const managePopupText = (checked) => {
-    console.log(checked, "checked");
     if (checked) {
       text = "Are you sure you want to enable this user?";
     } else {
@@ -210,7 +209,7 @@ export default function UserPage() {
             title={"Are you sure you want to delete this user?"}
           />
         )}
-        {disableUser && (
+        {/* {disableUser && ( */}
           <ConfirmationDialog
             open={disableUser}
             setDeleteDialog={setDisableUser}
@@ -218,7 +217,7 @@ export default function UserPage() {
             yes={() => setDisableUser(false)}
             title={text}
           />
-        )}
+        {/* )} */}
       </Card>
     </div>
   );

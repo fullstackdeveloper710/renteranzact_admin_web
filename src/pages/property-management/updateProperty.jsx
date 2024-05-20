@@ -313,7 +313,7 @@ const UpdateProperty = () => {
           <Icon
             cursor={"pointer"}
             fontSize={25}
-            style={{ position: "absolute", right: -4, top: -1 }}
+            style={{ position: "absolute", right: -10, top: -10,border:"1px solid #f00",borderRadius:"50%",background:"#fff" }}
             icon="openmoji:cross-mark"
           />
           <img
@@ -325,7 +325,7 @@ const UpdateProperty = () => {
           <Icon
             cursor={"pointer"}
             fontSize={25}
-            style={{ position: "absolute", right: -4, top: -1 }}
+            style={{ position: "absolute", right: -10, top: -10,border:"1px solid #f00",borderRadius:"50%",background:"#fff" }}
             icon="openmoji:cross-mark"
           />
           <img

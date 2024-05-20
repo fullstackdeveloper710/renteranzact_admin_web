@@ -1,6 +1,7 @@
 import { Checkbox, Typography } from "@mui/material";
 import React from "react";
 import Iconify from "../../../components/iconify";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const ImagesDocuments = () => {
   return (
@@ -8,18 +9,50 @@ const ImagesDocuments = () => {
       <Typography variant="h5">Property Images </Typography>
 
       <p className="mt-4">
-        Tap to select and upload multiple images/vedios of the property
+        Tap to select and upload multiple images/videos of the property
       </p>
 
       <div className="d-flex align-items-center gap-4">
+        <div className="position-relative">
         <img
           src={"/images/houseProperty.jpg"}
           style={{ height: 100, width: 150, borderRadius: 20 }}
         />
+         <Icon
+                    cursor={"pointer"}
+                    fontSize={25}
+                    style={{
+                      position: "absolute",
+                      right: -10,
+                      top: 1,
+                      zIndex: 2,
+                      border:"1px solid #f00",
+                      borderRadius:"50%",
+                      background:"#fff",
+                    }}
+                    icon="openmoji:cross-mark"
+                  />
+                  </div>
+                  <div className="position-relative">
         <img
           src={"/images/houseProperty.jpg"}
           style={{ height: 100, width: 150, borderRadius: 20 }}
         />
+         <Icon
+                    cursor={"pointer"}
+                    fontSize={25}
+                    style={{
+                      position: "absolute",
+                      right: -10,
+                      top: 1,
+                      zIndex: 2,
+                      border:"1px solid #f00",
+                      borderRadius:"50%",
+                      background:"#fff",
+                    }}
+                    icon="openmoji:cross-mark"
+                  />
+                  </div>
 
         <div
           className="d-flex justify-content-center align-items-center"

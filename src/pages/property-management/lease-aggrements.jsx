@@ -1,6 +1,7 @@
 import {
   FormControl,
   Grid,
+  Input,
   InputLabel,
   MenuItem,
   Select,
@@ -15,7 +16,13 @@ const LeaseAggrements = () => {
       <div className="d-flex justify-content-between align-items-center mt-4">
         <Typography variant="h4">Lease Agreements</Typography>
 
+
+
         <FormControl sx={{ minWidth: 300 }}>
+          <InputLabel htmlFor="grouped-select">Search</InputLabel>
+          <Input type="search"/>
+        </FormControl>
+        {/* <FormControl sx={{ minWidth: 300 }}>
           <InputLabel htmlFor="grouped-select">Lease agreements</InputLabel>
           <Select
             defaultValue={2}
@@ -28,7 +35,7 @@ const LeaseAggrements = () => {
             <MenuItem value={"approved"}>Approved</MenuItem>
             <MenuItem value={"rejected"}> Pending</MenuItem>
           </Select>
-        </FormControl>
+        </FormControl> */}
       </div>
 
       <Grid container spacing={4} className="mt-3">
