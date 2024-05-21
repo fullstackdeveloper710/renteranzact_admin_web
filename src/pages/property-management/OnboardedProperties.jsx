@@ -12,7 +12,7 @@ import { useState } from "react";
 import ViewProperty from "./ViewProperty";
 import { useNavigate } from "react-router-dom";
 import TableContainerComponent from "../../components/TableContainerComponent";
-const OnboardedProperties = ({ tableColumns, data, onClick }) => {
+const OnboardedProperties = ({ tableColumns, data  ,setOpenDeletePopup}) => {
   const navigate = useNavigate();
 
   return (
@@ -46,7 +46,7 @@ const OnboardedProperties = ({ tableColumns, data, onClick }) => {
                     onClick={() => navigate("/view-onboarded-property")}
                   />
                   &nbsp;
-                  <Iconify onClick={onClick} icon="mingcute:delete-line" />
+                  <Iconify onClick={() => setOpenDeletePopup(true)} icon="mingcute:delete-line" />
                   &nbsp;
                   <Iconify
                     icon="bx:edit"

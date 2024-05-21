@@ -121,7 +121,7 @@ export default function UserPage() {
       >
         <Typography variant="h4">Manage Users</Typography>
 
-        <div className="d-flex">
+        {/* <div className="d-flex">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={["DatePicker"]}>
               <DatePicker label="From Date" />
@@ -133,7 +133,7 @@ export default function UserPage() {
               <DatePicker label="To Date" />
             </DemoContainer>
           </LocalizationProvider>
-        </div>
+        </div> */}
       </Stack>
 
       <Card>

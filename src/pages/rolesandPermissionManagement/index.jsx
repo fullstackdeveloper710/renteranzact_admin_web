@@ -122,7 +122,7 @@ export default function ManageRolesAndPermission() {
               </TableCell>
 
               <TableCell>
-                <Iconify icon="solar:eye-linear" />
+                <Iconify icon="bx:edit" />
                 &nbsp;
                 <Iconify
                   onClick={() => setDeleteDialog(true)}
@@ -141,7 +141,7 @@ export default function ManageRolesAndPermission() {
               </TableCell>
 
               <TableCell>
-                <Iconify icon="solar:eye-linear" />
+               <Iconify icon="bx:edit" />
                 &nbsp;
                 <Iconify
                   onClick={() => setDeleteDialog(true)}
@@ -161,7 +161,7 @@ export default function ManageRolesAndPermission() {
               </TableCell>
 
               <TableCell>
-                <Iconify icon="solar:eye-linear" />
+               <Iconify icon="bx:edit" />
                 &nbsp;
                 <Iconify
                   onClick={() => setDeleteDialog(true)}
@@ -190,7 +190,7 @@ export default function ManageRolesAndPermission() {
               </TableCell>
 
               <TableCell>
-                <Iconify icon="solar:eye-linear" />
+               <Iconify icon="bx:edit" />
                 &nbsp;
                 <Iconify
                   onClick={() => setDeleteDialog(true)}

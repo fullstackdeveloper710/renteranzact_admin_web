@@ -34,9 +34,9 @@ export default function ReviewAndRatingMgt() {
         justifyContent="space-between"
         mb={5}
       >
-        <Typography variant="h4">Review&Rating/Management </Typography>
+        <Typography variant="h4">Review & Rating/Management </Typography>
 
-        <div className="d-flex">
+        {/* <div className="d-flex">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={["DatePicker"]}>
               <DatePicker label="From Date" />
@@ -48,7 +48,7 @@ export default function ReviewAndRatingMgt() {
               <DatePicker label="To Date" />
             </DemoContainer>
           </LocalizationProvider>
-        </div>
+        </div> */}
         {/* <Button variant="contained" color="inherit" startIcon={<Iconify icon="eva:plus-fill" />}>
       New User
     </Button> */}
@@ -62,8 +62,8 @@ export default function ReviewAndRatingMgt() {
           aria-label="basic tabs example"
         >
           <Tab sx={{ fontSize: 17 }} label="All" />
+          <Tab sx={{ fontSize: 17 }} label="Pending" />
           <Tab sx={{ fontSize: 17 }} label="Published" />
-          <Tab sx={{ fontSize: 17 }} label="Deleted" />
         </Tabs>
         <OutlinedInput
           size="medium"
@@ -106,7 +106,7 @@ export default function ReviewAndRatingMgt() {
           gap={2}
         >
           <Typography  variant="subtitle1">
-            Property
+            Property Name
           </Typography>
         </Grid>
         <Grid

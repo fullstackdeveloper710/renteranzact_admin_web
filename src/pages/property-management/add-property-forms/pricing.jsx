@@ -10,6 +10,9 @@ import {
 import React from "react";
 import { listOfMonths } from "../../../sections/user/utils";
 import PaperForm from "../../../components/PaperForm";
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 const Pricing = () => {
   return (
@@ -20,7 +23,7 @@ const Pricing = () => {
           <TextField label="Rent" fullWidth />
         </Grid>
         <Grid item md={6} xs={12} sm={6}>
-          <FormControl fullWidth>
+          {/* <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
             <Select
               labelId="demo-simple-select-label"
@@ -33,7 +36,12 @@ const Pricing = () => {
                 </MenuItem>
               ))}
             </Select>
-          </FormControl>
+          </FormControl> */}
+           <LocalizationProvider  dateAdapter={AdapterDayjs}>
+            {/* <DemoContainer components={["DatePicker"]}> */}
+              <DatePicker sx={{width :"100%"}} label="To Date" />
+            {/* </DemoContainer> */}
+          </LocalizationProvider>
         </Grid>
         <Grid item md={6} xs={12} sm={6}>
           <TextField label="Service Charges" fullWidth />

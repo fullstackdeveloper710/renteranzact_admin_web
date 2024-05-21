@@ -187,6 +187,7 @@ export default function UserPage() {
         <FormControl fullWidth>
               <InputLabel>Property</InputLabel>
               <Select
+              label="Property"
               >
                 <MenuItem >All</MenuItem>
                 <MenuItem >Reviewer Admin</MenuItem>

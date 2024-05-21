@@ -24,19 +24,31 @@ const UpdateProperty = () => {
   console.log(location.state);
   return (
     <div className="px-5">
-      <Stack
+ <Stack
         direction="row"
         alignItems="center"
         justifyContent="space-between"
         marginTop={3}
+        marginBottom={2}
       >
         <Typography variant="h4">Update Property</Typography>
       </Stack>
 
-      <label className="mt-4">
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <label className="">
         <b>Property details</b>
       </label>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
       <Grid container spacing={3} className="mt-1">
+      <Grid item md={6} xs={12} sm={6}>
+          <TextField fullWidth label="Property Name" />
+        </Grid>
         <Grid item md={6} xs={12} sm={6}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">
@@ -144,6 +156,42 @@ const UpdateProperty = () => {
           </FormControl>
         </Grid>
         <Grid item md={6} xs={12} sm={6}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Bathroom</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="No. of floors"
+              value={3}
+            >
+              {[0, 1, 2, 3, 4, 5, 6].map((x, index) => (
+                <MenuItem key={index} value={x}>
+                  {x}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+       
+       
+        <Grid item md={6} xs={12} sm={6}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Bathroom</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="No. of floors"
+              value={3}
+            >
+              {[0, 1, 2, 3, 4, 5, 6].map((x, index) => (
+                <MenuItem key={index} value={x}>
+                  {x}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Grid>
+        <Grid item md={6} xs={12} sm={6}>
           <TextField fullWidth label="Super Area" />
         </Grid>
         <Grid item md={6} xs={12} sm={6}>
@@ -230,10 +278,21 @@ const UpdateProperty = () => {
           </FormControl>
         </Grid>
       </Grid>
-      <label className="mt-4">
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <label className="">
         {" "}
         <b>Pricing</b>
       </label>
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
       <Grid container spacing={4} className="mt-1">
         <Grid item md={6} xs={12} sm={6}>
           <TextField label="Rent" fullWidth />
@@ -262,12 +321,21 @@ const UpdateProperty = () => {
           <TextField label="Caution Deposit" fullWidth />
         </Grid>
       </Grid>
+      </div>
+    </div>
+  </div>
 
-      <label className="mt-4">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      <label className="">
         {" "}
         <b>Amenities</b>
       </label>
-
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
       <Grid container spacing={1} className="mt-1">
         <Grid item md={6} xs={12} sm={6}>
           <Checkbox />
@@ -302,12 +370,20 @@ const UpdateProperty = () => {
           <span>Water Storage</span>
         </Grid> */}
       </Grid>
+      </div>
+    </div>
+  </div>
 
-      <label className="mt-4">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+      <label className="">
         <b>Property Images and videos</b>
       </label>
-      <br />
-
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
       <div className="d-flex align-items-center gap-4 mt-4">
         <div style={{ position: "relative", height: "100px", width: "150px" }}>
           <Icon
@@ -334,6 +410,13 @@ const UpdateProperty = () => {
           />
         </div>
       </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
       <Button className="global-button mt-3" size="large" variant="contained">
         Update
       </Button>

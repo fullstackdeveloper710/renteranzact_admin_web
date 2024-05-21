@@ -10,7 +10,7 @@ import MenuItem from "@mui/material/MenuItem";
 import TableCell from "@mui/material/TableCell";
 import Typography from "@mui/material/Typography";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Switch } from "@mui/material";
 import Iconify from "../../components/iconify";
 
@@ -31,7 +31,7 @@ export default function UserTableRow({
   managePopupText,
 }) {
   const [open, setOpen] = useState(null);
-
+const location = useLocation()
   const handleOpenMenu = (event) => {
     setOpen(event.currentTarget);
   };
@@ -61,7 +61,7 @@ export default function UserTableRow({
 
         <TableCell>{mobile}</TableCell>
 
-        <TableCell align="left">
+      { location.pathname ===  '/manage-users' ? <TableCell align="left">
           {name.startsWith("A")
             ? "Property Manager"
             : name.startsWith("D")
@@ -69,7 +69,8 @@ export default function UserTableRow({
             : name.startsWith("B")
             ? "Renter"
             : "Landlord"}
-        </TableCell>
+            {name}
+        </TableCell> : null}
 
         <TableCell>
           <Switch

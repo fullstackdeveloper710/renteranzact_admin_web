@@ -45,7 +45,7 @@ const ViewEmployee = () => {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               // value={age}
-              value={'All'}
+              value={'reviewerAdmin'}
               label="Role"
             >
               {/* <MenuItem value={'All'}>All</MenuItem> */}

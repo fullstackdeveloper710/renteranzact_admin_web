@@ -23,7 +23,7 @@ export default function ManageTransactions() {
     <div className="px-5">
       <Stack direction="row" alignItems="center" justifyContent="space-between">
         <Typography variant="h4">Manage Transactions</Typography>
-        <div className="d-flex">
+        {/* <div className="d-flex">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={["DatePicker"]}>
               <DatePicker label="From Date" />
@@ -35,7 +35,7 @@ export default function ManageTransactions() {
               <DatePicker label="To Date" />
             </DemoContainer>
           </LocalizationProvider>
-        </div>
+        </div> */}
       </Stack>
       <Stack>
         {/* <Typography variant="h4">Collected Amount</Typography> */}

@@ -27,7 +27,13 @@ const ViewProperty = () => {
         <Grid md={3} item>
           <Box
             className="d-flex justify-content-center align-items-center flex-column mt-2"
-            sx={{ backgroundColor: "grey", py: 1, height: 300 }}
+          
+            sx={{
+              backgroundImage: "url(/images/header-back.png)",
+              height: 300,
+              backgroundRepeat: "repeat",
+              borderRadius: 2,
+            }}
           >
             <Avatar
               alt="Remy Sharp"
@@ -35,12 +41,15 @@ const ViewProperty = () => {
               sx={{ width: 56, height: 56 }}
             />
             <div className="mt-2 text-center">
-              <Typography variant="body1">Samuel Rodge</Typography>
-              <Typography variant="body2">Landlord</Typography>
-              <Typography variant="body2">
+              <Typography  color={"white"} variant="h4">Samuel Rodge</Typography>
+              <Typography   color="#C8D736"
+                    fontSize={18}
+                    fontWeight={"bold"}
+                    variant="body1">Landlord</Typography>
+              <Typography variant="body2" color={"white"}>
                 Midnight Corner St.Suite 600 San
               </Typography>
-              <Typography variant="body2">Fransisco,CADGE 94107</Typography>
+              <Typography color={"white"} variant="body2">Fransisco,CADGE 94107</Typography>
             </div>
 
             <Box
@@ -170,7 +179,7 @@ const ViewProperty = () => {
           </div>
 
           <div className="mt-4">
-            <Typography variant="h4">Description</Typography>
+            <Typography variant="h4">About Property</Typography>
             <p>
               The standard chunk of Lorem Ipsum used since the 1500s is
               reproduced below for those interested. Sections 1.10.32 and

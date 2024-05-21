@@ -87,9 +87,9 @@ export default function ManageChat() {
           </LocalizationProvider>
         </div> */}
       </Stack>
-      <Grid container className="mt-4">
-        <Grid item md={4} sx={{ border: "1px solid grey", p: 2 }}>
-          <div className="d-flex justify-content-between align-items-center">
+      <Grid container className="mt-4 shadow-lg rounded">
+        <Grid item md={4} className="border-end" sx={{  p: 2 }}>
+          <div className="d-flex justify-content-between pb-4 align-items-center">
             <Typography variant="h5">RECENT CHATS</Typography>
             <Button size="medium" className="global-button" variant="contained">
               New Chat
@@ -166,12 +166,13 @@ export default function ManageChat() {
               value={input}
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position="end">
+                  <InputAdornment  position="end">
                     <Icon
                       cursor={"pointer"}
                       fontSize={30}
                       color="#13556d"
                       icon="mingcute:send-line"
+                    
                     />
                   </InputAdornment>
                 ),
