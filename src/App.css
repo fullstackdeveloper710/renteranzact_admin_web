@@ -147,3 +147,14 @@ body {
   border: 0px;
   padding-bottom: 20px;
 }
+
+/* -- */
+table tbody tr th:first-child{
+padding-left: 10px;
+}
+.slider-container.slider_1 .slick-list .slick-slide {
+  margin-right: 15px;
+}
+.slider_1 .slick-list {
+  height: 250px;
+}

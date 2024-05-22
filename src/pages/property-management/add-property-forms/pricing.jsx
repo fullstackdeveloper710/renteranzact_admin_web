@@ -37,11 +37,20 @@ const Pricing = () => {
               ))}
             </Select>
           </FormControl> */}
-           <LocalizationProvider  dateAdapter={AdapterDayjs}>
-            {/* <DemoContainer components={["DatePicker"]}> */}
-              <DatePicker sx={{width :"100%"}} label="To Date" />
-            {/* </DemoContainer> */}
-          </LocalizationProvider>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">
+              Monthly
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="Monthly"
+              >
+                <MenuItem >Monthly</MenuItem>
+                <MenuItem >Quartely</MenuItem>
+                <MenuItem >Yearly</MenuItem>
+              </Select>
+            </FormControl>
         </Grid>
         <Grid item md={6} xs={12} sm={6}>
           <TextField label="Service Charges" fullWidth />

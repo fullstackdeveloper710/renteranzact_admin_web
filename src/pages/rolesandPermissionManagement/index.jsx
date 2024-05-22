@@ -122,7 +122,10 @@ export default function ManageRolesAndPermission() {
               </TableCell>
 
               <TableCell>
-                <Iconify icon="bx:edit" />
+                <Iconify icon="bx:edit" 
+                 onClick={() =>
+                  navigate("/add-new-roles-and-permissions-management")
+                } />
                 &nbsp;
                 <Iconify
                   onClick={() => setDeleteDialog(true)}
@@ -141,7 +144,11 @@ export default function ManageRolesAndPermission() {
               </TableCell>
 
               <TableCell>
-               <Iconify icon="bx:edit" />
+               <Iconify icon="bx:edit"
+                onClick={() =>
+                  navigate("/add-new-roles-and-permissions-management")
+                }
+               />
                 &nbsp;
                 <Iconify
                   onClick={() => setDeleteDialog(true)}
@@ -161,7 +168,10 @@ export default function ManageRolesAndPermission() {
               </TableCell>
 
               <TableCell>
-               <Iconify icon="bx:edit" />
+               <Iconify icon="bx:edit"
+                onClick={() =>
+                  navigate("/add-new-roles-and-permissions-management")
+                } />
                 &nbsp;
                 <Iconify
                   onClick={() => setDeleteDialog(true)}
@@ -190,7 +200,10 @@ export default function ManageRolesAndPermission() {
               </TableCell>
 
               <TableCell>
-               <Iconify icon="bx:edit" />
+               <Iconify icon="bx:edit"
+                onClick={() =>
+                  navigate("/add-new-roles-and-permissions-management")
+                } />
                 &nbsp;
                 <Iconify
                   onClick={() => setDeleteDialog(true)}
