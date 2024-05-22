@@ -16,6 +16,11 @@ const PropertyDetails = () => {
     <div className="screen-transition">
       <PaperForm title={"Property Details"}>
         <Grid container spacing={3} className="mt-1">
+
+        <Grid item md={6} xs={12} sm={6}>
+            <TextField fullWidth label="Property Name" />
+          </Grid>
+
           <Grid item md={6} xs={12} sm={6}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">
@@ -110,6 +115,42 @@ const PropertyDetails = () => {
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">
                 No. of floors
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="No. of floors"
+              >
+                {[0, 1, 2, 3, 4, 5, 6].map((x, index) => (
+                  <MenuItem key={index} value={x}>
+                    {x}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item md={6} xs={12} sm={6}>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">
+                Bathroom
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="No. of floors"
+              >
+                {[0, 1, 2, 3, 4, 5, 6].map((x, index) => (
+                  <MenuItem key={index} value={x}>
+                    {x}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item md={6} xs={12} sm={6}>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">
+                Bedroom
               </InputLabel>
               <Select
                 labelId="demo-simple-select-label"
@@ -225,6 +266,9 @@ const PropertyDetails = () => {
                 <MenuItem value={30}>Courtney Auer</MenuItem>
               </Select>
             </FormControl>
+          </Grid>
+          <Grid item md={6} xs={12} sm={6}>
+            <TextField fullWidth label="About Property" />
           </Grid>
         </Grid>
       </PaperForm>

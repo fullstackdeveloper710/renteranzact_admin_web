@@ -126,7 +126,7 @@ export default function UserPage() {
   const tableColumns = [
     "Name",
     "Email",
-    "Mobile",
+    "Mobile Number",
     "Joining Date",
     "Role",
     "Status",
@@ -185,9 +185,9 @@ export default function UserPage() {
 
         <div className="d-flex w-50 gap-3">
         <FormControl fullWidth>
-              <InputLabel>Property</InputLabel>
+              <InputLabel>Role</InputLabel>
               <Select
-              label="Property"
+              label="Role"
               >
                 <MenuItem >All</MenuItem>
                 <MenuItem >Reviewer Admin</MenuItem>
@@ -228,7 +228,7 @@ export default function UserPage() {
                       {moment(x.joiningDate).format("YYYY/DD/MM")}
                     </TableCell>
                     <TableCell>
-                      {i % 2 === 0 ? "Reveiwer Admin" : "Legal Finance Admin"}
+                      {i % 2 === 0 ? "Reveiwer Admin" : "Legal Admin"}
                     </TableCell>
                     <TableCell>
                       <Switch

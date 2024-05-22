@@ -34,7 +34,7 @@ export default function ReviewAndRatingMgt() {
         justifyContent="space-between"
         mb={5}
       >
-        <Typography variant="h4">Review & Rating/Management </Typography>
+        <Typography variant="h4">Review & Rating </Typography>
 
         {/* <div className="d-flex">
           <LocalizationProvider dateAdapter={AdapterDayjs}>

@@ -16,7 +16,7 @@ const ViewEmployee = () => {
   return (
     <div className="px-5">
       <Typography className="mt-3" variant="h5">
-      Employe Details
+      Employee Details
       </Typography>
 
       <Grid container mt={3} spacing={2}>

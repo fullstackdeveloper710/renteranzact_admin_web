@@ -12,19 +12,19 @@ export default function PropertyDetailCard() {
         display={"flex"}
         alignItems={"center"}
         justifyContent={"space-between"}
-        mt={2}
-        gap={1}
+        mt={1}
+        gap={2}
         flexWrap={"nowrap"}
       >
         <Grid item xs={12} md={2}>
           <div className="d-flex justify-content-center align-items-center gap-3">
             <img
-              style={{ borderRadius: 13, width: 100 }}
+              style={{ borderRadius: 13, width: 80 }}
               src="./images/houseProperty.jpg"
             />
             <div>
               <span>#C01234</span>
-              <Typography variant="subtitle1">Robert Patlison</Typography>
+              <Typography variant="subtitle2">Robert Patlison</Typography>
               {/* <Typography sx={{ width: "100%" }} variant="body1" color="grey">
               Join on 26/04/2020, 12:42 AM
             </Typography> */}
@@ -32,10 +32,11 @@ export default function PropertyDetailCard() {
           </div>
         </Grid>
         <Grid item xs={12} md={2}>
-        <Typography variant="subtitle1"></Typography>
+        <Typography variant="subtitle1">abce</Typography>
         </Grid>
         <Grid item xs={12} md={2}>
-        <Typography variant="subtitle1"></Typography>
+        <Typography variant="subtitle1">Pearl J. Johnson
+</Typography>
         </Grid>
         <Grid item xs={12} md={2}>
           Property Owner a good and coperative Property is situated in a good

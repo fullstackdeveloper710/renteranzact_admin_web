@@ -198,7 +198,7 @@ const ViewProperty = () => {
             </p>
           </div>
 
-          <div className="slider-container mt-2">
+          <div className="slider-container slider_1 mt-2">
             <Slider
               arrows
               infinite={true}
@@ -208,7 +208,6 @@ const ViewProperty = () => {
               prevArrow={<Iconify icon="oui:arrow-left" />}
               autoplay
               slidesToScroll={3}
-              a
             >
               <div>
                 <img
