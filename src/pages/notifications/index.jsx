@@ -55,10 +55,12 @@ const Notifications = () => {
           }
         >
           {NOTIFICATIONS.slice(0, 2).map((notification) => (
-            <NotificationItem
-              key={notification.id}
-              notification={notification}
-            />
+            <div onClick={() => navigate("/notification-detail")}>
+              <NotificationItem
+                key={notification.id}
+                notification={notification}
+              />
+            </div>
           ))}
         </List>
 
@@ -75,22 +77,27 @@ const Notifications = () => {
         >
           {NOTIFICATIONS.slice(2, 5).map((notification) => (
             <>
-              <NotificationItem
-                key={notification.id}
-                notification={notification}
-              />
-              <NotificationItem
-                key={notification.id}
-                notification={notification}
-              />
+              <div onClick={() => navigate("/notification-detail")}>
+                {" "}
+                <NotificationItem
+                  key={notification.id}
+                  notification={notification}
+                />
+              </div>
+
+              <div onClick={() => navigate("/notification-detail")}>
+                {" "}
+                <NotificationItem
+                  key={notification.id}
+                  notification={notification}
+                />
+              </div>
             </>
           ))}
         </List>
       </Scrollbar>
 
       <Divider sx={{ borderStyle: "dashed" }} />
-
-     
     </div>
   );
 };

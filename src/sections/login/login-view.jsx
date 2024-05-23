@@ -31,9 +31,6 @@ export default function LoginView() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleClick = () => {
-    router.push("/dashboard");
-  };
 
   /// onsubmit function
   const onSubmit = (e) => {

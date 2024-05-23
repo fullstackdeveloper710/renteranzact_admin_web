@@ -59,7 +59,7 @@ const location = useLocation()
 
         <TableCell>{email}</TableCell>
 
-        <TableCell>{mobile}</TableCell>
+        <TableCell>{'234-1-1234567'}</TableCell>
 
       { location.pathname ===  '/manage-users' ? <TableCell align="left">
           {name.startsWith("A")

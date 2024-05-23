@@ -16,6 +16,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import CollapseWithTitle from "../../components/Collapse";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import Property from "../../components/Property";
 const UserDetails = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -28,10 +29,15 @@ const UserDetails = () => {
     useState(true);
   const [kinDetailsCollapse, setKinDetailsCollapse] = useState(true);
   const [landlordCollapse, setLandlordCollapse] = useState(true);
+  const [propertiesCollapse, setPropertiesCollapse] = useState(true);
   return (
     <div className="px-5">
       <div className="d-flex align-items-center gap-4">
-        <Icon onClick={() => navigate(-1)} icon="zondicons:arrow-left" cursor={'pointer'} />
+        <Icon
+          onClick={() => navigate(-1)}
+          icon="zondicons:arrow-left"
+          cursor={"pointer"}
+        />
         <Typography variant="h4" py={3}>
           User Detail
         </Typography>
@@ -375,7 +381,11 @@ const UserDetails = () => {
                     InputProps={{
                       endAdornment: (
                         <InputAdornment position="end">
-                          <Button    className="global-button" size="small" variant="contained">
+                          <Button
+                            className="global-button"
+                            size="small"
+                            variant="contained"
+                          >
                             upload
                           </Button>
                         </InputAdornment>
@@ -416,6 +426,23 @@ const UserDetails = () => {
         </>
       )}
       <div className="mt-5">
+        <CollapseWithTitle
+          title={"Properties"}
+          open={propertiesCollapse}
+          setOpen={setPropertiesCollapse}
+        />
+        <Collapse in={propertiesCollapse}>
+          <Grid container spacing={4} className="mt-2">
+            {Array(10).fill(
+              <Grid item md={3} sm={5} xs={12}>
+                <Property />
+              </Grid>
+            )}
+          </Grid>
+        </Collapse>
+      </div>
+
+      {/* <div className="mt-5">
         <Button
           size="large"
           className="global_button"
@@ -424,7 +451,7 @@ const UserDetails = () => {
         >
           Update
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 };

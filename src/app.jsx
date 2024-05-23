@@ -10,13 +10,11 @@ import "react-toastify/dist/ReactToastify.css";
 
 // ----------------------------------------------------------------------
 export default function App() {
-
   useScrollToTop();
   return (
     <ThemeProvider>
-      <Router />
       <ToastContainer />
-     
+      <Router />
     </ThemeProvider>
   );
 }

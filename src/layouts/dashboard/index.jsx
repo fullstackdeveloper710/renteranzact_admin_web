@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import Box from "@mui/material/Box";
@@ -9,7 +9,7 @@ import Nav from "./nav";
 import Main from "./main";
 import Header from "./header";
 import Iconify from "../../components/iconify";
-
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 // ----------------------------------------------------------------------
 
 export default function DashboardLayout({ children }) {
@@ -19,7 +19,13 @@ export default function DashboardLayout({ children }) {
   const langServeAdapter = useChatAdapter(adapterOptions);
   const [openNav, setOpenNav] = useState(false);
   const [showAI, setShowAI] = useState(false);
-
+  const location = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (location.pathname === "/") {
+      navigate("/dashboard");
+    }
+  }, [location.pathname, navigate]);
   return (
     <>
       <Header onOpenNav={() => setOpenNav(true)} />

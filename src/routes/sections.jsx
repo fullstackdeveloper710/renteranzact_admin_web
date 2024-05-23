@@ -18,6 +18,7 @@ import ManageTransactions from "../pages/manageTransactions/manageTransaction";
 import Activitylog from "../pages/activityLog/activitylog";
 import ManageChat from "../pages/manageChat/manageChat";
 import ChatAsPerUser from "../pages/manageChat/chatAsPerUser";
+import NotificationDetail from "../pages/notifications/detail";
 export const LoginPage = lazy(() => import("../pages/login"));
 export const ProductsPage = lazy(() => import("../pages/products"));
 export const Page404 = lazy(() => import("../pages/page-not-found"));
@@ -117,9 +118,11 @@ export const UpdateProperty = lazy(() =>
   import("../pages/property-management/updateProperty")
 );
 
-export const Landlords = lazy(() => import('../pages/manageUsers/landlords'))
-export const Renters = lazy(() => import('../pages/manageUsers/renters'))
-export const PropertyManagers = lazy(() => import('../pages/manageUsers/property-managers'))
+export const Landlords = lazy(() => import("../pages/manageUsers/landlords"));
+export const Renters = lazy(() => import("../pages/manageUsers/renters"));
+export const PropertyManagers = lazy(() =>
+  import("../pages/manageUsers/property-managers")
+);
 
 const LoadDynamicComponent = (object) => {
   const Component = lazy(() => import(`${object}`));
@@ -132,6 +135,8 @@ export default function Router() {
   const routes = useRoutes([
     {
       element: (
+
+     
         <DashboardLayout>
           <Suspense
             fallback={
@@ -155,7 +160,7 @@ export default function Router() {
       children: [
         {
           element: <Dashboard />,
-          path: "dashboard",
+          path: "/dashboard",
         },
         {
           element: <ManageUsers />,
@@ -358,6 +363,10 @@ export default function Router() {
         {
           element: <Landlords />,
           path: "landlords",
+        },
+        {
+          path: "/notification-detail",
+          element: <NotificationDetail />,
         },
       ],
     },

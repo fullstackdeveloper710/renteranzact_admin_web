@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Unstable_Grid2";
 import Typography from "@mui/material/Typography";
-import { Card, FormControl, MenuItem, Select } from "@mui/material";
+import { Card, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
@@ -102,15 +102,15 @@ export default function AppView() {
     series: [
       {
         name: "Renter",
-        data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 87,66, 87],
+        data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 87, 66, 87],
       },
       {
         name: "Property Manager",
-        data: [76, 85, 101, 98, 87, 105, 91, 114, 94, 90,94, 90,],
+        data: [76, 85, 101, 98, 87, 105, 91, 114, 94, 90, 94, 90],
       },
       {
         name: "Landlord",
-        data: [35, 41, 36, 26, 45, 48, 52, 53, 41, 49,41, 49],
+        data: [35, 41, 36, 26, 45, 48, 52, 53, 41, 49, 41, 49],
       },
     ],
     options: {
@@ -396,38 +396,32 @@ export default function AppView() {
     {
       count: "100",
       title: "Top Listed Properties",
-      onClick:  () =>
-        navigate("/property-management")
+      onClick: () => navigate("/property-management"),
     },
     {
       count: "80",
       title: "Properties on Rent",
-      onClick:  () =>
-        navigate("/")
+      onClick: () => navigate("/"),
     },
     {
       count: "100",
       title: "Vacant Properties",
-      onClick:  () =>
-        navigate("/")
+      onClick: () => navigate("/"),
     },
     {
       count: "80",
       title: "Registered Renters",
-      onClick:  () =>
-        navigate("/renters")
+      onClick: () => navigate("/renters"),
     },
     {
       count: "100",
       title: "Registered Landlords",
-      onClick:  () =>
-        navigate("/landlords")
+      onClick: () => navigate("/landlords"),
     },
     {
       count: "80",
       title: "Registered  Property Managers",
-      onClick:  () =>
-        navigate("/property-managers")
+      onClick: () => navigate("/property-managers"),
     },
   ];
   return (
@@ -439,21 +433,28 @@ export default function AppView() {
       <Grid container spacing={3} sx={{ mt: 4 }}>
         {cardsArray.map((x, i) => {
           return (
-            <Grid style={{cursor:"pointer"}} xs={12} sm={6} md={4} onClick={x.onClick}>
-              <CountCard key={i} title={x.title} count={x.count}  />
+            <Grid
+              style={{ cursor: "pointer" }}
+              xs={12}
+              sm={6}
+              md={4}
+              onClick={x.onClick}
+            >
+              <CountCard key={i} title={x.title} count={x.count} />
             </Grid>
           );
         })}
       </Grid>
 
-      <Grid 
-      className={"mt-4"}
-      container
-      spacing={4}
-      direction={"row"}
-      alignItems={"center"}
-      justifyContent={"space-between"}>
-      <Grid item md={3}>
+      <Grid
+        className={"mt-4"}
+        container
+        spacing={4}
+        direction={"row"}
+        alignItems={"center"}
+        justifyContent={"space-between"}
+      >
+        <Grid item md={3}>
           <Typography variant="h5">Financial Performance</Typography>
         </Grid>
         <Grid item md={2}>
@@ -464,7 +465,7 @@ export default function AppView() {
               id="demo-simple-select"
             >
               <MenuItem value={"Weekly"}>Last 7 days</MenuItem>
-              <MenuItem value={"Monthly"}>Last 30 days</MenuItem> 
+              <MenuItem value={"Monthly"}>Last 30 days</MenuItem>
               <MenuItem value={"Yearly"}>Last 90 days</MenuItem>
             </Select>
           </FormControl>
@@ -480,7 +481,7 @@ export default function AppView() {
         justify={"space-evenly"}
       >
         <Grid item xs={12} sm={6} md={12}>
-          <Card  sx={{p : 2}}>
+          <Card sx={{ p: 2 }}>
             <ReactApexChart
               type="bar"
               height={400}
@@ -491,26 +492,31 @@ export default function AppView() {
         </Grid>
 
         <Grid item md={8} xs={12} sm={6}>
-          <Card  sx={{p : 2}}>
-            <div className="d-flex justify-content-between">
-            <Typography variant="h6" >
-              Monthly User Onboarding
-            </Typography>
-            <div>
-          <FormControl fullWidth>
-            <Select
-              labelId="demo-simple-select-label"
-              value="Weekly"
-              id="demo-simple-select"
-            >
-              <MenuItem value={"Weekly"}>Weekly</MenuItem>
-              <MenuItem value={"Monthly"}>Monthly</MenuItem> 
-              <MenuItem value={"Yearly"}>Yearly</MenuItem>
-            </Select>
-          </FormControl>
-        </div>
+          <Card sx={{ p: 2 }}>
+            <div className="d-flex justify-content-between align-items-center">
+              <Typography variant="h6">Monthly User Onboarding</Typography>
+              <div>
+                <FormControl fullWidth>
+                  <InputLabel>Yearly</InputLabel>
+                  <Select
+                    sx={{ width: 200 }}
+                    labelId="demo-simple-select-label"
+                    value="2020"
+                    id="demo-simple-select"
+                    label="Yearly"
+                  >
+                    {["2020", "2021", "2022", "2023", "2024"].map((x, i) => {
+                      return (
+                        <MenuItem key={i} value={x}>
+                          {x}
+                        </MenuItem>
+                      );
+                    })}
+                  </Select>
+                </FormControl>
+              </div>
             </div>
-            
+
             <ReactApexChart
               options={onboardingChatState.options}
               series={onboardingChatState.series}
@@ -520,7 +526,7 @@ export default function AppView() {
           </Card>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <Card  sx={{p : 2}}>
+          <Card sx={{ p: 2 }}>
             <div
               style={{ height: "450px" }}
               className="d-flex justify-content-center align-items-center"
@@ -536,23 +542,30 @@ export default function AppView() {
           </Card>
         </Grid>
         <Grid item md={12} xs={12} sm={6}>
-          <Card  sx={{p : 2}}>
+          <Card sx={{ p: 2 }}>
             <div className="d-flex justify-content-between">
-            <Typography variant="h6">Total Revenue Generated</Typography>
-            <div>
-          <FormControl fullWidth>
-            <Select
-              labelId="demo-simple-select-label"
-              value="Weekly"
-              id="demo-simple-select"
-            >
-              <MenuItem value={"Weekly"}>Weekly</MenuItem>
-              <MenuItem value={"Monthly"}>Monthly</MenuItem> 
-              <MenuItem value={"Yearly"}>Yearly</MenuItem>
-            </Select>
-          </FormControl>
-        </div>
-        </div>
+              <Typography variant="h6">Total Revenue Generated</Typography>
+              <div>
+                <FormControl fullWidth>
+                  <InputLabel>Yearly</InputLabel>
+                  <Select
+                    sx={{ width: 200 }}
+                    labelId="demo-simple-select-label"
+                    value="2020"
+                    id="demo-simple-select"
+                    label="Yearly"
+                  >
+                    {["2020", "2021", "2022", "2023", "2024"].map((x, i) => {
+                      return (
+                        <MenuItem key={i} value={x}>
+                          {x}
+                        </MenuItem>
+                      );
+                    })}
+                  </Select>
+                </FormControl>
+              </div>
+            </div>
             <ReactApexChart
               options={revenueChartState.options}
               series={revenueChartState.series}

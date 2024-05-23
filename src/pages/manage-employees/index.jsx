@@ -41,7 +41,7 @@ import ConfirmationDialog from "../../components/dialog/ConfirmationDialog";
 import TableContainerComponent from "../../components/TableContainerComponent";
 import PaginationComponent from "../../components/Pagination";
 // ----------------------------------------------------------------------
-let text =''
+let text = "";
 export default function UserPage() {
   const [page, setPage] = useState(0);
   const [order, setOrder] = useState("asc");
@@ -117,7 +117,7 @@ export default function UserPage() {
     id: faker.string.uuid(),
     name: faker.person.fullName(),
     email: faker.internet.email(),
-    phone: faker.phone.number(),
+    phone: "234-1-1234567",
     // joiningDate: faker.date.birthdate(),
     role: faker.person.fullName(),
     status: faker.string.sample(),
@@ -183,28 +183,26 @@ export default function UserPage() {
             }
           />
 
-        <div className="d-flex w-50 gap-3">
-        <FormControl fullWidth>
+          <div className="d-flex w-50 gap-3">
+            <FormControl fullWidth>
               <InputLabel>Role</InputLabel>
-              <Select
-              label="Role"
-              >
-                <MenuItem >All</MenuItem>
-                <MenuItem >Reviewer Admin</MenuItem>
-                <MenuItem >Legal Admin</MenuItem>
-                <MenuItem >Finance Admin</MenuItem>
+              <Select label="Role" value="All">
+                <MenuItem value="All">All</MenuItem>
+                <MenuItem value="Reviewer Admin">Reviewer Admin</MenuItem>
+                <MenuItem value="Legal Admin">Legal Admin</MenuItem>
+                <MenuItem value="Finance Admin">Finance Admin</MenuItem>
               </Select>
             </FormControl>
-            
-          <Button
-            variant="contained"
-            color="inherit"
-            startIcon={<Iconify icon="eva:plus-fill" />}
-            onClick={() => navigate("/manage-employees/add-employees")}
-            className="global-button w-100"
-          >
-            Add Employee
-          </Button>
+
+            <Button
+              variant="contained"
+              color="inherit"
+              startIcon={<Iconify icon="eva:plus-fill" />}
+              onClick={() => navigate("/manage-employees/add-employees")}
+              className="global-button w-100"
+            >
+              Add Employee
+            </Button>
           </div>
         </div>
 
@@ -233,12 +231,11 @@ export default function UserPage() {
                     <TableCell>
                       <Switch
                         value={employeeStatus}
-                        onChange={(event, newValue) =>{
-                          setEmployeeStatus(true)
-                          
-                          managePopupText(newValue)
-                        }
-                        }
+                        onChange={(event, newValue) => {
+                          setEmployeeStatus(true);
+
+                          managePopupText(newValue);
+                        }}
                       />
                     </TableCell>
                     <TableCell>
@@ -273,7 +270,7 @@ export default function UserPage() {
           setDeleteDialog={setDeleteDialog}
           title={"Are you sure you want to delete?"}
         />
-         {employeeStatus && (
+        {employeeStatus && (
           <ConfirmationDialog
             open={employeeStatus}
             setDeleteDialog={setEmployeeStatus}
