@@ -2,7 +2,6 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { set, sub } from "date-fns";
 import { faker } from "@faker-js/faker";
-
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import Badge from "@mui/material/Badge";
@@ -17,20 +16,15 @@ import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemButton from "@mui/material/ListItemButton";
-
 import { fToNow } from "../../../utils/format-time";
-
 import Iconify from "../../../components/iconify/iconify";
 import Scrollbar from "../../../components/scrollbar";
 import { useNavigate } from "react-router-dom";
-
-// ----------------------------------------------------------------------
-
 export const NOTIFICATIONS = [
   {
     id: faker.string.uuid(),
-    title: "Your order is placed",
-    description: "waiting for shipping",
+    title: "Rent Recieved from Jason",
+    description: "Check for account details",
     avatar: null,
     type: "order_placed",
     createdAt: set(new Date(), { hours: 10, minutes: 30 }),
@@ -38,7 +32,7 @@ export const NOTIFICATIONS = [
   },
   {
     id: faker.string.uuid(),
-    title: faker.person.fullName(),
+    title: 'Maintenance Request by Matt',
     description: "answered to your comment on the Minimal",
     avatar: "/assets/images/avatars/avatar_2.jpg",
     type: "friend_interactive",
@@ -54,26 +48,8 @@ export const NOTIFICATIONS = [
     createdAt: sub(new Date(), { days: 1, hours: 3, minutes: 30 }),
     isUnRead: false,
   },
-  {
-    id: faker.string.uuid(),
-    title: "You have new mail",
-    description: "sent from Guido Padberg",
-    avatar: null,
-    type: "mail",
-    createdAt: sub(new Date(), { days: 2, hours: 3, minutes: 30 }),
-    isUnRead: false,
-  },
-  {
-    id: faker.string.uuid(),
-    title: "Delivery processing",
-    description: "Your order is being shipped",
-    avatar: null,
-    type: "order_shipped",
-    createdAt: sub(new Date(), { days: 3, hours: 3, minutes: 30 }),
-    isUnRead: false,
-  },
+  
 ];
-
 export default function NotificationsPopover() {
   const [notifications, setNotifications] = useState(NOTIFICATIONS);
   const navigate = useNavigate();

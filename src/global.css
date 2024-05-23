@@ -1,2 +1,10 @@
 /* scrollbar */
 @import 'simplebar-react/dist/simplebar.min.css';
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+body {
+  margin: 0;
+    font-family: "Rubik", sans-serif !important;
+    background-color: #f5f5f5 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
