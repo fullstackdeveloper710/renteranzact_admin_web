@@ -161,14 +161,14 @@ export const routeConfig = [
     role: ["superAdmin", "financeAdmin"],
     show: true,
   },
-  {
-    title: AppConstants.sidebarConstants.managePayouts,
-    link: "manage-payouts",
-    path: "./pages/managePayouts",
-    role: ["superAdmin"],
-    icon: <Icon icon="heroicons:currency-rupee" />,
-    show: true,
-  },
+  // {
+  //   title: AppConstants.sidebarConstants.managePayouts,
+  //   link: "manage-payouts",
+  //   path: "./pages/managePayouts",
+  //   role: ["superAdmin"],
+  //   icon: <Icon icon="heroicons:currency-rupee" />,
+  //   show: true,
+  // },
   {
     title: AppConstants.sidebarConstants.activityLog,
     link: "activity-logs",

@@ -67,9 +67,9 @@ export default function FinancePerformance() {
     "Legal Fee",
     "Service Charges",
     "Agency Fee",
-    "Transaction fee",
+    // "Transaction fee",
   ];
-  const revenueGenrateColumn = ["Month", "Revenue Regenerated"];
+  const revenueGenrateColumn = ["Month", "Revenue Generated"];
   return (
     <div className="px-5">
       <Stack
@@ -94,7 +94,7 @@ export default function FinancePerformance() {
         </div> */}
       </Stack>
 
-      <Typography variant="subtitle1">Collected Amount</Typography>
+      {/* <Typography variant="subtitle1">Collected Amount</Typography> */}
       <Grid
         container
         // gap={2}
@@ -107,39 +107,29 @@ export default function FinancePerformance() {
       >
         <Grid item md={3} sm={4} xs={12}>
           <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
+            <InputLabel id="demo-simple-select-label">Yearly</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={""}
               fullWidth
-              label="Monthly"
+              label="Yearly"
               // onChange={handleChange}
             >
-              {listOfMonths.map((x, i) => (
+              {[2024].map((x, i) => (
                 <MenuItem key={i} value={x}>
                   {x}
                 </MenuItem>
               ))}
-             
             </Select>
           </FormControl>
         </Grid>
-    
-        <Grid
-          item
-          md={3}
-          sm={4}
-          xs={12}
-          style={{ alignSelf: "flex-start" }}
-      
-        >
+
+        {/* <Grid item md={3} sm={4} xs={12} style={{ alignSelf: "flex-start" }}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-           
-              <DatePicker sx={{ width: "100%" }} label="11/11/23" />
-           
+            <DatePicker sx={{ width: "100%" }} label="11/11/23" />
           </LocalizationProvider>
-        </Grid>
+        </Grid> */}
         <Grid item md={3} sm={4} xs={12}>
           <Link>Clear Filters</Link>
         </Grid>
@@ -175,7 +165,7 @@ export default function FinancePerformance() {
                   <TableCell>100000</TableCell>
                   <TableCell>50000</TableCell>
                   <TableCell>60000</TableCell>
-                  <TableCell>70000</TableCell>
+                  {/* <TableCell>70000</TableCell> */}
                 </TableRow>
               );
             })}

@@ -5,6 +5,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  TextField,
 } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
@@ -46,9 +47,12 @@ export default function ManageTransactions() {
           direction={"row"}
           spacing={2}
           alignItems={"center"}
-          justify={"space-evenly"}
+          justify={"space-between"}
         >
           <Grid item xs={6} md={3}>
+            <TextField placeholder="Search" fullWidth />
+          </Grid>
+          {/* <Grid item xs={6} md={3}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Monthly</InputLabel>
               <Select
@@ -65,24 +69,24 @@ export default function ManageTransactions() {
                 ))}
               </Select>
             </FormControl>
-          </Grid>
+          </Grid> */}
 
-          <Grid item xs={6} md={3}>
+          {/* <Grid item xs={6} md={3}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              {/* <DemoContainer
+              <DemoContainer
                 sx={{ overflow: "hidden" }}
                 components={["DatePicker"]}
-              > */}
+              >
               <DatePicker
                 sx={{ width: "100%", overflow: "hidden" }}
                 label="11/11/23"
               />
-              {/* </DemoContainer> */}
+              </DemoContainer>
             </LocalizationProvider>
-          </Grid>
-          <Grid item xs={6} md={3}>
+          </Grid> */}
+          {/* <Grid item xs={6} md={3}>
             <Link>Clear Filters</Link>
-          </Grid>
+          </Grid> */}
           <Grid item xs={6} md={3}>
             <Button
               variant="contained"

@@ -97,128 +97,132 @@ export default function ManageRolesAndPermission() {
           </Button>
         </div>
         <TableContainerComponent>
+          <Table sx={{ minWidth: 800 }}>
+            <TableHead>
+              <TableRow>
+                <TableCell>Role Name</TableCell>
+                <TableCell>Permissions</TableCell>
+                <TableCell>Action</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                <TableCell>{"Reviewer Admin"}</TableCell>
+                <TableCell>
+                  <p>
+                    <b>
+                      Manage Users,Manage Property Listing Requests
+                      (Approve/Reject),Manage
+                      <br />
+                      Review & ratings (Approve/Remove/Publish){" "}
+                    </b>
+                  </p>
+                </TableCell>
 
-        <Table sx={{ minWidth: 800 }}>
-          <TableHead>
-            <TableRow>
-              <TableCell>Role Name</TableCell>
-              <TableCell>Permissions</TableCell>
-              <TableCell>Action</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              <TableCell>{"Reviewer Admin"}</TableCell>
-              <TableCell>
-                <p>
-                <b>
-                   Manage Users(Add/Edit/Delete),Manage Property
-                  <br />
-                  Listing Requests (View/Approve/Reject),Manage
-                  <br />
-                  Review & ratings (View/Approve/Remove/Publish){" "}
-                  </b> 
-                </p>
-              </TableCell>
+                <TableCell>
+                  <Iconify
+                    icon="bx:edit"
+                    onClick={() =>
+                      navigate("/add-new-roles-and-permissions-management")
+                    }
+                  />
+                  &nbsp;
+                  <Iconify
+                    onClick={() => setDeleteDialog(true)}
+                    icon="mingcute:delete-line"
+                  />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>{"Legal Admin"}</TableCell>
+                <TableCell>
+                  <p>
+                    <b>
+                      {" "}
+                      Manage Property related documents <br />
+                      (Approve/Reject/Request more documents)
+                    </b>
+                  </p>
+                </TableCell>
 
-              <TableCell>
-                <Iconify icon="bx:edit" 
-                 onClick={() =>
-                  navigate("/add-new-roles-and-permissions-management")
-                } />
-                &nbsp;
-                <Iconify
-                  onClick={() => setDeleteDialog(true)}
-                  icon="mingcute:delete-line"
-                />
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>{"Legal Admin"}</TableCell>
-              <TableCell>
-                <p>
-                <b> Manage Property related documents <br />
-                  (View/Approve/Reject/Request more documents)
-                  </b> 
-                </p>
-              </TableCell>
+                <TableCell>
+                  <Iconify
+                    icon="bx:edit"
+                    onClick={() =>
+                      navigate("/add-new-roles-and-permissions-management")
+                    }
+                  />
+                  &nbsp;
+                  <Iconify
+                    onClick={() => setDeleteDialog(true)}
+                    icon="mingcute:delete-line"
+                  />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>{"Finance Admin"}</TableCell>
+                <TableCell>
+                  <p>
+                    <b>
+                      {" "}
+                      Manage transactions (Download),Finance
+                      <br />
+                      Performance (Download)
+                    </b>
+                  </p>
+                </TableCell>
 
-              <TableCell>
-               <Iconify icon="bx:edit"
-                onClick={() =>
-                  navigate("/add-new-roles-and-permissions-management")
-                }
-               />
-                &nbsp;
-                <Iconify
-                  onClick={() => setDeleteDialog(true)}
-                  icon="mingcute:delete-line"
-                />
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>{"Finance Admin"}</TableCell>
-              <TableCell>
-                <p>
-                <b> Manage transactions (View/Download),Finance
-                  <br />
-                  Performance (View/Download)
-                  </b> 
-                </p>
-              </TableCell>
+                <TableCell>
+                  <Iconify
+                    icon="bx:edit"
+                    onClick={() =>
+                      navigate("/add-new-roles-and-permissions-management")
+                    }
+                  />
+                  &nbsp;
+                  <Iconify
+                    onClick={() => setDeleteDialog(true)}
+                    icon="mingcute:delete-line"
+                  />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>{"Super Admin"}</TableCell>
+                <TableCell>
+                  <p>
+                    <b>
+                      {" "}
+                      User Management ,Manage Employees,Manage Property Manage
+                      Roles & Permissions Review & Rating Management
+                      (Approve/Reject/Publish/Remove)
+                      <br /> Finance Performance (Download),Manage Transactions
+                      (Download),Activity Log (View)
+                    </b>
+                  </p>
+                </TableCell>
 
-              <TableCell>
-               <Iconify icon="bx:edit"
-                onClick={() =>
-                  navigate("/add-new-roles-and-permissions-management")
-                } />
-                &nbsp;
-                <Iconify
-                  onClick={() => setDeleteDialog(true)}
-                  icon="mingcute:delete-line"
-                />
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>{"Super Admin"}</TableCell>
-              <TableCell>
-                <p>
-                 <b> User Management (View/Add/Edit/Delete),Manage
-                  <br />
-                  Employees(View/Add/Edit/Delete),Manage Property
-                  <br />
-                  (View/Add/Edit/Delete) Manage Roles & Permissions
-                  <br />
-                  (View/Add/Edit/Delete) Review & Rating Management <br />
-                  (View/Approve/Reject/Publish/Remove), Finance
-                  <br />
-                  Performance (View/Download),Manage Transactions
-                  <br />
-                  (View/Download),Activity Log (View)
-                  </b>
-                </p>
-              </TableCell>
+                <TableCell>
+                  <Iconify
+                    icon="bx:edit"
+                    onClick={() =>
+                      navigate("/add-new-roles-and-permissions-management")
+                    }
+                  />
+                  &nbsp;
+                  <Iconify
+                    onClick={() => setDeleteDialog(true)}
+                    icon="mingcute:delete-line"
+                  />
+                </TableCell>
+              </TableRow>
 
-              <TableCell>
-               <Iconify icon="bx:edit"
-                onClick={() =>
-                  navigate("/add-new-roles-and-permissions-management")
-                } />
-                &nbsp;
-                <Iconify
-                  onClick={() => setDeleteDialog(true)}
-                  icon="mingcute:delete-line"
-                />
-              </TableCell>
-            </TableRow>
-
-            {/* <TableEmptyRows
+              {/* <TableEmptyRows
                   height={77}
                   emptyRows={emptyRows(page, rowsPerPage, users.length)}
                 />
                 {notFound && <TableNoData query={filterName} />} */}
-          </TableBody>
-        </Table>
+            </TableBody>
+          </Table>
         </TableContainerComponent>
       </Card>
       {deleteDialog && (

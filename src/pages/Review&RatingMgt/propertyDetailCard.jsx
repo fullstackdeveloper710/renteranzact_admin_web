@@ -5,7 +5,6 @@ import React from "react";
 export default function PropertyDetailCard() {
   return (
     <>
-     
       <Grid
         container
         spacing={1}
@@ -32,11 +31,10 @@ export default function PropertyDetailCard() {
           </div>
         </Grid>
         <Grid item xs={12} md={2}>
-        <Typography variant="subtitle1">abce</Typography>
+          <Typography variant="subtitle1">abce</Typography>
         </Grid>
         <Grid item xs={12} md={2}>
-        <Typography variant="subtitle1">Pearl J. Johnson
-</Typography>
+          <Typography variant="subtitle1">Pearl J. Johnson</Typography>
         </Grid>
         <Grid item xs={12} md={2}>
           Property Owner a good and coperative Property is situated in a good
@@ -52,7 +50,7 @@ export default function PropertyDetailCard() {
           flexDirection={"column"}
           gap={3}
         >
-          <Chip size="medium" label="Excellent" color="info" />
+          {/* <Chip size="medium" label="Excellent" color="info" /> */}
           <Rating size="large" value={5} />
         </Grid>
         <Grid
